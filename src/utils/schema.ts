@@ -130,3 +130,18 @@ export function buildHomeSchema() {
     }
   };
 }
+
+export function buildBreadcrumbSchema(items) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": items.map(function(item, i) {
+      return {
+        "@type": "ListItem",
+        "position": i + 1,
+        "name": item.name,
+        "item": item.url
+      };
+    })
+  };
+}
