@@ -33,6 +33,12 @@ export function buildCollectionSchema(category, products) {
           "@type": "AggregateRating",
           "ratingValue": p.stars,
           "bestRating": 5
+        },
+        "offers": {
+          "@type": "Offer",
+          "price": p.price,
+          "priceCurrency": "EUR",
+          "availability": p.price ? "https://schema.org/InStock" : "https://schema.org/OutOfStock"
         }
       }
     };
