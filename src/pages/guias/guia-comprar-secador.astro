@@ -1,0 +1,280 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { secadores, planchas, AFFILIATE_TAG } from '../../data/products';
+import { buildArticleSchema } from '../../utils/schema';
+
+const schema = buildArticleSchema(
+  "Como Elegir el Mejor Secador de Pelo en 2026",
+  "https://stylecraft.es/guias/guia-comprar-secador",
+  "Todo lo que necesitas saber para elegir el secador perfecto. Potencia, tecnologia ionica, difusor, peso y precio."
+);
+
+---
+
+<BaseLayout title="Guia de Compra: Como Elegir el Mejor Secador de Pelo 2026" description="Todo lo que necesitas saber para elegir el secador perfecto. Potencia, tecnologia ionica, difusor, peso y precio. Comparativa de los 10 mejores." schema={schema}>
+  <div class="page-header">
+    <div class="container">
+      <nav class="breadcrumb">
+        <a href="/">Inicio</a><span>/</span><a href="/guias">Guias</a><span>/</span><span>Guia Secador</span>
+      </nav>
+      <div class="guide-meta">
+        <span class="guide-label">GUIA DE COMPRA</span>
+        <span class="guide-time">15 min de lectura</span>
+        <span class="guide-date">Actualizado: Mayo 2026</span>
+      </div>
+      <h1>Como Elegir el Mejor Secador de Pelo en 2026</h1>
+      <p class="guide-intro">Todo lo que necesitas saber antes de comprar: potencia, tecnologia, accesorios, peso y presupuesto. Sin tecnicismos innecesarios.</p>
+    </div>
+  </div>
+
+  <article class="guide-content">
+    <div class="container">
+      <!-- TOC -->
+      <nav class="toc">
+        <h2>En esta guia</h2>
+        <ol>
+          <li><a href="#por-que">Por que confiar en nuestras recomendaciones</a></li>
+          <li><a href="#tecnologias">Tecnologias que importan</a></li>
+          <li><a href="#potencia">Potencia: 1800W vs 1875W vs 2200W</a></li>
+          <li><a href="#tipos-cabello">Elige segun tu tipo de cabello</a></li>
+          <li><a href="#presupuesto">Presupuesto y recomendaciones</a></li>
+          <li><a href="#dyson-comparativa">Dyson vs Shark vs Cecotec</a></li>
+          <li><a href="#top-10">Top 10 mejores secadores</a></li>
+        </ol>
+      </nav>
+
+      <!-- Section 1 -->
+      <section id="por-que">
+        <h2>Por que confiar en nuestras recomendaciones</h2>
+        <p>Analizamos mas de 200 productos usando datos reales de Amazon.es: ventas, ratings, reviews y precio. Solo recomendamos productos con al menos 4.4 estrellas y mas de 100 reseanas verificables. Todos los enlaces incluyen nuestro tag de afiliado (unmaquillaje-21), lo que nos ayuda a mantener el proyecto sin costo extra para ti.</p>
+              </section>
+
+      <!-- Section 2 -->
+      <section id="tecnologias">
+        <h2>Las tecnologias que realmente importan</h2>
+        <div class="tech-grid">
+          <div class="tech-card">
+            <h3>Ionica (Negative Ion)</h3>
+            <p>Emite iones negativos que neutralizan la electricidad estatica. Resultado: menos frizz, mas brillo, secado hasta 50% mas rapido. <strong>Recomendado para todos los tipos de cabello.</strong></p>
+            <span class="tech-level">Imprescindible</span>
+          </div>
+          <div class="tech-card">
+            <h3>Ceramic / Tourmaline</h3>
+            <p>Calor infrarrojo constante y distribuido均匀. Protege el cabello del dano por calor excesivo. <strong>Ideal para cabello tratado, danado o fragil.</strong></p>
+            <span class="tech-level">Muy Recomendado</span>
+          </div>
+          <div class="tech-card">
+            <h3>Motorless / Turbina</h3>
+            <p>Sin motor tradicional: mas ligero, mas silencioso, mas duradero. Solo en marcas premium (Dyson, Shark). <strong>Para uso profesional o frecuente.</strong></p>
+            <span class="tech-level">Premium</span>
+          </div>
+          <div class="tech-card">
+            <h3>Infrared (Rayos Infrarrojos)</h3>
+            <p>Penetran en la cuticula del cabello, secando desde dentro hacia afuera. Menor dano termico. <strong>Recomendado para cabello grueso o rizado.</strong></p>
+            <span class="tech-level">Recomendado</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- Section 3 -->
+      <section id="potencia">
+        <h2>Potencia: Como interpretar los vatios</h2>
+        <table class="comparison-table">
+          <thead><tr><th>Potencia</th><th>Uso recomendado</th><th>Tiempo secado</th><th>Ejemplos</th></tr></thead>
+          <tbody>
+            <tr><td><strong>1200-1500W</strong></td><td>Travel / Uso ocasional</td><td>8-12 min</td><td>Revlon Compact</td></tr>
+            <tr><td><strong>1800W</strong></td><td>Uso domestico diario</td><td>5-8 min</td><td>Slopehill, Anne Betty</td></tr>
+            <tr><td><strong>1875W</strong></td><td>Hogar y salon semi-profesional</td><td>4-7 min</td><td>KISS, Revlon Ionic, Infiniti Pro</td></tr>
+            <tr><td><strong>2000W+</strong></td><td>Uso profesional</td><td>3-5 min</td><td>Secadores de salon profesionales</td></tr>
+            <tr><td><strong>Sin motor tradicional</strong></td><td>Premium / Viaje frecuente</td><td>3-5 min</td><td>Dyson, Shark</td></tr>
+          </tbody>
+        </table>
+        <div class="pro-tip">
+          <strong>Consejo:</strong> La potencia no lo es todo. Un secador de 1800W con tecnologia ionica secara mejor y con menos dano que uno de 2200W con calor basico.
+        </div>
+      </section>
+
+      <!-- Section 4 -->
+      <section id="tipos-cabello">
+        <h2>Elige segun tu tipo de cabello</h2>
+        <div class="hair-types">
+          <div class="hair-type">
+            <h3>Cabello fino / debil</h3>
+            <p><strong>Evita:</strong> temperaturas extremas y flujo maximo constantemente.</p>
+            <p><strong>Busca:</strong> tecnologia ionica + ceramic, potencia media (1800W), difusor incluido.</p>
+            <p><strong>Nuestra eleccion:</strong> INFINITI PRO by CONAIR (1875W) o Revlon Infrared Ionic</p>
+          </div>
+          <div class="hair-type">
+            <h3>Cabello rizado / ondulado</h3>
+            <p><strong>Evita:</strong> secadores compactos sin difusor.</p>
+            <p><strong>Busca:</strong> difusor de bordes anchos, temperatura media, potencia alta (1800W+).</p>
+            <p><strong>Nuestra eleccion:</strong> Wavytalk con Diffuser (1875W, 4.4 estrellas) o AINA con Diffuser</p>
+          </div>
+          <div class="hair-type">
+            <h3>Cabello grueso / dificil</h3>
+            <p><strong>Evita:</strong> secadores de menos de 1800W sin accesorios.</p>
+            <p><strong>Busca:</strong> potencia alta (2000W+), tourmaline o titanio, concentrador estrecha.</p>
+            <p><strong>Nuestra eleccion:</strong> Slopehill 1800W o secadores premium tipo Shark/Dyson</p>
+          </div>
+          <div class="hair-type">
+            <h3>Cabello teñido / tratado</h3>
+            <p><strong>Evita:</strong> calor directo sin control de temperatura.</p>
+            <p><strong>Busca:</strong> tecnologia infrared o ionica, multiples configuraciones de calor, cool shot.</p>
+            <p><strong>Nuestra eleccion:</strong> Shark SpeedStyle (sin dano por calor) o INFINITI PRO</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Section 5 -->
+      <section id="presupuesto">
+        <h2>Presupuesto: de 12€ a 300€+</h2>
+        <div class="budget-grid">
+          <div class="budget-card">
+            <div class="budget-range">12€ - 25€</div>
+            <h3>Entrada</h3>
+            <p>Funcional para uso ocasional. Revlon Compact (12.77€) es el mejor en este rango. Sin extras pero confiable.</p>
+            <a href={`https://www.amazon.com/Revlon-Compact-Lightweight-Design-Perfect/dp/B003TQPRGY?tag=${AFFILIATE_TAG}`} target="_blank" rel="noopener" class="btn btn-outline">Ver en Amazon</a>
+          </div>
+          <div class="budget-card popular">
+            <div class="budget-range">25€ - 50€</div>
+            <h3>Mejor Valor</h3>
+            <p>El punto optimo calidad/precio. Wavytalk (28€), KISS (18€), Slopehill (29€). Todos con difusor y tecnologia ionica.</p>
+            <a href={`https://www.amazon.com/Wavytalk-Professional-Diffuser-Temperature-Technology/dp/B0C5R836QJ?tag=${AFFILIATE_TAG}`} target="_blank" rel="noopener" class="btn btn-accent">Ver Recomendado</a>
+          </div>
+          <div class="budget-card">
+            <div class="budget-range">50€ - 150€</div>
+            <h3>Semi-Premium</h3>
+            <p>Para uso frecuente. Shark SpeedStyle (~150€), secadores multi-styler con buenos resultados salon.</p>
+            <a href={`https://www.amazon.com/Shark-HD331-SpeedStyle-High-Velocity-Lightweight/dp/B0C7YJ7WML?tag=${AFFILIATE_TAG}`} target="_blank" rel="noopener" class="btn btn-outline">Ver en Amazon</a>
+          </div>
+          <div class="budget-card">
+            <div class="budget-range">300€+</div>
+            <h3>Premium</h3>
+            <p>Dyson Supersonic o FlexStyle. tecnologia de turbina, sin dano termico, durabilidad exceptional. Para profesionales o enthusiasts.</p>
+            <a href={`https://www.amazon.com/dp/B0B89P16MC?tag=${AFFILIATE_TAG}`} target="_blank" rel="noopener" class="btn btn-outline">Ver Dyson</a>
+          </div>
+        </div>
+      </section>
+
+      <!-- Section 6 -->
+      <section id="dyson-comparativa">
+        <h2>Dyson vs Shark vs Cecotec: Comparativa Real</h2>
+        <table class="comparison-table">
+          <thead><tr><th>Marca</th><th>Precio</th><th>Potencia</th><th>Ventaja</th><th>Para quien</th></tr></thead>
+          <tbody>
+            <tr><td><strong>Dyson</strong></td><td>300€+</td><td>Turbina digital</td><td>Tecnologia liderazgo, sin dano</td><td>Professionales y enthusiasts</td></tr>
+            <tr><td><strong>Shark</strong></td><td>150-200€</td><td>Alta velocidad</td><td>Mejor precio/premium, flexStyle</td><td>Uso frecuente domestico</td></tr>
+            <tr><td><strong>Cecotec</strong></td><td>30-100€</td><td>1800-2200W</td><td>Mejor valor ES, local support</td><td>Presupuesto y mercado ES</td></tr>
+          </tbody>
+        </table>
+        <div class="highlight-box">
+          <strong>Conclusion:</strong> Si tu presupuesto es hasta 100€, Cecotec ofrece la mejor relacion calidad/precio para el mercado espanol. Si puedes gastar 150€-300€, Shark FlexStyle es el mejor equilibrio. Dyson es para quienes no tienen limite de presupuesto.
+        </div>
+      </section>
+
+      <!-- Section 7 - Top 10 -->
+      <section id="top-10">
+        <h2>Top 10 Mejores Secadores - Mayo 2026</h2>
+        <div class="top-list">
+          {secadores.map((p, i) => (
+            <div class="top-row">
+              <span class="top-num">#{i + 1}</span>
+              <img src={p.image} alt={p.name} loading="lazy" />
+              <div class="top-info">
+                <h4>{p.name.split(' - ')[0]}</h4>
+                <div class="top-meta">
+                  <span class="top-stars">{'★'.repeat(Math.round(p.stars))} {p.stars}</span>
+                  {p.badge && <span class={`badge ${p.badge === 'BS Elegido' ? 'badge-choice' : p.badge === 'Premium' ? 'badge-premium' : 'badge-bs'}`}>{p.badge}</span>}
+                </div>
+              </div>
+              {p.price && <span class="top-price">{p.price}€</span>}
+              <a href={`${p.url}?tag=${AFFILIATE_TAG}`} target="_blank" rel="noopener" class="btn btn-accent top-btn">Ver Amazon</a>
+            </div>
+          ))}
+        </div>
+      </section>
+    </div>
+  </article>
+</BaseLayout>
+
+<style>
+  .page-header { background: linear-gradient(135deg, var(--text), #2a2d4a); color: #fff; padding: 64px 0; }
+  .breadcrumb { display: flex; align-items: center; gap: 8px; font-size: 0.85rem; color: rgba(255,255,255,0.5); margin-bottom: 24px; }
+  .breadcrumb a { color: rgba(255,255,255,0.7); }
+  .guide-meta { display: flex; align-items: center; gap: 16px; margin-bottom: 20px; }
+  .guide-label { background: var(--accent); color: #fff; font-size: 0.65rem; font-weight: 700; letter-spacing: 1px; padding: 4px 10px; border-radius: 4px; }
+  .guide-time, .guide-date { font-size: 0.8rem; color: rgba(255,255,255,0.5); }
+  .page-header h1 { font-family: 'Playfair Display', serif; font-size: 2.5rem; line-height: 1.2; max-width: 700px; margin-bottom: 16px; }
+  .guide-intro { color: rgba(255,255,255,0.7); max-width: 600px; font-size: 1.05rem; line-height: 1.7; }
+
+  .guide-content { padding: 0 0 80px; }
+
+  /* TOC */
+  .toc {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    padding: 24px 28px;
+    margin: 40px 0;
+  }
+  .toc h2 { font-size: 1rem; font-weight: 700; margin-bottom: 16px; color: var(--text); }
+  .toc ol { list-style: none; counter-reset: toc; }
+  .toc li { counter-increment: toc; margin-bottom: 8px; }
+  .toc li::before { content: counter(toc) '. '; font-weight: 600; color: var(--accent); margin-right: 8px; }
+  .toc a { font-size: 0.9rem; color: var(--text-2); }
+  .toc a:hover { color: var(--primary); }
+
+  /* Sections */
+  section { margin-bottom: 60px; }
+  section h2 { font-family: 'Playfair Display', serif; font-size: 1.7rem; margin-bottom: 20px; color: var(--text); }
+  section p { color: var(--text-2); line-height: 1.8; margin-bottom: 16px; font-size: 0.95rem; }
+
+  .highlight-box { background: linear-gradient(135deg, rgba(0,80,157,0.05), rgba(255,107,53,0.05)); border: 1px solid var(--border); border-radius: var(--radius); padding: 20px 24px; font-size: 0.9rem; margin: 24px 0; }
+  .highlight-box strong { color: var(--primary); }
+
+  /* Tech Grid */
+  .tech-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; }
+  .tech-card { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); padding: 20px; }
+  .tech-card h3 { font-size: 1rem; font-weight: 700; margin-bottom: 8px; }
+  .tech-card p { font-size: 0.85rem; margin-bottom: 12px; }
+  .tech-level { font-size: 0.7rem; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; padding: 3px 8px; border-radius: 4px; background: rgba(0,80,157,0.1); color: var(--primary); }
+
+  /* Tables */
+  .comparison-table { width: 100%; border-collapse: collapse; margin: 20px 0; font-size: 0.85rem; }
+  .comparison-table th { background: var(--surface-2); padding: 12px 16px; text-align: left; font-weight: 600; border-bottom: 2px solid var(--border); }
+  .comparison-table td { padding: 12px 16px; border-bottom: 1px solid var(--border); }
+  .comparison-table tr:hover { background: var(--surface-2); }
+
+  .pro-tip { background: rgba(255,107,53,0.08); border-left: 4px solid var(--accent); padding: 16px 20px; border-radius: 0 var(--radius) var(--radius) 0; font-size: 0.9rem; margin: 20px 0; }
+
+  /* Hair Types */
+  .hair-types { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; }
+  .hair-type { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); padding: 20px; }
+  .hair-type h3 { font-size: 1rem; font-weight: 700; color: var(--primary); margin-bottom: 12px; }
+  .hair-type p { font-size: 0.85rem; margin-bottom: 6px; }
+
+  /* Budget Grid */
+  .budget-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; }
+  .budget-card { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius-lg); padding: 24px; text-align: center; }
+  .budget-card.popular { border-color: var(--accent); box-shadow: 0 0 0 1px var(--accent); }
+  .budget-range { font-size: 1.2rem; font-weight: 800; color: var(--primary); margin-bottom: 8px; }
+  .budget-card h3 { font-size: 0.95rem; margin-bottom: 8px; }
+  .budget-card p { font-size: 0.8rem; color: var(--text-2); margin-bottom: 16px; }
+
+  /* Top 10 List */
+  .top-list { display: flex; flex-direction: column; gap: 8px; }
+  .top-row { display: flex; align-items: center; gap: 16px; background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); padding: 16px 20px; transition: all 0.2s; }
+  .top-row:hover { background: var(--surface-2); }
+  .top-num { font-size: 0.9rem; font-weight: 800; color: var(--accent); min-width: 32px; }
+  .top-row img { width: 56px; height: 56px; object-fit: cover; border-radius: 8px; }
+  .top-info { flex: 1; min-width: 0; }
+  .top-info h4 { font-size: 0.9rem; font-weight: 600; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  .top-meta { display: flex; align-items: center; gap: 8px; margin-top: 4px; }
+  .top-stars { font-size: 0.8rem; color: var(--accent); font-weight: 600; }
+  .top-price { font-size: 1rem; font-weight: 800; color: var(--primary); min-width: 60px; }
+  .top-btn { padding: 8px 16px; font-size: 0.8rem; white-space: nowrap; }
+
+  @media (max-width: 1024px) { .budget-grid { grid-template-columns: repeat(2, 1fr); } .tech-grid { grid-template-columns: 1fr; } .hair-types { grid-template-columns: 1fr; } }
+  @media (max-width: 768px) { .toc { } }
+  @media (max-width: 640px) { .budget-grid { grid-template-columns: 1fr; } .top-row { flex-wrap: wrap; } .top-btn { width: 100%; justify-content: center; } }
+</style>

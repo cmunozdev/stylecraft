@@ -1,0 +1,321 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { planchas, AFFILIATE_TAG } from '../data/products';
+import { buildCollectionSchema } from '../utils/schema';
+
+const sorted = planchas.filter(p => p.price !== null).sort((a, b) => b.stars - a.stars);
+const noPrice = planchas.filter(p => p.price === null).slice(0, 4);
+const schema = buildCollectionSchema("planchas", sorted);
+---
+
+<BaseLayout title="Mejores Planchas de Pelo 2026 - Reviews y Comparativas" description="Encuentra la plancha de pelo perfecta en 2026. Comparativas de BabylissPRO, Remington, ghd y mas. Guia de compra completa." schema={schema}>
+  <div class="page-header">
+    <div class="container">
+      <nav class="breadcrumb">
+        <a href="/">Inicio</a><span>/</span><span>Planchas</span>
+      </nav>
+      <div class="header-content">
+        <div class="header-icon">
+          <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><line x1="3" y1="9" x2="21" y2="9"/><line x1="9" y1="21" x2="9" y2="9"/></svg>
+        </div>
+        <div>
+          <h1>Mejores Planchas de Pelo 2026</h1>
+          <p>Planchas profesionales para alisado perfecto. BabylissPRO, Remington, ghd, CHI y mas. Encuentra la ideal para tu tipo de cabello.</p>
+        </div>
+      </div>
+      <div class="header-stats">
+        <div class="hstat"><strong>Desde 13€</strong><span>mejor precio</span></div>
+        <div class="hstat"><strong>+4.6</strong><span>rating promedio</span></div>
+        <div class="hstat"><strong>8</strong><span>planchas revisadas</span></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="container">
+    <!-- Products Grid -->
+    <h2 class="section-label">Top Planchas de Pelo 2026</h2>
+    <div class="products-grid">
+      {sorted.map((p, i) => (
+        <div class="product-card">
+          <div class="product-rank">#{i + 1}</div>
+          {p.badge && <span class={`badge ${p.badge === 'Premium' ? 'badge-premium' : p.badge === 'BS Elegido' ? 'badge-choice' : 'badge-bs'}`}>{p.badge}</span>}
+          <div class="product-image-wrap">
+            <img src={p.image} alt={p.name} loading="lazy" />
+          </div>
+          <div class="product-body">
+            <h3>{p.name}</h3>
+            <div class="product-rating">
+              <span class="stars">{'★'.repeat(Math.round(p.stars))}</span>
+              <span class="rating-num">{p.stars}</span>
+            </div>
+            {p.price && <div class="product-price">{p.price}€</div>}
+            {!p.price && <div class="product-price-na">Ver en Amazon</div>}
+          </div>
+          <a href={`${p.url}?tag=${AFFILIATE_TAG}`} target="_blank" rel="noopener" class="btn btn-accent buy-btn">
+            Ver en Amazon
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6M15 3h6v6M10 14L21 3"/></svg>
+          </a>
+        </div>
+      ))}
+    </div>
+
+    <div class="premium-section">
+      <h2>Planchas Premium</h2>
+      <div class="products-grid">
+        {noPrice.map((p, i) => (
+          <div class="product-card">
+            <div class="product-rank">#{i + 1}</div>
+            {p.badge && <span class="badge badge-premium">{p.badge}</span>}
+            <div class="product-image-wrap">
+              <img src={p.image} alt={p.name} loading="lazy" />
+            </div>
+            <div class="product-body">
+              <h3>{p.name}</h3>
+              <div class="product-rating">
+                <span class="stars">{'★'.repeat(Math.round(p.stars))}</span>
+                <span class="rating-num">{p.stars}</span>
+              </div>
+              <div class="product-price-na">Ver precio en Amazon</div>
+            </div>
+            <a href={`${p.url}?tag=${AFFILIATE_TAG}`} target="_blank" rel="noopener" class="btn btn-outline buy-btn">Ver en Amazon</a>
+          </div>
+        ))}
+      </div>
+    </div>
+
+    <!-- Guia de compra completa -->
+    <section class="guide-section">
+      <div class="guide-intro">
+        <h2>Como Elegir la Mejor Plancha de Pelo en 2026</h2>
+        <p>Una buena plancha de pelo no solo alisa: protege tu cabello, define el acabado y se adapta a tu tipo de pelo. Esta guia te ayuda a elegir segun su tecnologia, placas y funcionalidades.</p>
+      </div>
+
+      <div class="guide-grid">
+        <div class="guide-card">
+          <h3>Tecnologias de Placas</h3>
+          <p>El material de las placas determina la transferencia de calor y el dano que recibe tu cabello.</p>
+          <ul>
+            <li><strong>Ceramic:</strong> Calor infrarrojo que penetra desde el interior. Distribucion uniforme, dano minimo. El mejor punto de partida.</li>
+            <li><strong>Titanium:</strong> Calor constante y superficial. Secado rapido. Ideal para uso profesional intensivo y cabello grueso.</li>
+            <li><strong>Tourmaline:</strong> Piedra natural que emite iones negativos. Elimina frizz, aporta brillo. Recomendada para cabello danado o rizado.</li>
+            <li><strong>Keratina:</strong> Placas con infusion de keratina. Rellena la cuticula del cabello durante el alisado. Ideal para cabellos secos o tratados.</li>
+          </ul>
+        </div>
+
+        <div class="guide-card">
+          <h3>Tamaño de Placas segun tu Cabello</h3>
+          <p>Elegir el ancho correcto optimiza el tiempo de alisado y reduce el dano por pasadas excesivas.</p>
+          <div class="power-table">
+            <div class="power-row">
+              <span class="power-label">1-1.25"</span>
+              <span class="power-desc">Corto a medio. Cabello fino. Facilidad de control.</span>
+            </div>
+            <div class="power-row">
+              <span class="power-label">1.25-1.5"</span>
+              <span class="power-desc">Medio a largo. Todo tipo de cabello. El mas versatil.</span>
+            </div>
+            <div class="power-row">
+              <span class="power-label">1.75-2"</span>
+              <span class="power-desc">Largo o muy grueso. Seccionas mas cabello por pasada.</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="guide-card">
+          <h3>Funciones Extra que Marcan la Diferencia</h3>
+          <p>Mas alla del alisado basico, estas funciones te ofrecen mayor control y proteccion.</p>
+          <ul>
+            <li><strong>Rizador 2 en 1:</strong> Con un simple giro, cambias entre alisar y rizar. Perfecta para versatilidad diaria.</li>
+            <li><strong>Vapor:</strong> Placas con infusion de vapor. Hidratan mientras alisan, reducir el dano termico drásticamente.</li>
+            <li><strong>Keratina y Argan Oil:</strong> Infusiones que se depositan durante el alisado. Ideal para cabello seco y sin brillo.</li>
+            <li><strong>Apagado automatico:</strong> Se apaga sola tras 60 min. Olvida la paranoia de si la dejaste encendida.</li>
+            <li><strong>Temperatura regulable:</strong> 120°C - 230°C. Cabello fino: 150-170°C. Normal: 180°C. Grueso: 200-220°C.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="guide-card full-width">
+        <h3>Planchas Baratas vs Professionales: Realmente Compensa?</h3>
+        <p>Una plancha de 15€ puede parecer un ahorro, pero las <strong>placas de baja calidad</strong> generan puntos calientes que queman el cabello sin均匀mente. Los indicadores: ruido de chisporroteo, olor a quemado, o cabello quebradizo tras semanas de uso. Invertir entre <strong>30€ y 60€</strong> en una plancha con placas ceramic/titanium y temperatura regulable marca una diferencia brutal en la salud de tu cabello. Encuentra la mejor relacion calidad-precio en nuestro top.</p>
+      </div>
+    </section>
+
+    <!-- Comparativa por presupuesto -->
+    <section class="comparison-section">
+      <h2>Mejor Plancha segun tu Presupuesto</h2>
+      <div class="comparison-grid">
+        <div class="compare-card budget-low">
+          <div class="compare-badge">Economico</div>
+          <h4>Menos de 25€</h4>
+          <p>Placas ceramic basicas, temperatura fija o few niveles. Correctas para uso ocasional.</p>
+          <ul>
+            <li>Alisado funcional</li>
+            <li>Proteccion basica</li>
+            <li>Placas narrow a medias</li>
+            <li>Durabilidad limitada</li>
+          </ul>
+        </div>
+        <div class="compare-card budget-mid">
+          <div class="compare-badge">Recomendado</div>
+          <h4>25€ - 60€</h4>
+          <p>La mejor relacion calidad-precio. Titanium o ceramic premium, temperatura regulable, extras como vapor o rizador.</p>
+          <ul>
+            <li>Alisado rapido y suave</li>
+            <li>Proteccion real del cabello</li>
+            <li>Placas anchas para largo</li>
+            <li>Buena durabilidad</li>
+          </ul>
+        </div>
+        <div class="compare-card budget-high">
+          <div class="compare-badge">Premium</div>
+          <h4>Mas de 80€</h4>
+          <p>Planchas de salon con placa de titanio profesional, ionica avanzada, calentamiento ultra-rapido y precision absoluta.</p>
+          <ul>
+            <li>Resultado de peluqueria</li>
+            <li>Proteccion salon-level</li>
+            <li>Calentamiento en 15s</li>
+            <li>Durabilidad 5+ anos</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="faq-section">
+      <h2>Preguntas Frecuentes sobre Planchas de Pelo</h2>
+      <div class="faq-list">
+        <details class="faq-item">
+          <summary>A que temperatura debo usar mi plancha de pelo?</summary>
+          <div class="faq-answer">
+            <p>Depende de tu cabello. Cabello <strong>fino o sensibilizado</strong>: 150-170°C. Cabello <strong>normal</strong>: 180°C. Cabello <strong>grueso o rizado</strong>: 190-220°C. Si tu plancha no tiene control de temperatura, empieza en la temperatura mas baja y sube solo si no logras el resultado.</p>
+          </div>
+        </details>
+        <details class="faq-item">
+          <summary>Que es mejor: placas ceramic o titanium?</summary>
+          <div class="faq-answer">
+            <p><strong>Ceramic</strong> es mejor para dano minimo y calor uniforme. Ideal para cabellos finos, secos o tratados. <strong>Titanium</strong> es mejor para uso rapido y profesional, cabello grueso o largo. Para la mayoria, ceramic es la eleccion mas segura y equilibrada.</p>
+          </div>
+        </details>
+        <details class="faq-item">
+          <summary>Puedo rizar el pelo con una plancha normal?</summary>
+          <div class="faq-answer">
+            <p>Tecnicamente si, enrollando mechones alrededor de las placas y girando la plancha. Pero las <strong>planchas 2 en 1</strong> (con modo rizador integrado) ofrecen resultados mucho mejores y mas control. Si buscas versatilidad, prioriza una 2 en 1 en lugar de una plancha sola.</p>
+          </div>
+        </details>
+        <details class="faq-item">
+          <summary>Cada cuanto hay que cambiar las placas de una plancha?</summary>
+          <div class="faq-answer">
+            <p>Las placas no se cambian, se cambia la plancha. Senales de que necesita reemplazo: <strong>calentamiento desigual</strong> (zonas frias), ruido de chisporroteo, el cabello se queda seco o quebradizo apesar de usar protector termico, u olor a quemado constante.</p>
+          </div>
+        </details>
+        <details class="faq-item">
+          <summary>Necesito protector termico si uso una plancha con keratina?</summary>
+          <div class="faq-answer">
+            <p><strong>Siempre</strong>. El protector termico crea una barrera adicional que reduce el dano. Las placas con infusion de keratina complementan, no sustituyen, al protector. Aplica siempre antes de planchar, especialmente si usas temperaturas de 190°C o mas.</p>
+          </div>
+        </details>
+      </div>
+    </section>
+
+    <!-- CTA Final -->
+    <section class="cta-section">
+      <div class="cta-content">
+        <h2>Guia Completa: Como Elegir la Mejor Plancha de Pelo</h2>
+        <p>Comparativas detalladas de BabylissPRO vs Remington vs ghd, analisis de tecnologias de placas, y recomendaciones por tipo de cabello.</p>
+        <a href="/guias/guia-comprar-plancha" class="btn btn-accent btn-lg">Leer Guia de Compra Completa</a>
+      </div>
+    </section>
+  </div>
+</BaseLayout>
+
+<style>
+  .page-header {
+    background: linear-gradient(135deg, rgba(0,80,157,0.05), rgba(255,107,53,0.03));
+    border-bottom: 1px solid var(--border);
+    padding: 48px 0;
+  }
+  .breadcrumb { display: flex; align-items: center; gap: 8px; font-size: 0.85rem; color: var(--text-3); margin-bottom: 24px; }
+  .breadcrumb a { color: var(--primary); }
+  .header-content { display: flex; align-items: flex-start; gap: 20px; margin-bottom: 32px; }
+  .header-icon { width: 64px; height: 64px; background: linear-gradient(135deg, var(--primary), var(--primary-light)); border-radius: 16px; display: flex; align-items: center; justify-content: center; color: #fff; flex-shrink: 0; }
+  .header-content h1 { font-family: 'Playfair Display', serif; font-size: 2.2rem; margin-bottom: 8px; }
+  .header-content p { color: var(--text-2); max-width: 600px; line-height: 1.6; }
+  .header-stats { display: flex; gap: 32px; padding: 20px 24px; background: var(--surface); border-radius: var(--radius); border: 1px solid var(--border); width: fit-content; }
+  .hstat { display: flex; flex-direction: column; }
+  .hstat strong { font-size: 1.3rem; font-weight: 800; color: var(--primary); }
+  .hstat span { font-size: 0.75rem; color: var(--text-3); }
+
+  .section-label { font-family: 'Plus Jakarta Sans', sans-serif; font-size: 0.75rem; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; padding: 32px 0 0; margin: 0; }
+
+  .products-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; padding: 16px 0 40px; }
+  .product-card { background: var(--surface); border-radius: var(--radius-lg); border: 1px solid var(--border); padding: 24px; display: flex; flex-direction: column; gap: 12px; position: relative; transition: all 0.25s; }
+  .product-card:hover { box-shadow: var(--shadow-lg); transform: translateY(-2px); }
+  .product-rank { position: absolute; top: 16px; left: 16px; font-size: 0.7rem; font-weight: 800; color: var(--accent); background: rgba(255,107,53,0.1); padding: 4px 8px; border-radius: 4px; }
+  .product-image-wrap { display: flex; justify-content: center; padding: 16px; background: var(--surface-2); border-radius: var(--radius); }
+  .product-image-wrap img { height: 120px; width: 100%; object-fit: contain; }
+  .product-body { flex: 1; }
+  .product-body h3 { font-size: 0.95rem; font-weight: 600; line-height: 1.4; margin-bottom: 8px; color: var(--text); }
+  .product-rating { display: flex; align-items: center; gap: 8px; }
+  .stars { color: var(--accent); font-size: 0.9rem; }
+  .rating-num { font-size: 0.85rem; font-weight: 600; }
+  .product-price { font-size: 1.3rem; font-weight: 800; color: var(--primary); margin-top: 4px; }
+  .product-price-na { font-size: 0.85rem; color: var(--text-3); margin-top: 4px; }
+  .buy-btn { width: 100%; justify-content: center; margin-top: auto; }
+  .premium-section { padding: 0 0 40px; }
+  .premium-section h2 { font-family: 'Playfair Display', serif; font-size: 1.5rem; margin-bottom: 20px; }
+
+  .guide-section { padding: 48px 0; border-top: 1px solid var(--border); }
+  .guide-intro { text-align: center; max-width: 700px; margin: 0 auto 48px; }
+  .guide-intro h2 { font-family: 'Playfair Display', serif; font-size: 2rem; margin-bottom: 16px; }
+  .guide-intro p { color: var(--text-2); line-height: 1.7; font-size: 1rem; }
+  .guide-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; margin-bottom: 24px; }
+  .guide-card { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius-lg); padding: 28px; }
+  .guide-card.full-width { grid-column: 1 / -1; }
+  .guide-card h3 { font-family: 'Playfair Display', serif; font-size: 1.2rem; margin-bottom: 12px; color: var(--primary); }
+  .guide-card p { color: var(--text-2); font-size: 0.9rem; line-height: 1.6; margin-bottom: 16px; }
+  .guide-card ul { list-style: none; padding: 0; }
+  .guide-card ul li { font-size: 0.88rem; line-height: 1.6; color: var(--text-2); padding: 6px 0; border-bottom: 1px solid var(--border); }
+  .guide-card ul li:last-child { border-bottom: none; }
+  .guide-card ul li strong { color: var(--text); }
+  .power-table { display: flex; flex-direction: column; gap: 8px; }
+  .power-row { display: flex; gap: 12px; align-items: center; padding: 10px 14px; background: var(--surface-2); border-radius: var(--radius); }
+  .power-label { font-size: 0.85rem; font-weight: 700; color: var(--accent); min-width: 80px; }
+  .power-desc { font-size: 0.85rem; color: var(--text-2); }
+
+  .comparison-section { padding: 48px 0; border-top: 1px solid var(--border); }
+  .comparison-section h2 { font-family: 'Playfair Display', serif; font-size: 1.8rem; margin-bottom: 32px; text-align: center; }
+  .comparison-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+  .compare-card { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius-lg); padding: 28px; position: relative; }
+  .compare-card.budget-low { border-top: 3px solid var(--text-3); }
+  .compare-card.budget-mid { border-top: 3px solid var(--primary); }
+  .compare-card.budget-high { border-top: 3px solid var(--accent); }
+  .compare-badge { display: inline-block; font-size: 0.7rem; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; padding: 4px 10px; border-radius: 4px; margin-bottom: 12px; }
+  .budget-low .compare-badge { background: rgba(0,0,0,0.05); color: var(--text-3); }
+  .budget-mid .compare-badge { background: rgba(0,80,157,0.1); color: var(--primary); }
+  .budget-high .compare-badge { background: rgba(255,107,53,0.1); color: var(--accent); }
+  .compare-card h4 { font-size: 1.2rem; font-weight: 700; margin-bottom: 8px; }
+  .compare-card > p { font-size: 0.88rem; color: var(--text-2); line-height: 1.6; margin-bottom: 16px; }
+  .compare-card ul { list-style: none; padding: 0; margin-bottom: 20px; }
+  .compare-card ul li { font-size: 0.85rem; color: var(--text-2); padding: 5px 0; padding-left: 20px; position: relative; }
+  .compare-card ul li::before { content: '✓'; position: absolute; left: 0; color: var(--primary); font-weight: 700; }
+
+  .faq-section { padding: 48px 0; border-top: 1px solid var(--border); }
+  .faq-section h2 { font-family: 'Playfair Display', serif; font-size: 1.8rem; margin-bottom: 32px; text-align: center; }
+  .faq-list { max-width: 800px; margin: 0 auto; display: flex; flex-direction: column; gap: 8px; }
+  .faq-item { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); overflow: hidden; }
+  .faq-item summary { padding: 18px 24px; font-weight: 600; cursor: pointer; font-size: 0.95rem; list-style: none; display: flex; justify-content: space-between; align-items: center; }
+  .faq-item summary::after { content: '+'; font-size: 1.4rem; color: var(--accent); }
+  .faq-item[open] summary::after { content: '−'; }
+  .faq-item summary:hover { background: var(--surface-2); }
+  .faq-answer { padding: 0 24px 20px; }
+  .faq-answer p { font-size: 0.9rem; color: var(--text-2); line-height: 1.7; }
+
+  .cta-section { padding: 64px 0 80px; border-top: 1px solid var(--border); }
+  .cta-content { text-align: center; max-width: 600px; margin: 0 auto; }
+  .cta-content h2 { font-family: 'Playfair Display', serif; font-size: 1.8rem; margin-bottom: 16px; }
+  .cta-content p { color: var(--text-2); line-height: 1.7; margin-bottom: 24px; }
+  .btn-lg { padding: 14px 36px; font-size: 1rem; }
+
+  @media (max-width: 1024px) { .products-grid, .guide-grid, .comparison-grid { grid-template-columns: repeat(2, 1fr); } .guide-card.full-width { grid-column: span 2; } }
+  @media (max-width: 640px) { .products-grid, .guide-grid, .comparison-grid { grid-template-columns: 1fr; } .guide-card.full-width { grid-column: 1; } .header-stats { flex-wrap: wrap; } }
+</style>

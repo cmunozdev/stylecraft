@@ -1,0 +1,285 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { cepillos, AFFILIATE_TAG } from '../data/products';
+import { buildCollectionSchema } from '../utils/schema';
+
+const sorted = cepillos.filter(p => p.price !== null).sort((a, b) => b.stars - a.stars);
+const schema = buildCollectionSchema("cepillos", sorted);
+---
+
+<BaseLayout title="Mejores Cepillos Secadores 2026 - Dyson, Shark, Reviews" description="Cepillos secadores 3-en-1, 5-en-1 y mas en 2026. Dyson FlexStyle, Shark SpeedStyle y los mejores del mercado. Reviews y comparativas actualizadas." schema={schema}>
+  <div class="page-header">
+    <div class="container">
+      <nav class="breadcrumb">
+        <a href="/">Inicio</a><span>/</span><span>Cepillos Secadores</span>
+      </nav>
+      <div class="header-content">
+        <div class="header-icon">
+          <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="3"/></svg>
+        </div>
+        <div>
+          <h1>Mejores Cepillos Secadores 2026</h1>
+          <p>Cepillos 3-en-1, 5-en-1 y 7-en-1 que secan y estilizan en un solo paso. Dyson FlexStyle, Shark SpeedStyle y alternativas mas accesibles.</p>
+        </div>
+      </div>
+      <div class="header-stats">
+        <div class="hstat"><strong>Desde 16€</strong><span>mejor precio</span></div>
+        <div class="hstat"><strong>+4.3</strong><span>rating promedio</span></div>
+        <div class="hstat"><strong>8</strong><span>cepillos revisados</span></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="container">
+    <h2 class="section-label">Top Cepillos Secadores 2026</h2>
+    <div class="products-grid">
+      {cepillos.map((p, i) => (
+        <div class="product-card">
+          <div class="product-rank">#{i + 1}</div>
+          {p.badge && <span class={`badge ${p.badge === 'Premium' ? 'badge-premium' : p.badge === 'BS Elegido' ? 'badge-choice' : 'badge-bs'}`}>{p.badge}</span>}
+          <div class="product-image-wrap">
+            <img src={p.image} alt={p.name} loading="lazy" />
+          </div>
+          <div class="product-body">
+            <h3>{p.name}</h3>
+            <div class="product-rating">
+              <span class="stars">{'★'.repeat(Math.round(p.stars))}</span>
+              <span class="rating-num">{p.stars}</span>
+            </div>
+            {p.price && <div class="product-price">{p.price}€</div>}
+            {!p.price && <div class="product-price-na">Ver en Amazon</div>}
+          </div>
+          <a href={`${p.url}?tag=${AFFILIATE_TAG}`} target="_blank" rel="noopener" class="btn btn-accent buy-btn">Ver en Amazon</a>
+        </div>
+      ))}
+    </div>
+
+    <!-- Guia de compra completa -->
+    <section class="guide-section">
+      <div class="guide-intro">
+        <h2>Como Elegir el Mejor Cepillo Secador en 2026</h2>
+        <p>El cepillo secador (o "blow dryer brush") combina el secado y el estilizado en un solo paso. Suena a magia, pero no todos son iguales. Esta guia te ayuda a entender cual compensa segun tu cabello y presupuesto.</p>
+      </div>
+
+      <div class="guide-grid">
+        <div class="guide-card">
+          <h3>Que es un Cepillo Secador?</h3>
+          <p>Es un cepillo con motor de secador integrado que seca el cabello mientras lo estiliza. En lugar de secador + redondo + brush, usas un solo aparato que sopla aire caliente a traves de las cerdas.</p>
+          <ul>
+            <li><strong>Secado + Estilizado:</strong> En un solo paso. Reduces el tiempo de tu rutina drastically.</li>
+            <li><strong>Facil de usar:</strong> No requiere tecnica. Pasas el cepillo por secciones y listo.</li>
+            <li><strong>Reduce herramientas:</strong> Reemplaza secador, brush redondo y plaque. Un aparato para todo.</li>
+            <li><strong>Ideal para:</strong> Cabello liso a ondulado, largo a medio. Menos ideal para rizos definidos.</li>
+          </ul>
+        </div>
+
+        <div class="guide-card">
+          <h3>Formatos: Redondo vs Ovalado vs Paddle</h3>
+          <p>La forma del cepillo determina el resultado. Elige segun lo que busques.</p>
+          <div class="power-table">
+            <div class="power-row">
+              <span class="power-label">Redondo</span>
+              <span class="power-desc">Volumen en raiz, rizos suaves. El mas comun. REVLON One-Step es el icono.</span>
+            </div>
+            <div class="power-row">
+              <span class="power-label">Ovalado</span>
+              <span class="power-desc">Mas superficie de contacto. Secado rapido. Buen balance entre volumen y alisado.</span>
+            </div>
+            <div class="power-row">
+              <span class="power-label">Paddle</span>
+              <span class="power-desc">Superficie plana. Alisado suave. Sin volumen extra. Para cabello liso que quieres mantener liso.</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="guide-card">
+          <h3>Multi-Styler: Que Significa 3-en-1, 5-en-1?</h3>
+          <p>Los cepillos "multi" vienen con cabezales intercambiables. Esto multiplica la versatilidad.</p>
+          <ul>
+            <li><strong>3-en-1:</strong> Generalmente 3 cabezales: liso/alisado, rizado y volumetric. Lo basico.</li>
+            <li><strong>5-en-1:</strong> 5 cabezales para diferentes estilos: liso, ondas, rizos, volumen y diffuse. La mejor relacion versatilidad/precio.</li>
+            <li><strong>7-en-1 o mas:</strong> Incluye tous los cabezales mas extras como difusor o boquillas. Cerca del concepto Dyson Airwrap.</li>
+            <li><strong>Sin cabezales:</strong> Un solo cepillo integrado. Mas simple, mas barato, menos versatil.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="guide-card full-width">
+        <h3>Cepillo Secador vs Dyson Airwrap: Realmente Compensa?</h3>
+        <p>El <strong>Dyson Airwrap</strong> (400€+) es el referente absoluto. Pero a 5-10x el precio de alternativas como TYMO 4.0, Wavytalk o REVLON One-Step, la pregunta es: merece la pena? La respuesta honesta: <strong>depende de tu prioridades</strong>. Si priorizas volumen de aire, tecnologia de flujo de aire avanzada y duracion extrema: Dyson gana. Si priorizas resultado decente a precio razonable: las alternativas de 40-60€ ofrecen un 80% del resultado por el 10% del precio. Para la mayoria, la diferencia no justifica multiplicar por 6-10x el coste.</p>
+      </div>
+    </section>
+
+    <!-- Comparativa por presupuesto -->
+    <section class="comparison-section">
+      <h2>Mejor Cepillo Secador segun tu Presupuesto</h2>
+      <div class="comparison-grid">
+        <div class="compare-card budget-low">
+          <div class="compare-badge">Economico</div>
+          <h4>Menos de 25€</h4>
+          <p>Cepillos basicos 3-en-1 o paddle. Buena entrada al mundo de los cepillos secadores. Sin cabezales intercambiables.</p>
+          <ul>
+            <li>Rutinas mas rapidas</li>
+            <li>Tecnologia ionica basica</li>
+            <li>Ideal para probar</li>
+            <li>Funcionan para cabello liso</li>
+          </ul>
+        </div>
+        <div class="compare-card budget-mid">
+          <div class="compare-badge">Recomendado</div>
+          <h4>25€ - 65€</h4>
+          <p>La mejor relacion calidad-precio. REVLON One-Step, Wavytalk Air Sculpt, TYMO. Buenos motores, ionica real y resultados de salon accesibles.</p>
+          <ul>
+            <li>Resultado salon-like</li>
+            <li>Ionica y ceramic</li>
+            <li>Cabezales intercambiables</li>
+            <li>Buena durabilidad</li>
+          </ul>
+        </div>
+        <div class="compare-card budget-high">
+          <div class="compare-badge">Premium</div>
+          <h4>Mas de 100€</h4>
+          <p>Dyson FlexStyle, Shark SpeedStyle, ghd. Tecnologia de flujo de aire Coanda, motores brushless y precision profesional.</p>
+          <ul>
+            <li>Tecnologia Coanda</li>
+            <li>Motor brushless silencioso</li>
+            <li>Multi-cabezales salon</li>
+            <li>Durabilidad 5+ anos</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="faq-section">
+      <h2>Preguntas Frecuentes sobre Cepillos Secadores</h2>
+      <div class="faq-list">
+        <details class="faq-item">
+          <summary>Funciona un cepillo secador para cabello rizado?</summary>
+          <div class="faq-answer">
+            <p><strong>Parcialmente.</strong> Los cepillos secadores pueden <strong>relajar el rizado</strong> y crear ondas suaves, pero no crean rizos definidos. Si tu objetivo es mantener rizos, considera un rizador automatico en su lugar, o usa el difusor de un secador convencional. Los cabezales de "rizado" en los cepillos multi-en-1 crean ondulaciones suaves, no rizos de verdad.</p>
+          </div>
+        </details>
+        <details class="faq-item">
+          <summary>Cuanto tiempo tarda en secar con un cepillo secador?</summary>
+          <div class="faq-answer">
+            <p>Depende de tu cabello, pero aproximadamente <strong>10-15 minutos</strong> para cabello medio-largo (desde lavado). Un secador convencional puede tardar 15-20 minutos, asi que el ahorro es moderado. La ventaja real no es el tiempo de secado sino la <strong>combinacion secado + stylizado en un paso</strong>, lo que simplifica la rutina drasticamente.</p>
+          </div>
+        </details>
+        <details class="faq-item">
+          <summary>Puedo usar mousse o productos antes del cepillo secador?</summary>
+          <div class="faq-answer">
+            <p><strong>Si, y es recomendable.</strong> Aplica mousse, foam o spray de volumen en cabello humedo ANTES de usar el cepillo secador. El calor activa el producto y maximiza el resultado. Evita gels o productos muy pesados que puedan dejar residuo con el calor. El protector termico sigue siendo necesario antes de cualquier herramienta de calor.</p>
+          </div>
+        </details>
+        <details class="faq-item">
+          <summary>Que es mejor: REVLON One-Step o TYMO 4.0?</summary>
+          <div class="faq-answer">
+            <p><strong>REVLON One-Step</strong> es el clasico probado: simple, efectivo, 4.6 estrellas de media con miles de opiniones. <strong>TYMO 4.0</strong> es mas moderno con 5 cabezales intercambiables y mas potencia. Si quieres simplicidad y fiabilidad: REVLON. Si quieres versatilidad y mas temperatura: TYMO. En terminos de resultado de estilizado, son muy similares en el precio de 36-60€.</p>
+          </div>
+        </details>
+        <details class="faq-item">
+          <summary>Dyson FlexStyle vs Airwrap: cual es la diferencia?</summary>
+          <div class="faq-answer">
+            <p>La diferencia principal es el <strong>precio</strong> y los <strong>cabezales incluidos</strong>. El FlexStyle cuesta menos e incluye 4 cabezales (secado, liso, rizado, volumen). El Airwrap original es mas completo con mas cabezales especificos (secador, rizador corto, rizador largo, volumizador, smoothing). En rendimiento puro, la tecnologia Coanda es la misma. El FlexStyle es la entrada mas accesible al ecosistema Dyson.</p>
+          </div>
+        </details>
+      </div>
+    </section>
+
+    <!-- CTA Final -->
+    <section class="cta-section">
+      <div class="cta-content">
+        <h2>Guia Completa: Como Elegir el Mejor Cepillo Secador</h2>
+        <p>Comparativas de REVLON vs TYMO vs Wavytalk vs Dyson, analisis de tecnologias Coanda, y recomendaciones por tipo de cabello.</p>
+        <a href="/guias/guia-comprar-cepillo" class="btn btn-accent btn-lg">Leer Guia de Compra Completa</a>
+      </div>
+    </section>
+  </div>
+</BaseLayout>
+
+<style>
+  .page-header { background: linear-gradient(135deg, rgba(0,80,157,0.05), rgba(255,107,53,0.03)); border-bottom: 1px solid var(--border); padding: 48px 0; }
+  .breadcrumb { display: flex; align-items: center; gap: 8px; font-size: 0.85rem; color: var(--text-3); margin-bottom: 24px; }
+  .breadcrumb a { color: var(--primary); }
+  .header-content { display: flex; align-items: flex-start; gap: 20px; margin-bottom: 32px; }
+  .header-icon { width: 64px; height: 64px; background: linear-gradient(135deg, var(--primary), var(--primary-light)); border-radius: 16px; display: flex; align-items: center; justify-content: center; color: #fff; flex-shrink: 0; }
+  .header-content h1 { font-family: 'Playfair Display', serif; font-size: 2.2rem; margin-bottom: 8px; }
+  .header-content p { color: var(--text-2); max-width: 600px; line-height: 1.6; }
+  .header-stats { display: flex; gap: 32px; padding: 20px 24px; background: var(--surface); border-radius: var(--radius); border: 1px solid var(--border); width: fit-content; }
+  .hstat { display: flex; flex-direction: column; }
+  .hstat strong { font-size: 1.3rem; font-weight: 800; color: var(--primary); }
+  .hstat span { font-size: 0.75rem; color: var(--text-3); }
+
+  .section-label { font-family: 'Plus Jakarta Sans', sans-serif; font-size: 0.75rem; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; padding: 32px 0 0; margin: 0; }
+
+  .products-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; padding: 16px 0 40px; }
+  .product-card { background: var(--surface); border-radius: var(--radius-lg); border: 1px solid var(--border); padding: 24px; display: flex; flex-direction: column; gap: 12px; position: relative; transition: all 0.25s; }
+  .product-card:hover { box-shadow: var(--shadow-lg); transform: translateY(-2px); }
+  .product-rank { position: absolute; top: 16px; left: 16px; font-size: 0.7rem; font-weight: 800; color: var(--accent); background: rgba(255,107,53,0.1); padding: 4px 8px; border-radius: 4px; }
+  .product-image-wrap { display: flex; justify-content: center; padding: 16px; background: var(--surface-2); border-radius: var(--radius); }
+  .product-image-wrap img { height: 120px; width: 100%; object-fit: contain; }
+  .product-body { flex: 1; }
+  .product-body h3 { font-size: 0.95rem; font-weight: 600; line-height: 1.4; margin-bottom: 8px; color: var(--text); }
+  .product-rating { display: flex; align-items: center; gap: 8px; }
+  .stars { color: var(--accent); font-size: 0.9rem; }
+  .rating-num { font-size: 0.85rem; font-weight: 600; }
+  .product-price { font-size: 1.3rem; font-weight: 800; color: var(--primary); margin-top: 4px; }
+  .product-price-na { font-size: 0.85rem; color: var(--text-3); margin-top: 4px; }
+  .buy-btn { width: 100%; justify-content: center; margin-top: auto; }
+
+  .guide-section { padding: 48px 0; border-top: 1px solid var(--border); }
+  .guide-intro { text-align: center; max-width: 700px; margin: 0 auto 48px; }
+  .guide-intro h2 { font-family: 'Playfair Display', serif; font-size: 2rem; margin-bottom: 16px; }
+  .guide-intro p { color: var(--text-2); line-height: 1.7; font-size: 1rem; }
+  .guide-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; margin-bottom: 24px; }
+  .guide-card { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius-lg); padding: 28px; }
+  .guide-card.full-width { grid-column: 1 / -1; }
+  .guide-card h3 { font-family: 'Playfair Display', serif; font-size: 1.2rem; margin-bottom: 12px; color: var(--primary); }
+  .guide-card p { color: var(--text-2); font-size: 0.9rem; line-height: 1.6; margin-bottom: 16px; }
+  .guide-card ul { list-style: none; padding: 0; }
+  .guide-card ul li { font-size: 0.88rem; line-height: 1.6; color: var(--text-2); padding: 6px 0; border-bottom: 1px solid var(--border); }
+  .guide-card ul li:last-child { border-bottom: none; }
+  .guide-card ul li strong { color: var(--text); }
+  .power-table { display: flex; flex-direction: column; gap: 8px; }
+  .power-row { display: flex; gap: 12px; align-items: center; padding: 10px 14px; background: var(--surface-2); border-radius: var(--radius); }
+  .power-label { font-size: 0.85rem; font-weight: 700; color: var(--accent); min-width: 80px; }
+  .power-desc { font-size: 0.85rem; color: var(--text-2); }
+
+  .comparison-section { padding: 48px 0; border-top: 1px solid var(--border); }
+  .comparison-section h2 { font-family: 'Playfair Display', serif; font-size: 1.8rem; margin-bottom: 32px; text-align: center; }
+  .comparison-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+  .compare-card { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius-lg); padding: 28px; position: relative; }
+  .compare-card.budget-low { border-top: 3px solid var(--text-3); }
+  .compare-card.budget-mid { border-top: 3px solid var(--primary); }
+  .compare-card.budget-high { border-top: 3px solid var(--accent); }
+  .compare-badge { display: inline-block; font-size: 0.7rem; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; padding: 4px 10px; border-radius: 4px; margin-bottom: 12px; }
+  .budget-low .compare-badge { background: rgba(0,0,0,0.05); color: var(--text-3); }
+  .budget-mid .compare-badge { background: rgba(0,80,157,0.1); color: var(--primary); }
+  .budget-high .compare-badge { background: rgba(255,107,53,0.1); color: var(--accent); }
+  .compare-card h4 { font-size: 1.2rem; font-weight: 700; margin-bottom: 8px; }
+  .compare-card > p { font-size: 0.88rem; color: var(--text-2); line-height: 1.6; margin-bottom: 16px; }
+  .compare-card ul { list-style: none; padding: 0; margin-bottom: 20px; }
+  .compare-card ul li { font-size: 0.85rem; color: var(--text-2); padding: 5px 0; padding-left: 20px; position: relative; }
+  .compare-card ul li::before { content: '✓'; position: absolute; left: 0; color: var(--primary); font-weight: 700; }
+
+  .faq-section { padding: 48px 0; border-top: 1px solid var(--border); }
+  .faq-section h2 { font-family: 'Playfair Display', serif; font-size: 1.8rem; margin-bottom: 32px; text-align: center; }
+  .faq-list { max-width: 800px; margin: 0 auto; display: flex; flex-direction: column; gap: 8px; }
+  .faq-item { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); overflow: hidden; }
+  .faq-item summary { padding: 18px 24px; font-weight: 600; cursor: pointer; font-size: 0.95rem; list-style: none; display: flex; justify-content: space-between; align-items: center; }
+  .faq-item summary::after { content: '+'; font-size: 1.4rem; color: var(--accent); }
+  .faq-item[open] summary::after { content: '−'; }
+  .faq-item summary:hover { background: var(--surface-2); }
+  .faq-answer { padding: 0 24px 20px; }
+  .faq-answer p { font-size: 0.9rem; color: var(--text-2); line-height: 1.7; }
+
+  .cta-section { padding: 64px 0 80px; border-top: 1px solid var(--border); }
+  .cta-content { text-align: center; max-width: 600px; margin: 0 auto; }
+  .cta-content h2 { font-family: 'Playfair Display', serif; font-size: 1.8rem; margin-bottom: 16px; }
+  .cta-content p { color: var(--text-2); line-height: 1.7; margin-bottom: 24px; }
+  .btn-lg { padding: 14px 36px; font-size: 1rem; }
+
+  @media (max-width: 1024px) { .products-grid, .guide-grid, .comparison-grid { grid-template-columns: repeat(2, 1fr); } .guide-card.full-width { grid-column: span 2; } }
+  @media (max-width: 640px) { .products-grid, .guide-grid, .comparison-grid { grid-template-columns: 1fr; } .guide-card.full-width { grid-column: 1; } .header-stats { flex-wrap: wrap; } }
+</style>

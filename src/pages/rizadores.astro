@@ -1,0 +1,292 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { rizadores, AFFILIATE_TAG } from '../data/products';
+import { buildCollectionSchema } from '../utils/schema';
+
+const sorted = rizadores.filter(p => p.price !== null).sort((a, b) => b.stars - a.stars);
+const noPrice = rizadores.filter(p => p.price === null).slice(0, 4);
+const schema = buildCollectionSchema("rizadores", sorted);
+---
+
+<BaseLayout title="Mejores Rizadores de Pelo 2026 - Reviews y Comparativas" description="Los mejores rizadores de pelo en 2026: TYMO, ghd, Remington y mas. Crea rizos perfectos con reviews y comparativas actualizadas." schema={schema}>
+  <div class="page-header">
+    <div class="container">
+      <nav class="breadcrumb">
+        <a href="/">Inicio</a><span>/</span><span>Rizadores</span>
+      </nav>
+      <div class="header-content">
+        <div class="header-icon">
+          <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 3c4.97 0 9 4.03 9 9s-4.03 9-9 9"/></svg>
+        </div>
+        <div>
+          <h1>Mejores Rizadores de Pelo 2026</h1>
+          <p>Rizadores automaticos y profesionales para crear rizos perfectos. TYMO, ghd, Remington y mas. Reviews y comparativas actualizadas.</p>
+        </div>
+      </div>
+      <div class="header-stats">
+        <div class="hstat"><strong>Desde 15€</strong><span>mejor precio</span></div>
+        <div class="hstat"><strong>+4.4</strong><span>rating promedio</span></div>
+        <div class="hstat"><strong>8</strong><span>rizadores revisados</span></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="container">
+    <h2 class="section-label">Top Rizadores de Pelo 2026</h2>
+    <div class="products-grid">
+      {rizadores.map((p, i) => (
+        <div class="product-card">
+          <div class="product-rank">#{i + 1}</div>
+          {p.badge && <span class={`badge ${p.badge === 'Premium' ? 'badge-premium' : p.badge === 'BS Elegido' ? 'badge-choice' : 'badge-bs'}`}>{p.badge}</span>}
+          <div class="product-image-wrap">
+            <img src={p.image} alt={p.name} loading="lazy" />
+          </div>
+          <div class="product-body">
+            <h3>{p.name}</h3>
+            <div class="product-rating">
+              <span class="stars">{'★'.repeat(Math.round(p.stars))}</span>
+              <span class="rating-num">{p.stars}</span>
+            </div>
+            {p.price && <div class="product-price">{p.price}€</div>}
+            {!p.price && <div class="product-price-na">Ver en Amazon</div>}
+          </div>
+          <a href={`${p.url}?tag=${AFFILIATE_TAG}`} target="_blank" rel="noopener" class="btn btn-accent buy-btn">Ver en Amazon</a>
+        </div>
+      ))}
+    </div>
+
+    <!-- Guia de compra completa -->
+    <section class="guide-section">
+      <div class="guide-intro">
+        <h2>Como Elegir el Mejor Rizador de Pelo en 2026</h2>
+        <p>Un rizador no vale para todo el mundo. El tipo de barril, la temperatura y la tecnologia determinan si obtendras rizos sueltos, ondas naturales o tirabuzones definidos. Esta guia te ayuda a acertar.</p>
+      </div>
+
+      <div class="guide-grid">
+        <div class="guide-card">
+          <h3>Tipos de Rizador: Cual te Conviene?</h3>
+          <p>Cada tipo de rizador crea un efecto diferente. Elige segun el look que buscas.</p>
+          <ul>
+            <li><strong>Rotativo automatico:</strong> El mas facil. Enrolla automaticamente el mechon con un click. Ideal para principiantes. TYMO domina esta categoria.</li>
+            <li><strong>Barril conico:</strong> Mas natural. Mas grueso en la base y fino en la punta. Rizos tipo "沙滩波浪" (ondulado playero). Muy popular.</li>
+            <li><strong>Barril recto:</strong> Rizos uniformes y definidos. El clasico del salon. Requiere mas tecnica que los automaticos.</li>
+            <li><strong>Wand (varita):</strong> Sin mango cerrado. Rizos sueltos, ondulados. Muy versatil. Ideal para crear beach waves.</li>
+            <li><strong>Multi-styler:</strong> Varios cabezales. Secador + rizador + plancha en un solo aparato. Alternativa a Dyson Airwrap a precio menor.</li>
+          </ul>
+        </div>
+
+        <div class="guide-card">
+          <h3>El Tamano del Barril Importa Mucho</h3>
+          <p>Un barril del tamano correcto te ahorra frustracion y pasadas innecesarias.</p>
+          <div class="power-table">
+            <div class="power-row">
+              <span class="power-label">19-25mm</span>
+              <span class="power-desc">Rizos pequenos y definidos. Ideal para cabello corto o para rizos tipo tirabuzon.</span>
+            </div>
+            <div class="power-row">
+              <span class="power-label">25-32mm</span>
+              <span class="power-desc">El mas versatil. Ondas medias y rizos suaves. Funciona para la mayoria de largos.</span>
+            </div>
+            <div class="power-row">
+              <span class="power-label">32-38mm</span>
+              <span class="power-desc">Ondas sueltas y grandes. Cabello largo. Para quien busca un look natural y suave.</span>
+            </div>
+            <div class="power-row">
+              <span class="power-label">38mm+</span>
+              <span class="power-desc">Ondas tipo playa (beach waves). Muy sutil. Para rizos apenas marcados.</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="guide-card">
+          <h3>Temperatura y Tecnologia</h3>
+          <p>Mas calor no siempre es mejor. Ajusta la temperatura segun tu cabello para evitar dano.</p>
+          <ul>
+            <li><strong>150-170°C:</strong> Cabello fino, sensibilizado o decolorado. Riesgo minimo de dano.</li>
+            <li><strong>180-190°C:</strong> Cabello normal a medio. El punto dulce para la mayoria.</li>
+            <li><strong>200-220°C:</strong> Cabello grueso o muy rizado que necesita mucha fuerza de modelado.</li>
+            <li><strong>Ionica (500M+ iones):</strong> Reduce frizz, aporta brillo. Muy recomendada si tienes cabello con volumen o rebelion.</li>
+            <li><strong>Anti-scald:</strong> Proteccion exterior del barril. Previene quemaduras accidentales. Imprescindible si eres principiante.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="guide-card full-width">
+        <h3>Rizador Automatico vs Profesional: Cual Conviene?</h3>
+        <p>Los <strong>rizadores automaticos</strong> (como TYMO CURLPRO) son los mas populares en Amazon porque enrollan el cabello solos. Son perfectos para principiantes, economicos y dan resultados decentes. Los <strong>rizadores profesionales</strong> (barril manual, varitas ghd) ofrecen mas control, barril de mejor calidad y resultados mas personalizados, pero requieren practica. Si nunca has rizado, empieza con un automatico. Si ya tienes tecnica, el profesional te permite crear estilos imposibles para las maquinas automaticas.</p>
+      </div>
+    </section>
+
+    <!-- Comparativa por presupuesto -->
+    <section class="comparison-section">
+      <h2>Mejor Rizador segun tu Presupuesto</h2>
+      <div class="comparison-grid">
+        <div class="compare-card budget-low">
+          <div class="compare-badge">Economico</div>
+          <h4>Menos de 25€</h4>
+          <p>Varitas basicas y rizadores automaticos de entrada. Correctos para uso ocasional o experimento.</p>
+          <ul>
+            <li>Buenos para probar estilos</li>
+            <li>Temperatura fija</li>
+            <li>Materiales basicos</li>
+            <li>Ideal para viaje</li>
+          </ul>
+        </div>
+        <div class="compare-card budget-mid">
+          <div class="compare-badge">Recomendado</div>
+          <h4>25€ - 70€</h4>
+          <p>Rizadores rotativos TYMO y similares con temperatura regulable, ionica y multi-tamaños de barril. La mejor relacion calidad-precio.</p>
+          <ul>
+            <li>Automaticos de calidad</li>
+            <li>Ionica y anti-scald</li>
+            <li>Multi-temperaturas</li>
+            <li>Durabilidad correcta</li>
+          </ul>
+        </div>
+        <div class="compare-card budget-high">
+          <div class="compare-badge">Premium</div>
+          <h4>Mas de 80€</h4>
+          <p>Rizadores de salon (ghd, Dyson Airwrap) con tecnologia avanzada, barril de titanio y precision profesional.</p>
+          <ul>
+            <li>Resultado de peluqueria</li>
+            <li>Titanio o ceramiq avanzada</li>
+            <li>Multi-cabezales incluidos</li>
+            <li>Durabilidad 5+ anos</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="faq-section">
+      <h2>Preguntas Frecuentes sobre Rizadores de Pelo</h2>
+      <div class="faq-list">
+        <details class="faq-item">
+          <summary>A que temperatura debo rizar mi pelo?</summary>
+          <div class="faq-answer">
+            <p>Depende de tu tipo de cabello. <strong>Fino o danado</strong>: 150-170°C. <strong>Normal</strong>: 180°C. <strong>Grueso o rizado natural</strong>: 190-210°C. Empieza bajo y sube si no mantiene el rizo tras enfriarse. Si el rizo se deshace en minutos, sube la temperatura 10°C.</p>
+          </div>
+        </details>
+        <details class="faq-item">
+          <summary>Cuanto tiempo hay que dejar el cabello en el rizador?</summary>
+          <div class="faq-answer">
+            <p>Con rizadores automaticos, el tiempo lo determina la maquina (generalmente 6-15 segundos). Con rizadores manuales, <strong>8-12 segundos</strong> para rizos definidos, <strong>3-5 segundos</strong> para ondas sutiles. Nunca superes los 20 segundos: el cabello se daña sin beneficios adicionales en el rizado.</p>
+          </div>
+        </details>
+        <details class="faq-item">
+          <summary>Que es mejor: rizador automatico o convencional?</summary>
+          <div class="faq-answer">
+            <p>Para <strong>principiantes</strong>: automatico. Encrolla solo y no requiere practica. Para <strong>usuarios avanzados</strong>: convencional. Permite controlar la direccion, tension y angulo del rizo. Los automaticos son mas rapidos pero menos personalizables. Muchos terminan comprando ambos para diferentes dias/estilos.</p>
+          </div>
+        </details>
+        <details class="faq-item">
+          <summary>Puedo rizar mi pelo si lo acabo de teñir?</summary>
+          <div class="faq-answer">
+            <p><strong>Espera al menos 48 horas</strong> despues de teñir. El proceso quimico deja la cuticula abierta. Aplicar calor tan pronto puede causar dano severo o cambiar el color de manera inesperada. Si necesitas rizar antes, usa la temperatura mas baja (150°C) y aplica un protector termico de calidad.</p>
+          </div>
+        </details>
+        <details class="faq-item">
+          <summary>Que diferencia hay entre 500M iones y iones negativos?</summary>
+          <div class="faq-answer">
+            <p>Son esencialmente lo mismo marketing. <strong>500M iones</strong> significa 500 millones de iones negativos por cm³, la concentracion que mejores resultados da para eliminar electricidad estatica y frizz. Si el rizador indica "ionica" sin numero, desconfia un poco. Los mejores rizadores automaticos de TYMO usan 500M iones como estandar.</p>
+          </div>
+        </details>
+      </div>
+    </section>
+
+    <!-- CTA Final -->
+    <section class="cta-section">
+      <div class="cta-content">
+        <h2>Guia Completa: Como Elegir el Mejor Rizador de Pelo</h2>
+        <p>Analisis detallado de TYMO vs ghd vs Remington, comparativas por tipo de cabello y tutoriales de estilos.</p>
+        <a href="/guias/guia-comprar-rizador" class="btn btn-accent btn-lg">Leer Guia de Compra Completa</a>
+      </div>
+    </section>
+  </div>
+</BaseLayout>
+
+<style>
+  .page-header { background: linear-gradient(135deg, rgba(0,80,157,0.05), rgba(255,107,53,0.03)); border-bottom: 1px solid var(--border); padding: 48px 0; }
+  .breadcrumb { display: flex; align-items: center; gap: 8px; font-size: 0.85rem; color: var(--text-3); margin-bottom: 24px; }
+  .breadcrumb a { color: var(--primary); }
+  .header-content { display: flex; align-items: flex-start; gap: 20px; margin-bottom: 32px; }
+  .header-icon { width: 64px; height: 64px; background: linear-gradient(135deg, var(--primary), var(--primary-light)); border-radius: 16px; display: flex; align-items: center; justify-content: center; color: #fff; flex-shrink: 0; }
+  .header-content h1 { font-family: 'Playfair Display', serif; font-size: 2.2rem; margin-bottom: 8px; }
+  .header-content p { color: var(--text-2); max-width: 600px; line-height: 1.6; }
+  .header-stats { display: flex; gap: 32px; padding: 20px 24px; background: var(--surface); border-radius: var(--radius); border: 1px solid var(--border); width: fit-content; }
+  .hstat { display: flex; flex-direction: column; }
+  .hstat strong { font-size: 1.3rem; font-weight: 800; color: var(--primary); }
+  .hstat span { font-size: 0.75rem; color: var(--text-3); }
+
+  .section-label { font-family: 'Plus Jakarta Sans', sans-serif; font-size: 0.75rem; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; padding: 32px 0 0; margin: 0; }
+
+  .products-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; padding: 16px 0 40px; }
+  .product-card { background: var(--surface); border-radius: var(--radius-lg); border: 1px solid var(--border); padding: 24px; display: flex; flex-direction: column; gap: 12px; position: relative; transition: all 0.25s; }
+  .product-card:hover { box-shadow: var(--shadow-lg); transform: translateY(-2px); }
+  .product-rank { position: absolute; top: 16px; left: 16px; font-size: 0.7rem; font-weight: 800; color: var(--accent); background: rgba(255,107,53,0.1); padding: 4px 8px; border-radius: 4px; }
+  .product-image-wrap { display: flex; justify-content: center; padding: 16px; background: var(--surface-2); border-radius: var(--radius); }
+  .product-image-wrap img { height: 120px; width: 100%; object-fit: contain; }
+  .product-body { flex: 1; }
+  .product-body h3 { font-size: 0.95rem; font-weight: 600; line-height: 1.4; margin-bottom: 8px; color: var(--text); }
+  .product-rating { display: flex; align-items: center; gap: 8px; }
+  .stars { color: var(--accent); font-size: 0.9rem; }
+  .rating-num { font-size: 0.85rem; font-weight: 600; }
+  .product-price { font-size: 1.3rem; font-weight: 800; color: var(--primary); margin-top: 4px; }
+  .product-price-na { font-size: 0.85rem; color: var(--text-3); margin-top: 4px; }
+  .buy-btn { width: 100%; justify-content: center; margin-top: auto; }
+
+  .guide-section { padding: 48px 0; border-top: 1px solid var(--border); }
+  .guide-intro { text-align: center; max-width: 700px; margin: 0 auto 48px; }
+  .guide-intro h2 { font-family: 'Playfair Display', serif; font-size: 2rem; margin-bottom: 16px; }
+  .guide-intro p { color: var(--text-2); line-height: 1.7; font-size: 1rem; }
+  .guide-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; margin-bottom: 24px; }
+  .guide-card { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius-lg); padding: 28px; }
+  .guide-card.full-width { grid-column: 1 / -1; }
+  .guide-card h3 { font-family: 'Playfair Display', serif; font-size: 1.2rem; margin-bottom: 12px; color: var(--primary); }
+  .guide-card p { color: var(--text-2); font-size: 0.9rem; line-height: 1.6; margin-bottom: 16px; }
+  .guide-card ul { list-style: none; padding: 0; }
+  .guide-card ul li { font-size: 0.88rem; line-height: 1.6; color: var(--text-2); padding: 6px 0; border-bottom: 1px solid var(--border); }
+  .guide-card ul li:last-child { border-bottom: none; }
+  .guide-card ul li strong { color: var(--text); }
+  .power-table { display: flex; flex-direction: column; gap: 8px; }
+  .power-row { display: flex; gap: 12px; align-items: center; padding: 10px 14px; background: var(--surface-2); border-radius: var(--radius); }
+  .power-label { font-size: 0.85rem; font-weight: 700; color: var(--accent); min-width: 80px; }
+  .power-desc { font-size: 0.85rem; color: var(--text-2); }
+
+  .comparison-section { padding: 48px 0; border-top: 1px solid var(--border); }
+  .comparison-section h2 { font-family: 'Playfair Display', serif; font-size: 1.8rem; margin-bottom: 32px; text-align: center; }
+  .comparison-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+  .compare-card { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius-lg); padding: 28px; position: relative; }
+  .compare-card.budget-low { border-top: 3px solid var(--text-3); }
+  .compare-card.budget-mid { border-top: 3px solid var(--primary); }
+  .compare-card.budget-high { border-top: 3px solid var(--accent); }
+  .compare-badge { display: inline-block; font-size: 0.7rem; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; padding: 4px 10px; border-radius: 4px; margin-bottom: 12px; }
+  .budget-low .compare-badge { background: rgba(0,0,0,0.05); color: var(--text-3); }
+  .budget-mid .compare-badge { background: rgba(0,80,157,0.1); color: var(--primary); }
+  .budget-high .compare-badge { background: rgba(255,107,53,0.1); color: var(--accent); }
+  .compare-card h4 { font-size: 1.2rem; font-weight: 700; margin-bottom: 8px; }
+  .compare-card > p { font-size: 0.88rem; color: var(--text-2); line-height: 1.6; margin-bottom: 16px; }
+  .compare-card ul { list-style: none; padding: 0; margin-bottom: 20px; }
+  .compare-card ul li { font-size: 0.85rem; color: var(--text-2); padding: 5px 0; padding-left: 20px; position: relative; }
+  .compare-card ul li::before { content: '✓'; position: absolute; left: 0; color: var(--primary); font-weight: 700; }
+
+  .faq-section { padding: 48px 0; border-top: 1px solid var(--border); }
+  .faq-section h2 { font-family: 'Playfair Display', serif; font-size: 1.8rem; margin-bottom: 32px; text-align: center; }
+  .faq-list { max-width: 800px; margin: 0 auto; display: flex; flex-direction: column; gap: 8px; }
+  .faq-item { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); overflow: hidden; }
+  .faq-item summary { padding: 18px 24px; font-weight: 600; cursor: pointer; font-size: 0.95rem; list-style: none; display: flex; justify-content: space-between; align-items: center; }
+  .faq-item summary::after { content: '+'; font-size: 1.4rem; color: var(--accent); }
+  .faq-item[open] summary::after { content: '−'; }
+  .faq-item summary:hover { background: var(--surface-2); }
+  .faq-answer { padding: 0 24px 20px; }
+  .faq-answer p { font-size: 0.9rem; color: var(--text-2); line-height: 1.7; }
+
+  .cta-section { padding: 64px 0 80px; border-top: 1px solid var(--border); }
+  .cta-content { text-align: center; max-width: 600px; margin: 0 auto; }
+  .cta-content h2 { font-family: 'Playfair Display', serif; font-size: 1.8rem; margin-bottom: 16px; }
+  .cta-content p { color: var(--text-2); line-height: 1.7; margin-bottom: 24px; }
+  .btn-lg { padding: 14px 36px; font-size: 1rem; }
+
+  @media (max-width: 1024px) { .products-grid, .guide-grid, .comparison-grid { grid-template-columns: repeat(2, 1fr); } .guide-card.full-width { grid-column: span 2; } }
+  @media (max-width: 640px) { .products-grid, .guide-grid, .comparison-grid { grid-template-columns: 1fr; } .guide-card.full-width { grid-column: 1; } .header-stats { flex-wrap: wrap; } }
+</style>

@@ -1,0 +1,85 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+---
+
+<BaseLayout title="Guias de Compra - StyleCraft" description="Todas las guias de compra de herramientas de estilismo capilar: secadores, planchas, rizadores y mas.">
+  <div class="page-header">
+    <div class="container">
+      <h1>Guias de Compra</h1>
+      <p>Todo lo que necesitas saber antes de comprar herramientas de estilismo capilar.</p>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="guides-list">
+      <a href="/guias/guia-comprar-secador" class="guide-item">
+        <div class="guide-item-header">
+          <span class="guide-category">SECADORES</span>
+          <span class="guide-time">15 min</span>
+        </div>
+        <h2>Como Elegir el Mejor Secador de Pelo en 2026</h2>
+        <p>Tecnologias, potencia, tipos de cabello, presupuestos y comparativa Dyson vs Shark vs Cecotec. La guia mas completa.</p>
+        <div class="guide-footer">
+          <span class="guide-topics">Tecnologia Ionica, Potencia, Difusor, Dyson, Shark, Cecotec, ghd</span>
+          <span class="guide-arrow">→</span>
+        </div>
+      </a>
+    <a href="/guias/guia-comprar-plancha" class="guide-item">
+        <div class="guide-item-header">
+          <span class="guide-category">PLANCHAS</span>
+          <span class="guide-time">15 min</span>
+        </div>
+        <h2>Como Elegir la Mejor Plancha de Pelo en 2026</h2>
+        <p>Tecnologias de placas, tamanos, temperaturas y comparativa BabylissPRO vs ghd vs Remington. Todo para decidir bien.</p>
+        <div class="guide-footer">
+          <span class="guide-topics">Ceramic, Titanium, Tourmaline, Keratina, BabylissPRO, ghd, Remington</span>
+          <span class="guide-arrow">→</span>
+        </div>
+      </a>
+
+      <a href="/guias/guia-comprar-rizador" class="guide-item">
+        <div class="guide-item-header">
+          <span class="guide-category">RIZADORES</span>
+          <span class="guide-time">12 min</span>
+        </div>
+        <h2>Como Elegir el Mejor Rizador de Pelo en 2026</h2>
+        <p>Tipos de barril, tamanos, temperaturas y comparativa TYMO vs ghd vs Remington. Encuentra el rizador perfecto para tu estilo.</p>
+        <div class="guide-footer">
+          <span class="guide-topics">Barril Conico, Varita, Automatico, TYMO, ghd, Remington, Cecotec</span>
+          <span class="guide-arrow">→</span>
+        </div>
+      </a>
+
+      <a href="/guias/guia-comprar-cepillo" class="guide-item">
+        <div class="guide-item-header">
+          <span class="guide-category">CEPILLOS</span>
+          <span class="guide-time">12 min</span>
+        </div>
+        <h2>Como Elegir el Mejor Cepillo Secador en 2026</h2>
+        <p>Que es un cepillo secador, formatos 2-en-1 y n-en-1, y comparativa Dyson FlexStyle vs alternativas. Todo lo que necesitas saber.</p>
+        <div class="guide-footer">
+          <span class="guide-topics">Cepillo Secador, 2-en-1, n-en-1, Dyson FlexStyle, Cecotec, Revlon</span>
+          <span class="guide-arrow">→</span>
+        </div>
+      </a>
+    </div>
+  </div>
+</BaseLayout>
+
+<style>
+  .page-header { background: linear-gradient(135deg, rgba(0,80,157,0.05), rgba(255,107,53,0.03)); border-bottom: 1px solid var(--border); padding: 64px 0 48px; }
+  .page-header h1 { font-family: 'Playfair Display', serif; font-size: 2.5rem; margin-bottom: 8px; }
+  .page-header p { color: var(--text-2); }
+  .guides-list { padding: 48px 0; display: flex; flex-direction: column; gap: 16px; }
+  .guide-item { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius-lg); padding: 32px; transition: all 0.25s; display: block; }
+  .guide-item:hover { box-shadow: var(--shadow-lg); border-color: var(--primary); transform: translateY(-2px); }
+  .guide-item-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px; }
+  .guide-category { font-size: 0.7rem; font-weight: 700; letter-spacing: 1px; color: var(--accent); background: rgba(255,107,53,0.1); padding: 4px 10px; border-radius: 4px; }
+  .guide-time { font-size: 0.8rem; color: var(--text-3); }
+  .guide-item h2 { font-family: 'Playfair Display', serif; font-size: 1.5rem; margin-bottom: 8px; }
+  .guide-item p { color: var(--text-2); font-size: 0.9rem; line-height: 1.6; margin-bottom: 20px; }
+  .guide-footer { display: flex; justify-content: space-between; align-items: center; }
+  .guide-topics { font-size: 0.75rem; color: var(--text-3); }
+  .guide-arrow { font-size: 1.2rem; color: var(--primary); transition: transform 0.2s; }
+  .guide-item:hover .guide-arrow { transform: translateX(4px); }
+</style>

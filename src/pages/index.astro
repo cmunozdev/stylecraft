@@ -1,0 +1,289 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { secadores, planchas, rizadores, cepillos, AFFILIATE_TAG } from '../data/products';
+import { buildHomeSchema } from '../utils/schema';
+
+const categories = [
+  {
+    slug: 'secadores',
+    title: 'Secadores de Pelo',
+    description: 'Encuentra el secador perfecto para tu tipo de cabello. Desde profesionales hasta travel.',
+    icon: 'M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707',
+    products: secadores.slice(0, 3),
+  },
+  {
+    slug: 'planchas',
+    title: 'Planchas de Pelo',
+    description: 'Planchas profesionales para un alisado perfecto. Ceramica, titanio y mas.',
+    icon: 'M4 4h16v16H4zM4 12h16M12 4v16',
+    products: planchas.slice(0, 3),
+  },
+  {
+    slug: 'rizadores',
+    title: 'Rizadores',
+    description: 'Crea rizos perfectos con nuestros rizadores recomendados. Automatizados y profesionales.',
+    icon: 'M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10 10-4.5 10-10S17.5 2 12 2zm0 18c-4.4 0-8-3.6-8-8s3.6-8 8-8 8 3.6 8 8-3.6 8-8 8z',
+    products: rizadores.slice(0, 3),
+  },
+  {
+    slug: 'cepillos',
+    title: 'Cepillos Secadores',
+    description: 'Cepillos 3-en-1, 5-en-1 y cepillos Dyson. Secan y estilizan en un solo paso.',
+    icon: 'M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10zm0-6c-2.2 0-4-1.8-4-4s1.8-4 4-4 4 1.8 4 4-1.8 4-4 4z',
+    products: cepillos.slice(0, 3),
+  }
+];
+
+const schema = buildHomeSchema();
+---
+
+<BaseLayout title="StyleCraft - Guias y Reviews de Herramientas de Estilismo Capilar" schema={schema}>
+  <section class="hero">
+    <div class="hero-bg"></div>
+    <div class="container">
+      <div class="hero-content">
+        <div class="hero-badge">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          Guias de Compra Expertas 2026
+        </div>
+        <h1 class="hero-title">
+          Tu Guia en<br/>
+          <span class="hero-accent">Herramientas de Peluqueria</span>
+        </h1>
+        <p class="hero-sub">
+          Reviews detalladas, comparativas honestas y guias de compra para elegir los mejores secadores, planchas y rizadores del mercado. Todo con enlaces de afiliado a Amazon.
+        </p>
+        <div class="hero-actions">
+          <a href="/guias/guia-comprar-secador" class="btn btn-accent">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12l7 7 7-7"/></svg>
+            Guia de Compra Secador
+          </a>
+          <a href="/secadores" class="btn btn-outline">Ver Top Secadores</a>
+        </div>
+        <div class="hero-stats">
+          <div class="stat"><strong>4</strong><span>Categorias</span></div>
+          <div class="stat"><strong>25+</strong><span>Productos</span></div>
+          <div class="stat"><strong>2026</strong><span>Actualizado</span></div>
+        </div>
+      </div>
+      <div class="hero-visual">
+        <div class="hero-cards">
+          <div class="hero-card">
+            <img src="https://m.media-amazon.com/images/I/714LmK6QFrL._AC_UL320_.jpg" alt="Shark Hair Dryer" />
+            <div class="hero-card-info">
+              <span class="hero-card-cat">Secador Premium</span>
+              <strong>Shark SpeedStyle</strong>
+              <span class="hero-card-price">4.4 - Amazon Choice</span>
+            </div>
+          </div>
+          <div class="hero-card">
+            <img src="https://m.media-amazon.com/images/I/51Pevx2OW5L._AC_UL320_.jpg" alt="TYMO Curling" />
+            <div class="hero-card-info">
+              <span class="hero-card-cat">Rizador Auto</span>
+              <strong>TYMO CurlPro Plus</strong>
+              <span class="hero-card-price">4.6 - 68.19</span>
+            </div>
+          </div>
+          <div class="hero-card">
+            <img src="https://m.media-amazon.com/images/I/61VkRoH0BSL._AC_UL320_.jpg" alt="Remington Plancha" />
+            <div class="hero-card-info">
+              <span class="hero-card-cat">Plancha Keratina</span>
+              <strong>Remington Shine</strong>
+              <span class="hero-card-price">4.7 - Top Vendido</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="categories">
+    <div class="container">
+      <div class="section-header">
+        <h2>Explora por Categoria</h2>
+        <p>Cada categoria con productos verificados, reviews reales y enlaces de afiliado actualizados.</p>
+      </div>
+      <div class="categories-grid">
+        {categories.map(cat => (
+          <a href={`/${cat.slug}`} class="category-card">
+            <div class="cat-icon">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d={cat.icon}/>
+              </svg>
+            </div>
+            <h3>{cat.title}</h3>
+            <p>{cat.description}</p>
+            <div class="cat-meta">
+              <span class="cat-count">{cat.products.length} productos</span>
+            </div>
+            <div class="cat-arrow">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </div>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="top-products">
+    <div class="container">
+      <div class="section-header">
+        <h2>Los Mejores por Categoria</h2>
+        <p>Seleccionados por rating, precio y popularidad en Amazon.es</p>
+      </div>
+      <div class="top-grid">
+        {categories.map(cat => (
+          <div class="top-col">
+            <div class="top-col-header">
+              <h3>{cat.title}</h3>
+              <a href={`/${cat.slug}`} class="top-col-link">Ver todos</a>
+            </div>
+            <div class="top-list">
+              {cat.products.map((p, i) => (
+                <a href={`${p.url}?tag=${AFFILIATE_TAG}`} class="product-row" target="_blank" rel="noopener">
+                  <span class="product-rank">#{i + 1}</span>
+                  <img src={p.image} alt={p.name} class="product-img" loading="lazy" />
+                  <div class="product-info">
+                    <span class="product-name">{p.name.split(' - ')[0]}</span>
+                    <div class="product-meta">
+                      <span class="product-stars">{p.stars}</span>
+                      {p.price && <span class="product-price">{p.price}</span>}
+                    </div>
+                  </div>
+                  {p.badge && <span class={`badge ${p.badge === 'Premium' ? 'badge-premium' : p.badge === 'BS Elegido' ? 'badge-choice' : 'badge-bs'}`}>{p.badge}</span>}
+                </a>
+              ))}
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="guides-section">
+    <div class="container">
+      <div class="guides-header">
+        <h2>Guias de Compra Expertas</h2>
+        <a href="/guias" class="btn btn-outline">Ver todas las guias</a>
+      </div>
+      <div class="guides-grid">
+        <a href="/guias/guia-comprar-secador" class="guide-card main-guide">
+          <div class="guide-badge">GUIA COMPLETA</div>
+          <h3>Como Elegir el Mejor Secador de Pelo en 2026</h3>
+          <p>Todo lo que necesitas saber: potencia, tecnologia ionica, difusor, peso y precio. Con comparativa de los 10 mejores secadores para cada tipo de cabello.</p>
+          <div class="guide-meta">15 min de lectura - Actualizado May 2026</div>
+        </a>
+        <div class="guides-mini">
+          <a href="/guias/guia-comprar-secador" class="guide-mini">
+            <span class="guide-mini-num">01</span>
+            <span>Diferencia entre secador ionic y ceramic</span>
+          </a>
+          <a href="/guias/guia-comprar-secador" class="guide-mini">
+            <span class="guide-mini-num">02</span>
+            <span>Potencia ideal: 1800W vs 1875W vs 2200W</span>
+          </a>
+          <a href="/guias/guia-comprar-secador" class="guide-mini">
+            <span class="guide-mini-num">03</span>
+            <span>Cuando un difusor marca la diferencia</span>
+          </a>
+          <a href="/guias/guia-comprar-secador" class="guide-mini">
+            <span class="guide-mini-num">04</span>
+            <span>Dyson vs Shark vs Cecotec: comparativa real</span>
+          </a>
+          <a href="/guias/guia-comprar-secador" class="guide-mini">
+            <span class="guide-mini-num">05</span>
+            <span>Presupuesto: menos de 30 hasta +300</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="cta-banner">
+    <div class="container">
+      <div class="cta-content">
+        <div class="cta-icon">
+          <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#FF6B35" stroke-width="2"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+        </div>
+        <h2>Empieza a Comparar Ahora</h2>
+        <p>Todas nuestras recomendaciones incluyen enlaces de afiliado a Amazon.es (unmaquillaje-21), asi que si compras a traves de nuestros enlaces, apoyas el proyecto sin costo extra para ti.</p>
+        <a href="/secadores" class="btn btn-accent">Explorar Secadores</a>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .hero { padding: 80px 0 60px; position: relative; overflow: hidden; }
+  .hero-bg { position: absolute; inset: 0; background: radial-gradient(ellipse 80% 50% at 50% -10%, rgba(0, 80, 157, 0.08), transparent); pointer-events: none; }
+  .hero .container { display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: center; }
+  .hero-badge { display: inline-flex; align-items: center; gap: 6px; padding: 6px 14px; background: rgba(255, 107, 53, 0.1); color: var(--accent); border-radius: 20px; font-size: 0.8rem; font-weight: 600; margin-bottom: 20px; }
+  .hero-title { font-family: 'Playfair Display', serif; font-size: clamp(2.5rem, 5vw, 3.8rem); font-weight: 700; line-height: 1.1; margin-bottom: 20px; letter-spacing: -1px; }
+  .hero-accent { background: linear-gradient(135deg, var(--primary), var(--accent)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+  .hero-sub { font-size: 1.05rem; color: var(--text-2); max-width: 480px; margin-bottom: 32px; line-height: 1.7; }
+  .hero-actions { display: flex; gap: 12px; flex-wrap: wrap; margin-bottom: 40px; }
+  .hero-stats { display: flex; gap: 32px; }
+  .stat { display: flex; flex-direction: column; }
+  .stat strong { font-size: 1.5rem; font-weight: 800; color: var(--primary); }
+  .stat span { font-size: 0.8rem; color: var(--text-3); }
+  .hero-visual { display: flex; justify-content: center; }
+  .hero-cards { display: flex; flex-direction: column; gap: 12px; position: relative; }
+  .hero-card { display: flex; align-items: center; gap: 16px; background: var(--surface); border-radius: var(--radius); padding: 16px; box-shadow: var(--shadow); border: 1px solid var(--border); transition: transform 0.2s; }
+  .hero-card:hover { transform: translateX(-4px); }
+  .hero-card img { width: 56px; height: 56px; object-fit: cover; border-radius: 8px; }
+  .hero-card-info { display: flex; flex-direction: column; }
+  .hero-card-cat { font-size: 0.7rem; text-transform: uppercase; letter-spacing: 1px; color: var(--accent); font-weight: 600; }
+  .hero-card-info strong { font-size: 0.9rem; font-weight: 700; }
+  .hero-card-price { font-size: 0.8rem; color: var(--text-3); }
+  .categories { padding: 80px 0; }
+  .section-header { text-align: center; margin-bottom: 48px; }
+  .section-header h2 { font-family: 'Playfair Display', serif; font-size: 2rem; margin-bottom: 8px; }
+  .section-header p { color: var(--text-2); }
+  .categories-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; }
+  .category-card { background: var(--surface); border-radius: var(--radius-lg); padding: 28px; border: 1px solid var(--border); transition: all 0.25s; position: relative; display: flex; flex-direction: column; gap: 12px; }
+  .category-card:hover { box-shadow: var(--shadow-lg); border-color: var(--primary); transform: translateY(-4px); }
+  .cat-icon { width: 52px; height: 52px; background: linear-gradient(135deg, var(--primary), var(--primary-light)); border-radius: 14px; display: flex; align-items: center; justify-content: center; color: #fff; }
+  .category-card h3 { font-size: 1.15rem; font-weight: 700; }
+  .category-card p { font-size: 0.85rem; color: var(--text-2); line-height: 1.5; flex: 1; }
+  .cat-meta { display: flex; justify-content: space-between; font-size: 0.75rem; color: var(--text-3); }
+  .cat-arrow { position: absolute; bottom: 24px; right: 24px; color: var(--text-3); transition: all 0.2s; }
+  .category-card:hover .cat-arrow { color: var(--primary); transform: translateX(4px); }
+  .top-products { padding: 0 0 80px; }
+  .top-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; }
+  .top-col { background: var(--surface); border-radius: var(--radius-lg); overflow: hidden; border: 1px solid var(--border); }
+  .top-col-header { display: flex; justify-content: space-between; align-items: center; padding: 16px 20px; border-bottom: 1px solid var(--border); background: var(--surface-2); }
+  .top-col-header h3 { font-size: 0.95rem; font-weight: 700; }
+  .top-col-link { font-size: 0.8rem; color: var(--primary); font-weight: 600; }
+  .top-list { display: flex; flex-direction: column; }
+  .product-row { display: flex; align-items: center; gap: 12px; padding: 14px 20px; border-bottom: 1px solid var(--border); transition: background 0.2s; }
+  .product-row:last-child { border-bottom: none; }
+  .product-row:hover { background: var(--surface-2); }
+  .product-rank { font-size: 0.75rem; font-weight: 700; color: var(--text-3); min-width: 24px; }
+  .product-img { width: 48px; height: 48px; object-fit: cover; border-radius: 8px; flex-shrink: 0; }
+  .product-info { flex: 1; min-width: 0; }
+  .product-name { font-size: 0.8rem; font-weight: 600; display: block; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  .product-meta { display: flex; align-items: center; gap: 8px; margin-top: 2px; }
+  .product-stars { font-size: 0.75rem; color: var(--accent); font-weight: 600; }
+  .product-price { font-size: 0.8rem; font-weight: 700; color: var(--primary); }
+  .guides-section { padding: 0 0 80px; }
+  .guides-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 32px; }
+  .guides-header h2 { font-family: 'Playfair Display', serif; font-size: 1.8rem; }
+  .guides-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
+  .main-guide { background: linear-gradient(135deg, var(--text), #2a2d4a); color: #fff; border-radius: var(--radius-lg); padding: 36px; position: relative; overflow: hidden; }
+  .main-guide::before { content: ''; position: absolute; top: -50%; right: -20%; width: 300px; height: 300px; background: radial-gradient(circle, rgba(255,107,53,0.15), transparent); pointer-events: none; }
+  .guide-badge { display: inline-block; background: var(--accent); color: #fff; font-size: 0.65rem; font-weight: 700; letter-spacing: 1px; padding: 4px 12px; border-radius: 4px; margin-bottom: 16px; }
+  .main-guide h3 { font-family: 'Playfair Display', serif; font-size: 1.5rem; line-height: 1.3; margin-bottom: 12px; }
+  .main-guide p { color: rgba(255,255,255,0.7); line-height: 1.6; margin-bottom: 20px; }
+  .guide-meta { font-size: 0.75rem; color: rgba(255,255,255,0.5); }
+  .guides-mini { display: flex; flex-direction: column; gap: 2px; }
+  .guide-mini { display: flex; align-items: center; gap: 16px; padding: 16px 20px; background: var(--surface); border-radius: var(--radius); border: 1px solid var(--border); font-size: 0.9rem; font-weight: 500; color: var(--text-2); transition: all 0.2s; }
+  .guide-mini:hover { background: var(--surface-2); color: var(--primary); transform: translateX(4px); }
+  .guide-mini-num { font-size: 0.7rem; font-weight: 700; color: var(--accent); background: rgba(255,107,53,0.1); padding: 4px 8px; border-radius: 4px; min-width: 32px; text-align: center; }
+  .cta-banner { padding: 0 0 80px; }
+  .cta-content { background: linear-gradient(135deg, rgba(0, 80, 157, 0.05), rgba(255, 107, 53, 0.05)); border: 1px solid var(--border); border-radius: var(--radius-lg); padding: 48px; text-align: center; }
+  .cta-icon { margin-bottom: 16px; }
+  .cta-content h2 { font-family: 'Playfair Display', serif; font-size: 1.8rem; margin-bottom: 12px; }
+  .cta-content p { color: var(--text-2); max-width: 600px; margin: 0 auto 24px; line-height: 1.6; }
+  @media (max-width: 1024px) { .hero .container { grid-template-columns: 1fr; gap: 40px; } .hero-visual { display: none; } .categories-grid { grid-template-columns: repeat(2, 1fr); } .top-grid { grid-template-columns: repeat(2, 1fr); } .guides-grid { grid-template-columns: 1fr; } }
+  @media (max-width: 640px) { .hero { padding: 40px 0; } .hero-title { font-size: 2.2rem; } .categories-grid { grid-template-columns: 1fr; } .top-grid { grid-template-columns: 1fr; } .hero-stats { gap: 20px; } }
+</style>

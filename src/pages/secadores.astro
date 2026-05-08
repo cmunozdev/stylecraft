@@ -1,0 +1,322 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { secadores, AFFILIATE_TAG } from '../data/products';
+import { buildCollectionSchema } from '../utils/schema';
+
+const sortedSecadores = secadores.filter(p => p.price !== null).sort((a, b) => b.stars - a.stars);
+const premiumSecadores = secadores.filter(p => p.price === null).slice(0, 4);
+const schema = buildCollectionSchema("secadores", sortedSecadores);
+---
+
+<BaseLayout title="Mejores Secadores de Pelo 2026 - Reviews y Comparativas" description="Descubre los mejores secadores de pelo del mercado. Comparativas, reviews y guias de compra para elegir el secador perfecto segun tu tipo de cabello." schema={schema}>
+  <div class="page-header">
+    <div class="container">
+      <nav class="breadcrumb">
+        <a href="/">Inicio</a><span>/</span><span>Secadores</span>
+      </nav>
+      <div class="header-content">
+        <div class="header-icon">
+          <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10 10-4.5 10-10S17.5 2 12 2z"/><path d="M12 8v4l3 3"/></svg>
+        </div>
+        <div>
+          <h1>Mejores Secadores de Pelo 2026</h1>
+          <p>Secadores ionicos, turbo y premium. Comparativas de Dyson, Cecotec, Remington y mas. Encuentra el secador ideal para tu tipo de cabello.</p>
+        </div>
+      </div>
+      <div class="header-stats">
+        <div class="hstat"><strong>Desde 12€</strong><span>mejor precio</span></div>
+        <div class="hstat"><strong>+4.4</strong><span>rating promedio</span></div>
+        <div class="hstat"><strong>12</strong><span>secadores revisados</span></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="container">
+    <h2 class="section-label">Top Secadores de Pelo 2026</h2>
+    <div class="products-grid">
+      {sortedSecadores.map((p, i) => (
+        <div class="product-card">
+          <div class="product-rank">#{i + 1}</div>
+          {p.badge && <span class={`badge ${p.badge === 'Premium' ? 'badge-premium' : p.badge === 'BS Elegido' ? 'badge-choice' : 'badge-bs'}`}>{p.badge}</span>}
+          <div class="product-image-wrap">
+            <img src={p.image} alt={p.name} loading="lazy" />
+          </div>
+          <div class="product-body">
+            <h3>{p.name}</h3>
+            <div class="product-rating">
+              <span class="stars">{'★'.repeat(Math.round(p.stars))}</span>
+              <span class="rating-num">{p.stars}</span>
+            </div>
+            {p.price && <div class="product-price">{p.price}€</div>}
+            {!p.price && <div class="product-price-na">Ver en Amazon</div>}
+          </div>
+          <a href={`${p.url}?tag=${AFFILIATE_TAG}`} target="_blank" rel="noopener" class="btn btn-accent buy-btn">
+            Ver en Amazon
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6M15 3h6v6M10 14L21 3"/></svg>
+          </a>
+        </div>
+      ))}
+    </div>
+
+    {premiumSecadores.length > 0 && (
+      <div class="premium-section">
+        <h2>Secadores Premium</h2>
+        <div class="products-grid">
+          {premiumSecadores.map((p, i) => (
+            <div class="product-card">
+              <div class="product-rank">#{i + 1}</div>
+              {p.badge && <span class="badge badge-premium">{p.badge}</span>}
+              <div class="product-image-wrap">
+                <img src={p.image} alt={p.name} loading="lazy" />
+              </div>
+              <div class="product-body">
+                <h3>{p.name}</h3>
+                <div class="product-rating">
+                  <span class="stars">{'★'.repeat(Math.round(p.stars))}</span>
+                  <span class="rating-num">{p.stars}</span>
+                </div>
+                <div class="product-price-na">Ver precio en Amazon</div>
+              </div>
+              <a href={`${p.url}?tag=${AFFILIATE_TAG}`} target="_blank" rel="noopener" class="btn btn-outline buy-btn">Ver en Amazon</a>
+            </div>
+          ))}
+        </div>
+      </div>
+    )}
+
+    <!-- Guia de compra -->
+    <section class="guide-section">
+      <div class="guide-intro">
+        <h2>Como Elegir el Mejor Secador en 2026</h2>
+        <p>La diferencia entre un secador de 15€ y uno de 250€ esta en el motor, la tecnologia de calor y los accesorios. Esta guia te ayuda a entender que buscar.</p>
+      </div>
+
+      <div class="guide-grid">
+        <div class="guide-card">
+          <h3>Potencia y Tecnologia</h3>
+          <p>La potencia determina la velocidad de secado. La tecnologia de calor, como los iones negativos o la ceramica, reduce el dano y mejora el acabado.</p>
+          <ul>
+            <li><strong>1800-1875W:</strong> El punto optimo para uso domestico. Secado rapido sin sobrecalentamiento.</li>
+            <li><strong>2200W+:</strong> Potencia profesional. Para cabello muy grueso o uso intensivo en salon.</li>
+            <li><strong>Ionica (Negative Ion):</strong> Reduce electricidad estatica y frizz. Imprescindible.</li>
+            <li><strong>Ceramic / Tourmaline:</strong> Calor infrarrojo distribuido uniformemente. Protege la cuticula.</li>
+            <li><strong>Infrared:</strong> Penetra en la cuticula. Seca desde dentro hacia afuera, menos dano.</li>
+          </ul>
+        </div>
+
+        <div class="guide-card">
+          <h3>Accesorios que Importan</h3>
+          <p>Un buen secador puede venir con accesorios que multiplican su versatilidad para distintos tipos de cabello.</p>
+          <ul>
+            <li><strong>Difusor:</strong> Imprescindible para cabello rizado. Distribuye el aire suavemente, define rizos sin erizarlos.</li>
+            <li><strong>Concentrador:</strong> Precision para alisar. Canaliza el flujo de aire a una linea estrecha.</li>
+            <li><strong>Boquillas magneticas:</strong> Facilitan el cambio rapido entre accesorios. Solo en marcas premium.</li>
+            <li><strong>Cepillo integrado:</strong> Convierte el secador en un all-in-one. Ideal para uso domestico rapido.</li>
+          </ul>
+        </div>
+
+        <div class="guide-card">
+          <h3>Peso y Ergonomia</h3>
+          <p>Un secador pesado fatigue tu muneca. Los modelos de turbina (sin motor tradicional) pesan la mitad.</p>
+          <div class="power-table">
+            <div class="power-row">
+              <span class="power-label">&lt;400g</span>
+              <span class="power-desc">Turbina/motorless. Premium. Uso frecuente sin fatiga.</span>
+            </div>
+            <div class="power-row">
+              <span class="power-label">400-550g</span>
+              <span class="power-desc">Estandar domestico. El equilibrio perfecto.</span>
+            </div>
+            <div class="power-row">
+              <span class="power-label">&gt;600g</span>
+              <span class="power-desc">Motor tradicional. Mas potencia pero mas peso.</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="guide-card full-width">
+        <h3>Dyson vs Cecotec vs Shark: Realmente Compensa la Premium?</h3>
+        <p>Un Dyson Supersonic o Shark FlexStyle cuestan 250€-400€. El argumento de venta es el motor sin escobillas: mas silencioso, mas ligero, mas duradero. Pero para <strong>uso domestico ocasional</strong>, un secador ionico de 30€ cumplira el 80% del trabajo. La premium tiene sentido si lo usas a diario o eres profesional. Encuentra el equilibrio en nuestro top de secadores.</p>
+      </div>
+    </section>
+
+    <!-- Comparativa por presupuesto -->
+    <section class="comparison-section">
+      <h2>Mejor Secador segun tu Presupuesto</h2>
+      <div class="comparison-grid">
+        <div class="compare-card budget-low">
+          <div class="compare-badge">Economico</div>
+          <h4>Menos de 25€</h4>
+          <p>Secadores ionicos basicos con buena potencia. Correctos para uso ocasional.</p>
+          <ul>
+            <li>Ionica basica</li>
+            <li>Potencia suficiente</li>
+            <li>Difusor a veces incluido</li>
+            <li>Durabilidad limitada</li>
+          </ul>
+        </div>
+        <div class="compare-card budget-mid">
+          <div class="compare-badge">Recomendado</div>
+          <h4>25€ - 80€</h4>
+          <p>La mejor relacion calidad-precio. Ionica avanzada, accesorios incluidos, buena durabilidad.</p>
+          <ul>
+            <li>Ionica 500M+</li>
+            <li>Difusor + concentrador</li>
+            <li>Bajo ruido</li>
+            <li>Durabilidad 2-3 anos</li>
+          </ul>
+        </div>
+        <div class="compare-card budget-high">
+          <div class="compare-badge">Premium</div>
+          <h4>Mas de 200€</h4>
+          <p>Motorless/turbina. Silencio maximo, peso minimo, precision absoluta.</p>
+          <ul>
+            <li>Motor sin escobillas</li>
+            <li>Peso &lt;400g</li>
+            <li>Silencioso</li>
+            <li>Durabilidad 5+ anos</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="faq-section">
+      <h2>Preguntas Frecuentes sobre Secadores</h2>
+      <div class="faq-list">
+        <details class="faq-item">
+          <summary>Cuanta potencia necesito en un secador?</summary>
+          <div class="faq-answer">
+            <p>Para cabello <strong>fino o corto</strong>: 1800W es suficiente. Para cabello <strong>medio a grueso</strong>: 1875W-2200W. Mas potencia no siempre es mejor: seca demasiado rapido y puede dano el cabello. Empieza en temperatura media y ajusta.</p>
+          </div>
+        </details>
+        <details class="faq-item">
+          <summary>Que diferencia hay entre ionica y no ionica?</summary>
+          <div class="faq-answer">
+            <p>Un secador ionico emite iones negativos que neutralizan la electricidad estatica. Resultado: <strong>50% menos frizz, 50% mas brillo</strong>, y el cabello se seca antes. Es una tecnologia barata de implementar, asi que cualquier secador por mas de 20€ deberia incluir ionica. Si no la incluye, no lo compres.</p>
+          </div>
+        </details>
+        <details class="faq-item">
+          <summary>El difusor es realmente necesario?</summary>
+          <div class="faq-answer">
+            <p>Si tienes <strong>pelo rizado o ondulado: si, imprescindible</strong>. Un difusor distribuye el aire caliente de manera uniforme y suave, evitando que los rizos se abran o se vuelen. Si tienes pelo liso, el difusor es opcional y probablemente no lo uses.</p>
+          </div>
+        </details>
+        <details class="faq-item">
+          <summary>Mejor secador para cabello teñido?</summary>
+          <div class="faq-answer">
+            <p>Cualquier secador ionico con temperatura regulable. Evita temperaturas maximas constantes (220°C+) que aceleran la perdida de color. Busca secadores con modo keratina o argan oil integrado si quieres proteger aun mas el color.</p>
+          </div>
+        </details>
+        <details class="faq-item">
+          <summary>Cada cuanto debo cambiar el secador?</summary>
+          <div class="faq-answer">
+            <p>Senales de que necesita reemplazo: <strong>olor a quemado</strong>, el aire no calienta igual que antes, el cable esta deteriorado, o hace ruidos nuevos. Un secador de calidad dura 3-5 anos con uso regular. Los de baja calidad, 1-2 anos.</p>
+          </div>
+        </details>
+      </div>
+    </section>
+
+    <!-- CTA Final -->
+    <section class="cta-section">
+      <div class="cta-content">
+        <h2>Guia Completa: Como Elegir el Mejor Secador</h2>
+        <p>Comparativas completas Dyson vs Shark vs Cecotec, analisis de tecnologias, y todo lo que necesitas saber antes de comprar.</p>
+        <a href="/guias/guia-comprar-secador" class="btn btn-accent btn-lg">Leer Guia de Compra Completa</a>
+      </div>
+    </section>
+  </div>
+</BaseLayout>
+
+<style>
+  .page-header {
+    background: linear-gradient(135deg, rgba(0,80,157,0.05), rgba(255,107,53,0.03));
+    border-bottom: 1px solid var(--border);
+    padding: 48px 0;
+  }
+  .breadcrumb { display: flex; align-items: center; gap: 8px; font-size: 0.85rem; color: var(--text-3); margin-bottom: 24px; }
+  .breadcrumb a { color: var(--primary); }
+  .header-content { display: flex; align-items: flex-start; gap: 20px; margin-bottom: 32px; }
+  .header-icon { width: 64px; height: 64px; background: linear-gradient(135deg, var(--primary), var(--primary-light)); border-radius: 16px; display: flex; align-items: center; justify-content: center; color: #fff; flex-shrink: 0; }
+  .header-content h1 { font-family: 'Playfair Display', serif; font-size: 2.2rem; margin-bottom: 8px; }
+  .header-content p { color: var(--text-2); max-width: 600px; line-height: 1.6; }
+  .header-stats { display: flex; gap: 32px; padding: 20px 24px; background: var(--surface); border-radius: var(--radius); border: 1px solid var(--border); width: fit-content; }
+  .hstat { display: flex; flex-direction: column; }
+  .hstat strong { font-size: 1.3rem; font-weight: 800; color: var(--primary); }
+  .hstat span { font-size: 0.75rem; color: var(--text-3); }
+
+  .section-label { font-family: 'Plus Jakarta Sans', sans-serif; font-size: 0.75rem; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; padding: 32px 0 0; margin: 0; }
+
+  .products-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; padding: 16px 0 40px; }
+  .product-card { background: var(--surface); border-radius: var(--radius-lg); border: 1px solid var(--border); padding: 24px; display: flex; flex-direction: column; gap: 12px; position: relative; transition: all 0.25s; }
+  .product-card:hover { box-shadow: var(--shadow-lg); transform: translateY(-2px); }
+  .product-rank { position: absolute; top: 16px; left: 16px; font-size: 0.7rem; font-weight: 800; color: var(--accent); background: rgba(255,107,53,0.1); padding: 4px 8px; border-radius: 4px; }
+  .product-image-wrap { display: flex; justify-content: center; padding: 16px; background: var(--surface-2); border-radius: var(--radius); }
+  .product-image-wrap img { height: 120px; width: 100%; object-fit: contain; }
+  .product-body { flex: 1; }
+  .product-body h3 { font-size: 0.95rem; font-weight: 600; line-height: 1.4; margin-bottom: 8px; color: var(--text); }
+  .product-rating { display: flex; align-items: center; gap: 8px; }
+  .stars { color: var(--accent); font-size: 0.9rem; }
+  .rating-num { font-size: 0.85rem; font-weight: 600; }
+  .product-price { font-size: 1.3rem; font-weight: 800; color: var(--primary); margin-top: 4px; }
+  .product-price-na { font-size: 0.85rem; color: var(--text-3); margin-top: 4px; }
+  .buy-btn { width: 100%; justify-content: center; margin-top: auto; }
+  .premium-section { padding: 0 0 40px; }
+  .premium-section h2 { font-family: 'Playfair Display', serif; font-size: 1.5rem; margin-bottom: 20px; }
+
+  .guide-section { padding: 48px 0; border-top: 1px solid var(--border); }
+  .guide-intro { text-align: center; max-width: 700px; margin: 0 auto 48px; }
+  .guide-intro h2 { font-family: 'Playfair Display', serif; font-size: 2rem; margin-bottom: 16px; }
+  .guide-intro p { color: var(--text-2); line-height: 1.7; font-size: 1rem; }
+  .guide-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; margin-bottom: 24px; }
+  .guide-card { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius-lg); padding: 28px; }
+  .guide-card.full-width { grid-column: 1 / -1; }
+  .guide-card h3 { font-family: 'Playfair Display', serif; font-size: 1.2rem; margin-bottom: 12px; color: var(--primary); }
+  .guide-card p { color: var(--text-2); font-size: 0.9rem; line-height: 1.6; margin-bottom: 16px; }
+  .guide-card ul { list-style: none; padding: 0; }
+  .guide-card ul li { font-size: 0.88rem; line-height: 1.6; color: var(--text-2); padding: 6px 0; border-bottom: 1px solid var(--border); }
+  .guide-card ul li:last-child { border-bottom: none; }
+  .guide-card ul li strong { color: var(--text); }
+  .power-table { display: flex; flex-direction: column; gap: 8px; }
+  .power-row { display: flex; gap: 12px; align-items: center; padding: 10px 14px; background: var(--surface-2); border-radius: var(--radius); }
+  .power-label { font-size: 0.85rem; font-weight: 700; color: var(--accent); min-width: 80px; }
+  .power-desc { font-size: 0.85rem; color: var(--text-2); }
+
+  .comparison-section { padding: 48px 0; border-top: 1px solid var(--border); }
+  .comparison-section h2 { font-family: 'Playfair Display', serif; font-size: 1.8rem; margin-bottom: 32px; text-align: center; }
+  .comparison-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+  .compare-card { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius-lg); padding: 28px; position: relative; }
+  .compare-card.budget-low { border-top: 3px solid var(--text-3); }
+  .compare-card.budget-mid { border-top: 3px solid var(--primary); }
+  .compare-card.budget-high { border-top: 3px solid var(--accent); }
+  .compare-badge { display: inline-block; font-size: 0.7rem; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; padding: 4px 10px; border-radius: 4px; margin-bottom: 12px; }
+  .budget-low .compare-badge { background: rgba(0,0,0,0.05); color: var(--text-3); }
+  .budget-mid .compare-badge { background: rgba(0,80,157,0.1); color: var(--primary); }
+  .budget-high .compare-badge { background: rgba(255,107,53,0.1); color: var(--accent); }
+  .compare-card h4 { font-size: 1.2rem; font-weight: 700; margin-bottom: 8px; }
+  .compare-card > p { font-size: 0.88rem; color: var(--text-2); line-height: 1.6; margin-bottom: 16px; }
+  .compare-card ul { list-style: none; padding: 0; margin-bottom: 20px; }
+  .compare-card ul li { font-size: 0.85rem; color: var(--text-2); padding: 5px 0; padding-left: 20px; position: relative; }
+  .compare-card ul li::before { content: '✓'; position: absolute; left: 0; color: var(--primary); font-weight: 700; }
+
+  .faq-section { padding: 48px 0; border-top: 1px solid var(--border); }
+  .faq-section h2 { font-family: 'Playfair Display', serif; font-size: 1.8rem; margin-bottom: 32px; text-align: center; }
+  .faq-list { max-width: 800px; margin: 0 auto; display: flex; flex-direction: column; gap: 8px; }
+  .faq-item { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); overflow: hidden; }
+  .faq-item summary { padding: 18px 24px; font-weight: 600; cursor: pointer; font-size: 0.95rem; list-style: none; display: flex; justify-content: space-between; align-items: center; }
+  .faq-item summary::after { content: '+'; font-size: 1.4rem; color: var(--accent); }
+  .faq-item[open] summary::after { content: '−'; }
+  .faq-item summary:hover { background: var(--surface-2); }
+  .faq-answer { padding: 0 24px 20px; }
+  .faq-answer p { font-size: 0.9rem; color: var(--text-2); line-height: 1.7; }
+
+  .cta-section { padding: 64px 0 80px; border-top: 1px solid var(--border); }
+  .cta-content { text-align: center; max-width: 600px; margin: 0 auto; }
+  .cta-content h2 { font-family: 'Playfair Display', serif; font-size: 1.8rem; margin-bottom: 16px; }
+  .cta-content p { color: var(--text-2); line-height: 1.7; margin-bottom: 24px; }
+  .btn-lg { padding: 14px 36px; font-size: 1rem; }
+
+  @media (max-width: 1024px) { .products-grid, .guide-grid, .comparison-grid { grid-template-columns: repeat(2, 1fr); } .guide-card.full-width { grid-column: span 2; } }
+  @media (max-width: 640px) { .products-grid, .guide-grid, .comparison-grid { grid-template-columns: 1fr; } .guide-card.full-width { grid-column: 1; } .header-stats { flex-wrap: wrap; } }
+</style>
