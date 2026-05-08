@@ -1,8 +1,17 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import { AFFILIATE_TAG } from '../../data/products';
-import { buildProductSchema } from '../../utils/schema';
+import { buildProductSchema, buildFAQSchema } from '../../utils/schema';
 
+const faqQuestions = [
+  { question: "Cuanto tarda en calentarse el TYMO CurlPro Plus?", answer: "Aproximadamente 30 segundos hasta alcanzar 200°C. Las temperaturas bajas de 150°C estan listas en menos de 15 segundos." },
+  { question: "Funciona con cabello rizado natural?", answer: "Si, pero para mejores resultados en cabello muy rizado o 4C recomendamos un rizador de barril mas grueso de 32mm+ o un rizador manual en lugar de uno automatico." },
+  { question: "Las instrucciones vienen en espanol?", answer: "Las instrucciones basicas vienen en espanol. El rizador es intuitivo de usar aunque las instrucciones avanzadas sean mejorables en traduccion." },
+  { question: "Cuanto dura la garantia del TYMO CurlPro?", answer: "Garantia del vendedor Amazon: 2 anos en la mayoria de listings. Comprueba en la pagina del producto al momento de la compra." },
+  { question: "Consume mucha electricidad?", answer: "Consumo tipico de 25-45W, comparable a cualquier rizador de su categoria. No tiene un consumo excepcionalmente alto." }
+];
+
+const faqSchema = buildFAQSchema(faqQuestions);
 const product = {
   name: "TYMO CurlPro Plus - Rizador Automático, Cabello Largo, 25mm",
   price: 24.90,
@@ -12,11 +21,10 @@ const product = {
   asin: "B0DPZLWX8J",
   category: "rizadores"
 };
-
 const schema = buildProductSchema(product);
 ---
 
-<BaseLayout title="TYMO CURLPRO Review 2026 - Rizador Rotativo Automático" description="Review completa del TYMO CURLPRO. 500M iones, rotativo automatico, 4 temperaturas. Analisis honesto: pros, contras y comparativa con alternativas." image={product.image} schema={schema} breadcrumbs={[{ name: "Inicio", url: "https://stylecraft.es/" }, { name: "Rizadores", url: "https://stylecraft.es/rizadores" }, { name: "TYMO CurlPro Plus Review", url: "https://stylecraft.es/productos/tymo-curlpro-review" }]}>
+<BaseLayout title="TYMO CURLPRO Review 2026 - Rizador Rotativo Automático" description="Review completa del TYMO CURLPRO. 500M iones, rotativo automatico, 4 temperaturas. Analisis honesto: pros, contras y comparativa con alternativas." image={product.image} schema={schema} schemas={[faqSchema]} breadcrumbs={[{ name: "Inicio", url: "https://stylecraft.es/" }, { name: "Rizadores", url: "https://stylecraft.es/rizadores" }, { name: "TYMO CurlPro Plus Review", url: "https://stylecraft.es/productos/tymo-curlpro-review" }]}>
   <div class="page-header">
     <div class="container">
       <nav class="breadcrumb">

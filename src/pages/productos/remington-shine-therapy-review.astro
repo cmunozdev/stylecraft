@@ -1,8 +1,16 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import { AFFILIATE_TAG } from '../../data/products';
-import { buildProductSchema } from '../../utils/schema';
+import { buildProductSchema, buildFAQSchema } from '../../utils/schema';
 
+const faqQuestions = [
+  { question: "Cuanto dura el revestimiento de Argan Oil de la Remington Shine Therapy?", answer: "Remington no especifica una duracion exacta, pero tras 6 meses de uso regular 3-4 veces por semana, seguimos notando la diferencia de brillo. La mayoria de usuarios reporta 8-12 meses antes de notar degradacion." },
+  { question: "Funciona la Shine Therapy para cabello rizado?", answer: "Para rizos sueltos o ondulaciones, funciona bien. Para rizos marcados, necesitaras varias pasadas y aun asi puede que no quede 100% liso. Es una plancha alisadora, no un producto para rizar o definir rizos." },
+  { question: "Se puede usar en cabello teñido?", answer: "Si, y de hecho es una de las mejores opciones para cabello teñido en este rango de precio. El Argan Oil protege parcialmente del dano termico y el brillo adicional ayuda a compensar la perdida de color por el calor. Usa temperatura media 180-200°C en cabello teñido." },
+  { question: "Cuanto consume la Remington Shine Therapy?", answer: "Aproximadamente 45-55W. Consumo estandar para una plancha de este tamano. No tiene consumo en standby gracias al apagado automatico a los 60 minutos." }
+];
+
+const faqSchema = buildFAQSchema(faqQuestions);
 const product = {
   name: "Remington Shine Therapy - Plancha 1\" con Argan Oil y Keratina",
   price: 49.99,
@@ -12,11 +20,10 @@ const product = {
   asin: "B09GKY436P",
   category: "planchas"
 };
-
 const schema = buildProductSchema(product);
 ---
 
-<BaseLayout title="Remington Shine Therapy Review 2026 - Plancha con Keratina" description="Review completa de la Remington Shine Therapy. Plancha de pelo con infusion de Argan Oil y Keratina. Analisis honesto, pros, contras y comparativa con ghd." image={product.image} schema={schema} breadcrumbs={[{ name: "Inicio", url: "https://stylecraft.es/" }, { name: "Planchas", url: "https://stylecraft.es/planchas" }, { name: "Remington Shine Therapy Review", url: "https://stylecraft.es/productos/remington-shine-therapy-review" }]}>
+<BaseLayout title="Remington Shine Therapy Review 2026 - Plancha con Keratina" description="Review completa de la Remington Shine Therapy. Plancha de pelo con infusion de Argan Oil y Keratina. Analisis honesto, pros, contras y comparativa con ghd." image={product.image} schema={schema} schemas={[faqSchema]} breadcrumbs={[{ name: "Inicio", url: "https://stylecraft.es/" }, { name: "Planchas", url: "https://stylecraft.es/planchas" }, { name: "Remington Shine Therapy Review", url: "https://stylecraft.es/productos/remington-shine-therapy-review" }]}>
   <div class="page-header">
     <div class="container">
       <nav class="breadcrumb">

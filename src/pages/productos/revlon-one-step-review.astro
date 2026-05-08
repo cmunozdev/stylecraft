@@ -1,8 +1,16 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import { AFFILIATE_TAG } from '../../data/products';
-import { buildProductSchema } from '../../utils/schema';
+import { buildProductSchema, buildFAQSchema } from '../../utils/schema';
 
+const faqQuestions = [
+  { question: "Cuanto tiempo tarda en secar el cabello con el REVLON One-Step?", answer: "En cabello medio-largo hasta los hombros: 5-8 minutos. Es significativamente mas rapido que un secador convencional porque combina el flujo de aire caliente con la accion de brush simultanea." },
+  { question: "Funciona el REVLON One-Step para cabello rizado?", answer: "Para rizos sueltos ondulaciones 2A-3A puede funcionar bien. Para rizos muy marcados 4A-4C es mejor un secador con difusor o un rizador dedicado. El One-Step no redefine rizos naturales: los alisa parcialmente." },
+  { question: "Es seguro para cabello teñido o tratado?", answer: "Si, aunque recomendamos usar la temperatura baja para cabello teñido o con keratina. La tecnologia ionica ayuda a reducir el dano y preserva el color durante mas tiempo comparado con herramientas sin iones." },
+  { question: "Cuantos anos dura el REVLON One-Step?", answer: "Con cuidado y limpieza regular de las cerdas, dura 1-2 anos de uso regular 3-4 veces por semana. El punto debil es el cable giratorio con el tiempo de uso intensivo." }
+];
+
+const faqSchema = buildFAQSchema(faqQuestions);
 const product = {
   name: "REVLON Salon One-Step - Secador y Voluminizador con Peine Seccionador",
   price: 49.99,
@@ -12,11 +20,10 @@ const product = {
   asin: "B0D98PWHXN",
   category: "cepillos"
 };
-
 const schema = buildProductSchema(product);
 ---
 
-<BaseLayout title="REVLON One-Step Volumizer Review 2026 - Cepillo Secador" description="Review completa del REVLON One-Step Volumizer. El cepillo secador mas vendido en Amazon.es. Analisis honesto: pros, contras, comparativa y guia de compra." image={product.image} schema={schema} breadcrumbs={[{ name: "Inicio", url: "https://stylecraft.es/" }, { name: "Cepillos", url: "https://stylecraft.es/cepillos" }, { name: "REVLON One-Step Review", url: "https://stylecraft.es/productos/revlon-one-step-review" }]}>
+<BaseLayout title="REVLON One-Step Volumizer Review 2026 - Cepillo Secador" description="Review completa del REVLON One-Step Volumizer. El cepillo secador mas vendido en Amazon.es. Analisis honesto: pros, contras, comparativa y guia de compra." image={product.image} schema={schema} schemas={[faqSchema]} breadcrumbs={[{ name: "Inicio", url: "https://stylecraft.es/" }, { name: "Cepillos", url: "https://stylecraft.es/cepillos" }, { name: "REVLON One-Step Review", url: "https://stylecraft.es/productos/revlon-one-step-review" }]}>
   <div class="page-header">
     <div class="container">
       <nav class="breadcrumb">
