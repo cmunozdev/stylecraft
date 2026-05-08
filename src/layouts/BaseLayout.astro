@@ -2,10 +2,11 @@
 interface Props {
   title: string;
   description?: string;
+  image?: string;
   schema?: Record<string, any>;
 }
 
-const { title, description = "Tu guia experta en herramientas de estilismo capilar. Reviews, comparativas y guias de compra de los mejores secadores, planchas y rizadores.", schema } = Astro.props;
+const { title, description = "Tu guia experta en herramientas de estilismo capilar. Reviews, comparativas y guias de compra de los mejores secadores, planchas y rizadores.", image = "https://stylecraft.es/og-default.jpg", schema } = Astro.props;
 const currentYear = new Date().getFullYear();
 ---
 
@@ -16,6 +17,18 @@ const currentYear = new Date().getFullYear();
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description" content={description} />
     <link rel="canonical" href={Astro.url.href} />
+    <!-- Open Graph -->
+    <meta property="og:title" content={`${title} | StyleCraft`} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content={image} />
+    <meta property="og:url" content={Astro.url.href} />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="StyleCraft" />
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={`${title} | StyleCraft`} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={image} />
     <title>{title} | StyleCraft - Herramientas de Estilismo Capilar</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
