@@ -137,6 +137,23 @@ export function buildHomeSchema() {
   };
 }
 
+export function buildFAQSchema(questions) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": questions.map(function(q) {
+      return {
+        "@type": "Question",
+        "name": q.question,
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": q.answer
+        }
+      };
+    })
+  };
+}
+
 export function buildBreadcrumbSchema(items) {
   return {
     "@context": "https://schema.org",

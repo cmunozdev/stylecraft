@@ -1,14 +1,23 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import { secadores, AFFILIATE_TAG } from '../data/products';
-import { buildCollectionSchema } from '../utils/schema';
+import { buildCollectionSchema, buildFAQSchema } from '../utils/schema';
 
+const faqQuestions = [
+  { question: "Cuanta potencia necesito en un secador?", answer: "Para cabello fino o corto: 1800W es suficiente. Para cabello medio a grueso: 1875W-2200W. Mas potencia no siempre es mejor: seca demasiado rapido y puede dano el cabello. Empieza en temperatura media y ajusta." },
+  { question: "Que diferencia hay entre ionica y no ionica?", answer: "Un secador ionico emite iones negativos que neutralizan la electricidad estatica. Resultado: 50% menos frizz, 50% mas brillo, y el cabello se seca antes. Es una tecnologia barata de implementar, asi que cualquier secador por mas de 20€ deberia incluir ionica. Si no la incluye, no lo compres." },
+  { question: "El difusor es realmente necesario?", answer: "Si tienes pelo rizado o ondulado: si, imprescindible. Un difusor distribuye el aire caliente de manera uniforme y suave, evitando que los rizos se abran o se vuelen. Si tienes pelo liso, el difusor es opcional y probablemente no lo uses." },
+  { question: "Mejor secador para cabello teñido?", answer: "Cualquier secador ionico con temperatura regulable. Evita temperaturas maximas constantes (220°C+) que aceleran la perdida de color. Busca secadores con modo keratina o argan oil integrado si quieres proteger aun mas el color." },
+  { question: "Cada cuanto debo cambiar el secador?", answer: "Senales de que necesita reemplazo: olor a quemado, el aire no calienta igual que antes, el cable esta deteriorado, o hace ruidos nuevos. Un secador de calidad dura 3-5 anos con uso regular. Los de baja calidad, 1-2 anos." }
+];
+
+const faqSchema = buildFAQSchema(faqQuestions);
 const sortedSecadores = secadores.filter(p => p.price !== null).sort((a, b) => b.stars - a.stars);
 const premiumSecadores = secadores.filter(p => p.price === null).slice(0, 4);
 const schema = buildCollectionSchema("secadores", sortedSecadores);
 ---
 
-<BaseLayout title="Mejores Secadores de Pelo 2026 - Reviews y Comparativas" description="Descubre los mejores secadores de pelo del mercado. Comparativas, reviews y guias de compra para elegir el secador perfecto segun tu tipo de cabello." schema={schema} breadcrumbs={[{ name: "Inicio", url: "https://stylecraft.es/" }, { name: "Secadores", url: "https://stylecraft.es/secadores" }]}>
+<BaseLayout title="Mejores Secadores de Pelo 2026 - Reviews y Comparativas" description="Descubre los mejores secadores de pelo del mercado. Comparativas, reviews y guias de compra para elegir el secador perfecto segun tu tipo de cabello." schema={schema} schemas={[faqSchema]} breadcrumbs={[{ name: "Inicio", url: "https://stylecraft.es/" }, { name: "Secadores", url: "https://stylecraft.es/secadores" }]}>
   <div class="page-header">
     <div class="container">
       <nav class="breadcrumb">

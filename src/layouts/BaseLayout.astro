@@ -9,11 +9,13 @@ interface Props {
   description?: string;
   image?: string;
   schema?: Record<string, any>;
+  schemas?: Record<string, any>[];
   breadcrumbs?: BreadcrumbItem[];
 }
 
 import { buildBreadcrumbSchema } from '../utils/schema';
-const { title, description = "Tu guia experta en herramientas de estilismo capilar. Reviews, comparativas y guias de compra de los mejores secadores, planchas y rizadores.", image = "https://stylecraft.es/og-default.jpg", schema, breadcrumbs } = Astro.props;
+const { title, description = "Tu guia experta en herramientas de estilismo capilar. Reviews, comparativas y guias de compra de los mejores secadores, planchas y rizadores.", image = "https://stylecraft.es/og-default.jpg", schema, schemas = [], breadcrumbs } = Astro.props;
+const allSchemas = schema ? [schema, ...schemas] : schemas;
 const breadcrumbSchema = breadcrumbs ? buildBreadcrumbSchema(breadcrumbs) : null;
 const currentYear = new Date().getFullYear();
 ---
@@ -42,8 +44,8 @@ const currentYear = new Date().getFullYear();
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    {schema && <script type="application/ld+json" set:html={JSON.stringify(schema)} />}
     {breadcrumbSchema && <script type="application/ld+json" set:html={JSON.stringify(breadcrumbSchema)} />}
+    {allSchemas.map(s => <script type="application/ld+json" set:html={JSON.stringify(s)} />)}
   </head>
   <body>
     <header class="header">
