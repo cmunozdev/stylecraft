@@ -1,7 +1,7 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import { planchas, AFFILIATE_TAG } from '../../data/products';
-import { buildArticleSchema, buildFAQSchema } from '../../utils/schema';
+import { buildArticleSchema, buildFAQSchema, buildHowToSchema } from '../../utils/schema';
 
 const faqQuestions = [
   { question: "A que temperatura debo usar mi plancha de pelo?", answer: "Cabello fino o sensibilizado: 150-170°C. Cabello normal: 180°C. Cabello grueso o rizado: 190-220°C. Si tu plancha no tiene control de temperatura, empieza en la temperatura mas baja y sube solo si no logras el resultado." },
@@ -10,16 +10,24 @@ const faqQuestions = [
   { question: "Cada cuanto hay que cambiar una plancha?", answer: "Senales de que necesita reemplazo: calentamiento desigual con zonas frias, ruido de chisporroteo, el cabello se queda seco o quebradizo apesar de usar protector termico, u olor a quemado constante." },
   { question: "Las planchas con keratina sustituyen al protector termico?", answer: "No. El protector termico crea una barrera adicional que reduce el dano. Las placas con infusion de keratina complementan, no sustituyen, al protector. Aplica siempre antes de planchar, especialmente a 190°C o mas." }
 ];
-
 const faqSchema = buildFAQSchema(faqQuestions);
+const howToSteps = [
+  { name: "Aplica protector térmico", text: "Rocía protector térmico a 20cm de distancia sobre cabello seco. Esto crea una barrera que reduce el daño térmico y mejora el deslizamiento de las placas." },
+  { name: "Selecciona la temperatura correcta", text: "Cabello fino: 150-170°C. Cabello normal: 180°C. Cabello grueso: 190-220°C. Consulta el manual si no estás seguro del rango de tu plancha." },
+  { name: "Separa el cabello en mechones", text: "Divide el cabello en secciones de 2-3cm. Comienza por la nuca. Esto evita pasar dos veces por el mismo mechón, lo que duplica el daño." },
+  { name: "Plancha de raíz a puntas", text: "Coloca el mechón entre las placas y desliza desde la raíz hasta las puntas en un movimiento lento y constante. No parpadees las placas sobre el cabello." },
+  { name: "Fija el resultado", text: "Aplica un spray o sérum Brillante después de planchar para sellar la cutícula y añadir hidratación. Para más volumen, aplica en las puntas solo." }
+];
+const howToSchema = buildHowToSchema(howToSteps);
 const schema = buildArticleSchema(
   "Como Elegir la Mejor Plancha de Pelo en 2026",
   "https://stylecraft.es/guias/guia-comprar-plancha",
-  "Todo lo que necesitas saber para elegir la plancha de pelo perfecta. Tecnologias de placas, temperaturas, marcas y comparativas."
+  "Todo lo que necesitas saber para elegir la plancha de pelo perfecta. Tecnologias de placas, temperaturas, marcas y comparativas.",
+  "https://stylecraft.es/og-default.svg"
 );
 ---
 
-<BaseLayout title="Guia de Compra: Como Elegir la Mejor Plancha de Pelo 2026" description="Todo lo que necesitas saber para elegir la plancha de pelo perfecta. Tecnologias de placas, temperaturas, marcas y comparativas. La guia mas completa." schema={schema} schemas={[faqSchema]} breadcrumbs={[{ name: "Inicio", url: "https://stylecraft.es/" }, { name: "Guias", url: "https://stylecraft.es/guias" }, { name: "Guia Plancha", url: "https://stylecraft.es/guias/guia-comprar-plancha" }]}>
+<BaseLayout title="Guia de Compra: Como Elegir la Mejor Plancha de Pelo 2026" description="Todo lo que necesitas saber para elegir la plancha de pelo perfecta. Tecnologias de placas, temperaturas, marcas y comparativas. La guia mas completa." schema={schema} schemas={[faqSchema, howToSchema]} breadcrumbs={[{ name: "Inicio", url: "https://stylecraft.es/" }, { name: "Guias", url: "https://stylecraft.es/guias" }, { name: "Guia Plancha", url: "https://stylecraft.es/guias/guia-comprar-plancha" }]}>
   <div class="page-header">
     <div class="container">
       <nav class="breadcrumb">

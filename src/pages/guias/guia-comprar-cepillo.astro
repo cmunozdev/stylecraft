@@ -1,7 +1,7 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import { cepillos, AFFILIATE_TAG } from '../../data/products';
-import { buildArticleSchema, buildFAQSchema } from '../../utils/schema';
+import { buildArticleSchema, buildFAQSchema, buildHowToSchema } from '../../utils/schema';
 
 const faqQuestions = [
   { question: "Funciona un cepillo secador para cabello rizado?", answer: "Parcialmente. Los cepillos secadores pueden-relajar el rizado y crear ondas suaves, pero no crean rizos definidos. Si tu objetivo es mantener rizos definidos, considera un rizador automatico o usa el difusor de un secador convencional." },
@@ -10,16 +10,24 @@ const faqQuestions = [
   { question: "Dyson FlexStyle vs Airwrap: cual compensa mas?", answer: "El FlexStyle cuesta menos e incluye 4 cabezales. El Airwrap es mas completo con mas cabezales especificos. En rendimiento puro, la tecnologia Coanda es la misma. El FlexStyle es la entrada mas accesible al ecosistema Dyson." },
   { question: "Necesito productos antes de usar el cepillo secador?", answer: "Si, aplica mousse, foam o spray de volumen en cabello humedo ANTES de usar el cepillo secador. El calor activa el producto y maximiza el resultado. Evita gels muy pesados que dejen residuo. El protector termico sigue siendo necesario." }
 ];
-
 const faqSchema = buildFAQSchema(faqQuestions);
+const howToSteps = [
+  { name: "Aplica producto sobre cabello húmedo", text: "Rocía mousse o foam de volumen en cabello recién lavado y ligeramente escurrido. Esto maximiza el volumen y protege contra el calor." },
+  { name: "Elige el cabezal adecuado", text: "Cabezal ovalado grande: cabello largo y grueso. Cabezal pequeño: pelo corto o para raíces. Difusor: rizos y cabello ondulado." },
+  { name: "Trabaja por secciones", text: "Divide el cabello en 4-6 secciones. Empieza por la nuca. Mantén el cepillo en movimiento constante: nunca lo dejes quieto sobre una zona." },
+  { name: "Tensa mientras secas", text: "Estira suavemente el cabello con la mano libre mientras pasas el cepillo. Esto alisa y da tensión para un acabado más sleek." },
+  { name: "Fija con aire frío", text: "Si tu cepillo tiene modo de aire frío, úsalo 10-15 segundos al final para fijar el peinado y añadir brillo." }
+];
+const howToSchema = buildHowToSchema(howToSteps);
 const schema = buildArticleSchema(
   "Como Elegir el Mejor Cepillo Secador en 2026",
   "https://stylecraft.es/guias/guia-comprar-cepillo",
-  "Todo lo que necesitas saber para elegir el cepillo secador perfecto. REVLON vs TYMO vs Dyson, tecnologias y comparativas."
+  "Todo lo que necesitas saber para elegir el cepillo secador perfecto. REVLON vs TYMO vs Dyson, tecnologias y comparativas.",
+  "https://stylecraft.es/og-default.svg"
 );
 ---
 
-<BaseLayout title="Guia de Compra: Como Elegir el Mejor Cepillo Secador 2026" description="Todo lo que necesitas saber para elegir el cepillo secador perfecto. REVLON vs TYMO vs Dyson, tecnologias y comparativas." schema={schema} schemas={[faqSchema]} breadcrumbs={[{ name: "Inicio", url: "https://stylecraft.es/" }, { name: "Guias", url: "https://stylecraft.es/guias" }, { name: "Guia Cepillo", url: "https://stylecraft.es/guias/guia-comprar-cepillo" }]}>
+<BaseLayout title="Guia de Compra: Como Elegir el Mejor Cepillo Secador 2026" description="Todo lo que necesitas saber para elegir el cepillo secador perfecto. REVLON vs TYMO vs Dyson, tecnologias y comparativas." schema={schema} schemas={[faqSchema, howToSchema]} breadcrumbs={[{ name: "Inicio", url: "https://stylecraft.es/" }, { name: "Guias", url: "https://stylecraft.es/guias" }, { name: "Guia Cepillo", url: "https://stylecraft.es/guias/guia-comprar-cepillo" }]}>
   <div class="page-header">
     <div class="container">
       <nav class="breadcrumb">

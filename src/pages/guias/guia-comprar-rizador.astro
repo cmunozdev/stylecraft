@@ -1,7 +1,7 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import { rizadores, AFFILIATE_TAG } from '../../data/products';
-import { buildArticleSchema, buildFAQSchema } from '../../utils/schema';
+import { buildArticleSchema, buildFAQSchema, buildHowToSchema } from '../../utils/schema';
 
 const faqQuestions = [
   { question: "A que temperatura debo rizar mi pelo?", answer: "Fino o danado: 150-170°C. Normal: 180°C. Grueso o rizado natural: 190-210°C. Empieza bajo y sube si no mantiene el rizo tras enfriarse. Si el rizo se deshace en minutos, sube la temperatura 10°C." },
@@ -10,16 +10,24 @@ const faqQuestions = [
   { question: "Puedo rizar mi pelo si lo acabo de teñir?", answer: "Espera al menos 48 horas despues de teñir. El proceso quimico deja la cuticula abierta. Aplicar calor tan pronto puede causar dano severo o cambiar el color de manera inesperada. Usa la temperatura mas baja si es urgente." },
   { question: "Que significa 500M iones en un rizador?", answer: "500M iones significa 500 millones de iones negativos por cm3, la concentracion que mejores resultados da para eliminar electricidad estatica y frizz. Los mejores rizadores automaticos como TYMO usan 500M iones como estandar." }
 ];
-
 const faqSchema = buildFAQSchema(faqQuestions);
+const howToSteps = [
+  { name: "Prepara el cabello", text: "Lava y seca completamente el cabello. El rizado funciona mejor en cabello casi seco. Aplica mousse o spray para rizos antes de usar el rizador." },
+  { name: "Selecciona la temperatura", text: "Fino o dañado: 150-170°C. Normal: 180°C. Grueso: 190-210°C. Consulta el manual de tu rizador para conocer su temperatura real." },
+  { name: "Divide en secciones", text: "Separa el cabello en 4-6 secciones con pinzas de clips. Trabaja primero la nuca y los laterales, dejando la coronilla para el final." },
+  { name: "Enrolla el mechón", text: "Toma un mechón de 2-3cm, colócalo en el rizador y espera el tiempo indicado (6-15 segundos según el rizo deseado). Suelta suavemente." },
+  { name: "Fija el rizo", text: "Una vez enrollado, espera a que el mechón se enfríe antes de tocarlo. Esto fija el rizo. Aplica spray para rizos al final." }
+];
+const howToSchema = buildHowToSchema(howToSteps);
 const schema = buildArticleSchema(
   "Como Elegir el Mejor Rizador de Pelo en 2026",
   "https://stylecraft.es/guias/guia-comprar-rizador",
-  "Todo lo que necesitas saber para elegir el rizador perfecto. Tipos de barril, temperaturas, marcas y comparativas."
+  "Todo lo que necesitas saber para elegir el rizador perfecto. Tipos de barril, temperaturas, marcas y comparativas.",
+  "https://stylecraft.es/og-default.svg"
 );
 ---
 
-<BaseLayout title="Guia de Compra: Como Elegir el Mejor Rizador de Pelo 2026" description="Todo lo que necesitas saber para elegir el rizador perfecto. Tipos de barril, temperaturas, marcas y comparativas. Guia completa." schema={schema} schemas={[faqSchema]} breadcrumbs={[{ name: "Inicio", url: "https://stylecraft.es/" }, { name: "Guias", url: "https://stylecraft.es/guias" }, { name: "Guia Rizador", url: "https://stylecraft.es/guias/guia-comprar-rizador" }]}>
+<BaseLayout title="Guia de Compra: Como Elegir el Mejor Rizador de Pelo 2026" description="Todo lo que necesitas saber para elegir el rizador perfecto. Tipos de barril, temperaturas, marcas y comparativas. Guia completa." schema={schema} schemas={[faqSchema, howToSchema]} breadcrumbs={[{ name: "Inicio", url: "https://stylecraft.es/" }, { name: "Guias", url: "https://stylecraft.es/guias" }, { name: "Guia Rizador", url: "https://stylecraft.es/guias/guia-comprar-rizador" }]}>
   <div class="page-header">
     <div class="container">
       <nav class="breadcrumb">

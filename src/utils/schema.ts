@@ -63,8 +63,8 @@ export function buildCollectionSchema(category, products) {
   };
 }
 
-export function buildArticleSchema(title, url, description) {
-  return {
+export function buildArticleSchema(title, url, description, image) {
+  const schema = {
     "@context": "https://schema.org",
     "@type": "Article",
     "name": title,
@@ -88,6 +88,10 @@ export function buildArticleSchema(title, url, description) {
       "url": url
     }
   };
+  if (image) {
+    schema["image"] = image;
+  }
+  return schema;
 }
 
 export function buildProductSchema(product) {
@@ -101,8 +105,7 @@ export function buildProductSchema(product) {
     "aggregateRating": {
       "@type": "AggregateRating",
       "ratingValue": product.stars,
-      "bestRating": 5,
-      "ratingCount": 50
+      "bestRating": 5
     },
     "offers": {
       "@type": "Offer",
@@ -149,6 +152,23 @@ export function buildFAQSchema(questions) {
           "@type": "Answer",
           "text": q.answer
         }
+      };
+    })
+  };
+}
+
+export function buildHowToSchema(steps) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "HowTo",
+    "name": "Como usar tu herramienta de estilismo",
+    "step": steps.map(function(step, i) {
+      return {
+        "@type": "HowToStep",
+        "position": i + 1,
+        "name": step.name,
+        "text": step.text,
+        "image": step.image || undefined
       };
     })
   };

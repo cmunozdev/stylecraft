@@ -1,7 +1,7 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import { secadores, planchas, AFFILIATE_TAG } from '../../data/products';
-import { buildArticleSchema, buildFAQSchema } from '../../utils/schema';
+import { buildArticleSchema, buildFAQSchema, buildHowToSchema } from '../../utils/schema';
 
 const faqQuestions = [
   { question: "Cuanta potencia necesito en un secador?", answer: "1800W es suficiente para la mayoria. Cabello grueso o uso intensivo: 1875W-2200W. Mas potencia no siempre es mejor: seca demasiado rapido y puede dano el cabello." },
@@ -12,15 +12,24 @@ const faqQuestions = [
 ];
 
 const faqSchema = buildFAQSchema(faqQuestions);
+const howToSteps = [
+  { name: "Ajusta la temperatura", text: "Comienza a 1800W para cabello normal. Para cabello fino o dañado, usa la temperatura más baja. Para cabello grueso, 2000W o más." },
+  { name: "Usa el modo iónico", text: "Activa la función de iones negativos para reducir el frizz y añadir brillo. Si tu secador tiene esta función, úsala siempre." },
+  { name: "Separa el cabello en mechones", text: "Divide tu cabello en secciones con pinzas. Empieza por la nuca y ve subiendo hacia la coronilla para un secado uniforme." },
+  { name: "Seca de raíz a puntas", text: "Dirige el flujo de aire hacia las raíces primero y trabaja hacia las puntas. No frotes con la toalla, presiona suavemente." },
+  { name: "Fija con frío", text: "Usa el chorro de aire frío durante 10 segundos al final para cerrar la cutícula y fijar el peinado." }
+];
+const howToSchema = buildHowToSchema(howToSteps);
 const schema = buildArticleSchema(
   "Como Elegir el Mejor Secador de Pelo en 2026",
   "https://stylecraft.es/guias/guia-comprar-secador",
-  "Todo lo que necesitas saber para elegir el secador perfecto. Potencia, tecnologia ionica, difusor, peso y precio."
+  "Todo lo que necesitas saber para elegir el secador perfecto. Potencia, tecnologia ionica, difusor, peso y precio.",
+  "https://stylecraft.es/og-default.svg"
 );
 
 ---
 
-<BaseLayout title="Guia de Compra: Como Elegir el Mejor Secador de Pelo 2026" description="Todo lo que necesitas saber para elegir el secador perfecto. Potencia, tecnologia ionica, difusor, peso y precio. Comparativa de los 10 mejores." schema={schema} schemas={[faqSchema]} breadcrumbs={[{ name: "Inicio", url: "https://stylecraft.es/" }, { name: "Guias", url: "https://stylecraft.es/guias" }, { name: "Guia Secador", url: "https://stylecraft.es/guias/guia-comprar-secador" }]}>
+<BaseLayout title="Guia de Compra: Como Elegir el Mejor Secador de Pelo 2026" description="Todo lo que necesitas saber para elegir el secador perfecto. Potencia, tecnologia ionica, difusor, peso y precio. Comparativa de los 10 mejores." schema={schema} schemas={[faqSchema, howToSchema]} breadcrumbs={[{ name: "Inicio", url: "https://stylecraft.es/" }, { name: "Guias", url: "https://stylecraft.es/guias" }, { name: "Guia Secador", url: "https://stylecraft.es/guias/guia-comprar-secador" }]}>
   <div class="page-header">
     <div class="container">
       <nav class="breadcrumb">
