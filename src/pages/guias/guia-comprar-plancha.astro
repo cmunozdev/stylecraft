@@ -226,6 +226,29 @@ const schema = buildArticleSchema(
           ))}
         </div>
       </section>
+
+      <!-- Reviews relacionadas -->
+      <section class="related-reviews">
+        <h2>Reviews en profundidad</h2>
+        <p>Si quieres la opinion detallada de un usuario real sobre alguna herramienta, consulta nuestras reviews:</p>
+        <div class="related-review-cards">
+          <a href="/productos/revlon-one-step-review" class="related-review-card">
+            <span class="related-review-cat">CEPILLO</span>
+            <strong>REVLON One-Step</strong>
+            <span class="related-review-link">Review completa →</span>
+          </a>
+          <a href="/productos/remington-shine-therapy-review" class="related-review-card">
+            <span class="related-review-cat">PLANCHA</span>
+            <strong>Remington Shine Therapy</strong>
+            <span class="related-review-link">Review completa →</span>
+          </a>
+          <a href="/productos/tymo-curlpro-review" class="related-review-card">
+            <span class="related-review-cat">RIZADOR</span>
+            <strong>TYMO CurlPro Plus</strong>
+            <span class="related-review-link">Review completa →</span>
+          </a>
+        </div>
+      </section>
     </div>
   </article>
 </BaseLayout>
@@ -295,5 +318,5 @@ const schema = buildArticleSchema(
   .top-btn { padding: 8px 16px; font-size: 0.8rem; white-space: nowrap; }
 
   @media (max-width: 1024px) { .budget-grid { grid-template-columns: repeat(2, 1fr); } .tech-grid { grid-template-columns: 1fr; } .hair-types { grid-template-columns: 1fr; } }
-  @media (max-width: 640px) { .budget-grid { grid-template-columns: 1fr; } .top-row { flex-wrap: wrap; } .top-btn { width: 100%; justify-content: center; } }
+  @media (max-width: 640px) { .budget-grid { grid-template-columns: 1fr; } .top-row { flex-wrap: wrap; } .top-btn { width: 100%; justify-content: center; } .related-review-cards { grid-template-columns: 1fr; } }
 </style>
