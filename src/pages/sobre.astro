@@ -1,12 +1,8 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
-import { buildArticleSchema } from '../utils/schema';
+import { buildAboutSchema } from '../utils/schema';
 
-const schema = buildArticleSchema(
-  "Sobre StyleCraft - Quiénes Somos y Cómo Funcionamos",
-  "https://stylecraft.es/sobre",
-  "Conoce a StyleCraft: quiénes somos, cómo seleccionamos productos, cómo financiamos el proyecto con afiliados de Amazon, y nuestro compromiso con reviews honestas."
-);
+const schema = buildAboutSchema();
 ---
 
 <BaseLayout title="Sobre StyleCraft - Quiénes Somos" description="Conoce a StyleCraft: quiénes somos, cómo seleccionamos productos y por qué puedes confiar en nuestras reviews y guías de compra." schema={schema} image="https://stylecraft.es/og-default.svg" breadcrumbs={[{ name: "Inicio", url: "https://stylecraft.es/" }, { name: "Sobre StyleCraft", url: "https://stylecraft.es/sobre" }]}>

@@ -174,6 +174,26 @@ export function buildHowToSchema(steps) {
   };
 }
 
+export function buildAboutSchema() {
+  return {
+    "@context": "https://schema.org",
+    "@type": "AboutPage",
+    "mainEntity": {
+      "@type": "Organization",
+      "name": "StyleCraft",
+      "url": "https://stylecraft.es",
+      "description": "Tu guia experta en herramientas de estilismo capilar. Reviews, comparativas y guias de compra de los mejores secadores, planchas y rizadores de Amazon.es.",
+      "logo": "https://stylecraft.es/favicon.svg",
+      "sameAs": [],
+      "knowsAbout": ["herramientas de estilismo capilar", "secadores de pelo", "planchas de pelo", "rizadores automaticos", "cepillos secadores"],
+      "areaServed": {
+        "@type": "Country",
+        "name": "Spain"
+      }
+    }
+  };
+}
+
 export function buildBreadcrumbSchema(items) {
   return {
     "@context": "https://schema.org",
