@@ -1,14 +1,23 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import { planchas, AFFILIATE_TAG } from '../data/products';
-import { buildCollectionSchema } from '../utils/schema';
+import { buildCollectionSchema, buildFAQSchema } from '../utils/schema';
 
+const faqQuestions = [
+  { question: "A que temperatura debo usar mi plancha de pelo?", answer: "Depende de tu cabello. Cabello fino o sensibilizado: 150-170°C. Cabello normal: 180°C. Cabello grueso o rizado: 190-220°C. Si tu plancha no tiene control de temperatura, empieza en la temperatura mas baja y sube solo si no logras el resultado." },
+  { question: "Que es mejor: placas ceramic o titanium?", answer: "Ceramic es mejor para dano minimo y calor uniforme. Ideal para cabellos finos, secos o tratados. Titanium es mejor para uso rapido y profesional, cabello grueso o largo. Para la mayoria, ceramic es la eleccion mas segura y equilibrada." },
+  { question: "Puedo rizar el pelo con una plancha normal?", answer: "Tecnicamente si, enrollando mechones alrededor de las placas y girando la plancha. Pero las planchas 2 en 1 con modo rizador integrado ofrecen resultados mucho mejores y mas control. Si buscas versatilidad, prioriza una 2 en 1 en lugar de una plancha sola." },
+  { question: "Cada cuanto hay que cambiar las placas de una plancha?", answer: "Las placas no se cambian, se cambia la plancha. Senales de que necesita reemplazo: calentamiento desigual con zonas frias, ruido de chisporroteo, el cabello se queda seco o quebradizo apesar de usar protector termico, u olor a quemado constante." },
+  { question: "Necesito protector termico si uso una plancha con keratina?", answer: "Siempre. El protector termico crea una barrera adicional que reduce el dano. Las placas con infusion de keratina complementan, no sustituyen, al protector. Aplica siempre antes de planchar, especialmente si usas temperaturas de 190°C o mas." }
+];
+
+const faqSchema = buildFAQSchema(faqQuestions);
 const sorted = planchas.filter(p => p.price !== null).sort((a, b) => b.stars - a.stars);
 const noPrice = planchas.filter(p => p.price === null).slice(0, 4);
 const schema = buildCollectionSchema("planchas", sorted);
 ---
 
-<BaseLayout title="Mejores Planchas de Pelo 2026 - Reviews y Comparativas" description="Encuentra la plancha de pelo perfecta en 2026. Comparativas de BabylissPRO, Remington, ghd y mas. Guia de compra completa." schema={schema} breadcrumbs={[{ name: "Inicio", url: "https://stylecraft.es/" }, { name: "Planchas", url: "https://stylecraft.es/planchas" }]}>
+<BaseLayout title="Mejores Planchas de Pelo 2026 - Reviews y Comparativas" description="Encuentra la plancha de pelo perfecta en 2026. Comparativas de BabylissPRO, Remington, ghd y mas. Guia de compra completa." schema={schema} schemas={[faqSchema]} breadcrumbs={[{ name: "Inicio", url: "https://stylecraft.es/" }, { name: "Planchas", url: "https://stylecraft.es/planchas" }]}>
   <div class="page-header">
     <div class="container">
       <nav class="breadcrumb">

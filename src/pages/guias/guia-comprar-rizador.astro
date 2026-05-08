@@ -1,8 +1,17 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import { rizadores, AFFILIATE_TAG } from '../../data/products';
-import { buildArticleSchema } from '../../utils/schema';
+import { buildArticleSchema, buildFAQSchema } from '../../utils/schema';
 
+const faqQuestions = [
+  { question: "A que temperatura debo rizar mi pelo?", answer: "Fino o danado: 150-170°C. Normal: 180°C. Grueso o rizado natural: 190-210°C. Empieza bajo y sube si no mantiene el rizo tras enfriarse. Si el rizo se deshace en minutos, sube la temperatura 10°C." },
+  { question: "Cuanto tiempo hay que dejar el cabello en el rizador?", answer: "Con rizadores automaticos, generalmente 6-15 segundos. Con rizadores manuales, 8-12 segundos para rizos definidos, 3-5 segundos para ondas sutiles. Nunca superes los 20 segundos: el cabello se daña sin beneficios adicionales." },
+  { question: "Que es mejor: rizador automatico o convencional?", answer: "Para principiantes: automatico. Enrolla solo y no requiere practica. Para usuarios avanzados: convencional. Permite controlar la direccion, tension y angulo del rizo. Los automaticos son mas rapidos pero menos personalizables." },
+  { question: "Puedo rizar mi pelo si lo acabo de teñir?", answer: "Espera al menos 48 horas despues de teñir. El proceso quimico deja la cuticula abierta. Aplicar calor tan pronto puede causar dano severo o cambiar el color de manera inesperada. Usa la temperatura mas baja si es urgente." },
+  { question: "Que significa 500M iones en un rizador?", answer: "500M iones significa 500 millones de iones negativos por cm3, la concentracion que mejores resultados da para eliminar electricidad estatica y frizz. Los mejores rizadores automaticos como TYMO usan 500M iones como estandar." }
+];
+
+const faqSchema = buildFAQSchema(faqQuestions);
 const schema = buildArticleSchema(
   "Como Elegir el Mejor Rizador de Pelo en 2026",
   "https://stylecraft.es/guias/guia-comprar-rizador",
@@ -10,7 +19,7 @@ const schema = buildArticleSchema(
 );
 ---
 
-<BaseLayout title="Guia de Compra: Como Elegir el Mejor Rizador de Pelo 2026" description="Todo lo que necesitas saber para elegir el rizador perfecto. Tipos de barril, temperaturas, marcas y comparativas. Guia completa." schema={schema} breadcrumbs={[{ name: "Inicio", url: "https://stylecraft.es/" }, { name: "Guias", url: "https://stylecraft.es/guias" }, { name: "Guia Rizador", url: "https://stylecraft.es/guias/guia-comprar-rizador" }]}>
+<BaseLayout title="Guia de Compra: Como Elegir el Mejor Rizador de Pelo 2026" description="Todo lo que necesitas saber para elegir el rizador perfecto. Tipos de barril, temperaturas, marcas y comparativas. Guia completa." schema={schema} schemas={[faqSchema]} breadcrumbs={[{ name: "Inicio", url: "https://stylecraft.es/" }, { name: "Guias", url: "https://stylecraft.es/guias" }, { name: "Guia Rizador", url: "https://stylecraft.es/guias/guia-comprar-rizador" }]}>
   <div class="page-header">
     <div class="container">
       <nav class="breadcrumb">

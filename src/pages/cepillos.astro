@@ -1,13 +1,22 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import { cepillos, AFFILIATE_TAG } from '../data/products';
-import { buildCollectionSchema } from '../utils/schema';
+import { buildCollectionSchema, buildFAQSchema } from '../utils/schema';
 
+const faqQuestions = [
+  { question: "Funciona un cepillo secador para cabello rizado?", answer: "Parcialmente. Los cepillos secadores pueden-relajar el rizado y crear ondas suaves, pero no crean rizos definidos. Si tu objetivo es mantener rizos, considera un rizador automatico o usa el difusor de un secador convencional." },
+  { question: "Cuanto tiempo tarda en secar con un cepillo secador?", answer: "Depende de tu cabello, pero aproximadamente 10-15 minutos para cabello medio-largo desde lavado. La ventaja real no es el tiempo de secado sino la combinacion secado + estilizado en un paso, lo que simplifica la rutina drasticamente." },
+  { question: "Puedo usar mousse o productos antes del cepillo secador?", answer: "Si, y es recomendable. Aplica mousse, foam o spray de volumen en cabello humedo ANTES de usar el cepillo secador. El calor activa el producto y maximiza el resultado. Evita gels o productos muy pesados que puedan dejar residuo con el calor. El protector termico sigue siendo necesario." },
+  { question: "Que es mejor: REVLON One-Step o TYMO 4.0?", answer: "REVLON One-Step es el clasico probado: simple, efectivo, 4.6 estrellas de media con miles de opiniones. TYMO 4.0 es mas moderno con 5 cabezales intercambiables y mas potencia. Si quieres simplicidad y fiabilidad: REVLON. Si quieres versatilidad y mas temperatura: TYMO." },
+  { question: "Dyson FlexStyle vs Airwrap: cual es la diferencia?", answer: "La diferencia principal es el precio y los cabezales incluidos. El FlexStyle cuesta menos e incluye 4 cabezales. El Airwrap original es mas completo con mas cabezales especificos. En rendimiento puro, la tecnologia Coanda es la misma. El FlexStyle es la entrada mas accesible al ecosistema Dyson." }
+];
+
+const faqSchema = buildFAQSchema(faqQuestions);
 const sorted = cepillos.filter(p => p.price !== null).sort((a, b) => b.stars - a.stars);
 const schema = buildCollectionSchema("cepillos", sorted);
 ---
 
-<BaseLayout title="Mejores Cepillos Secadores 2026 - Dyson, Shark, Reviews" description="Cepillos secadores 3-en-1, 5-en-1 y mas en 2026. Dyson FlexStyle, Shark SpeedStyle y los mejores del mercado. Reviews y comparativas actualizadas." schema={schema} breadcrumbs={[{ name: "Inicio", url: "https://stylecraft.es/" }, { name: "Cepillos", url: "https://stylecraft.es/cepillos" }]}>
+<BaseLayout title="Mejores Cepillos Secadores 2026 - Dyson, Shark, Reviews" description="Cepillos secadores 3-en-1, 5-en-1 y mas en 2026. Dyson FlexStyle, Shark SpeedStyle y los mejores del mercado. Reviews y comparativas actualizadas." schema={schema} schemas={[faqSchema]} breadcrumbs={[{ name: "Inicio", url: "https://stylecraft.es/" }, { name: "Cepillos", url: "https://stylecraft.es/cepillos" }]}>
   <div class="page-header">
     <div class="container">
       <nav class="breadcrumb">

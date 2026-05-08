@@ -1,14 +1,23 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import { rizadores, AFFILIATE_TAG } from '../data/products';
-import { buildCollectionSchema } from '../utils/schema';
+import { buildCollectionSchema, buildFAQSchema } from '../utils/schema';
 
+const faqQuestions = [
+  { question: "A que temperatura debo rizar mi pelo?", answer: "Depende de tu tipo de cabello. Fino o danado: 150-170°C. Normal: 180°C. Grueso o rizado natural: 190-210°C. Empieza bajo y sube si no mantiene el rizo tras enfriarse. Si el rizo se deshace en minutos, sube la temperatura 10°C." },
+  { question: "Cuanto tiempo hay que dejar el cabello en el rizador?", answer: "Con rizadores automaticos, el tiempo lo determina la maquina generalmente 6-15 segundos. Con rizadores manuales, 8-12 segundos para rizos definidos, 3-5 segundos para ondas sutiles. Nunca superes los 20 segundos: el cabello se daña sin beneficios adicionales." },
+  { question: "Que es mejor: rizador automatico o convencional?", answer: "Para principiantes: automatico. Enrolla solo y no requiere practica. Para usuarios avanzados: convencional. Permite controlar la direccion, tension y angulo del rizo. Los automaticos son mas rapidos pero menos personalizables." },
+  { question: "Puedo rizar mi pelo si lo acabo de teñir?", answer: "Espera al menos 48 horas despues de teñir. El proceso quimico deja la cuticula abierta. Aplicar calor tan pronto puede causar dano severo o cambiar el color de manera inesperada. Si necesitas rizar antes, usa la temperatura mas baja de 150°C y aplica un protector termico de calidad." },
+  { question: "Que diferencia hay entre 500M iones y iones negativos?", answer: "Son esencialmente lo mismo marketing. 500M iones significa 500 millones de iones negativos por cm3, la concentracion que mejores resultados da para eliminar electricidad estatica y frizz. Los mejores rizadores automaticos de TYMO usan 500M iones como estandar." }
+];
+
+const faqSchema = buildFAQSchema(faqQuestions);
 const sorted = rizadores.filter(p => p.price !== null).sort((a, b) => b.stars - a.stars);
 const noPrice = rizadores.filter(p => p.price === null).slice(0, 4);
 const schema = buildCollectionSchema("rizadores", sorted);
 ---
 
-<BaseLayout title="Mejores Rizadores de Pelo 2026 - Reviews y Comparativas" description="Los mejores rizadores de pelo en 2026: TYMO, ghd, Remington y mas. Crea rizos perfectos con reviews y comparativas actualizadas." schema={schema} breadcrumbs={[{ name: "Inicio", url: "https://stylecraft.es/" }, { name: "Rizadores", url: "https://stylecraft.es/rizadores" }]}>
+<BaseLayout title="Mejores Rizadores de Pelo 2026 - Reviews y Comparativas" description="Los mejores rizadores de pelo en 2026: TYMO, ghd, Remington y mas. Crea rizos perfectos con reviews y comparativas actualizadas." schema={schema} schemas={[faqSchema]} breadcrumbs={[{ name: "Inicio", url: "https://stylecraft.es/" }, { name: "Rizadores", url: "https://stylecraft.es/rizadores" }]}>
   <div class="page-header">
     <div class="container">
       <nav class="breadcrumb">
