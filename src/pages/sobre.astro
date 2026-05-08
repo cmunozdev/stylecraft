@@ -1,0 +1,159 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { buildArticleSchema } from '../utils/schema';
+
+const schema = buildArticleSchema(
+  "Sobre StyleCraft - Quiénes Somos y Cómo Funcionamos",
+  "https://stylecraft.es/sobre",
+  "Conoce a StyleCraft: quiénes somos, cómo seleccionamos productos, cómo financiamos el proyecto con afiliados de Amazon, y nuestro compromiso con reviews honestas."
+);
+---
+
+<BaseLayout title="Sobre StyleCraft - Quiénes Somos" description="Conoce a StyleCraft: quiénes somos, cómo seleccionamos productos y por qué puedes confiar en nuestras reviews y guías de compra." schema={schema} image="https://m.media-amazon.com/images/I/61976vsKBdL._AC_SY300_SX300_QL70_FMwebp_.jpg" breadcrumbs={[{ name: "Inicio", url: "https://stylecraft.es/" }, { name: "Sobre StyleCraft", url: "https://stylecraft.es/sobre" }]}>
+  <div class="page-header">
+    <div class="container">
+      <nav class="breadcrumb">
+        <a href="/">Inicio</a><span>/</span><span>Sobre StyleCraft</span>
+      </nav>
+      <h1>Sobre StyleCraft</h1>
+      <p class="page-intro">Tu guía experta en herramientas de estilismo capilar. Analizamos productos, comparamos opciones y te ayudamos a decidir sin ruido ni confusión.</p>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="about-grid">
+      <div class="about-main">
+        <section class="about-section">
+          <h2>Quiénes somos</h2>
+          <p>StyleCraft es un proyecto editorial independiente especializado en herramientas de estilismo capilar: secadores, planchas, rizadores y cepillos secadores. Nacimos en 2026 para ayudar a los consumidores españoles a tomar decisiones informadas en un mercado saturado de opciones.</p>
+          <p>No somos una tienda. No vendemos productos. Nuestro modelo se basa en ingresos por afiliación a Amazon, lo que significa que cuando compras a través de nuestros enlaces, recibimos una pequeña comisión sin que el precio suba para ti.</p>
+        </section>
+
+        <section class="about-section">
+          <h2>Cómo seleccionamos los productos</h2>
+          <p>No recomendamos cualquier producto. Nuestra selección sigue criterios estrictos:</p>
+          <ul class="criteria-list">
+            <li><strong>Rating mínimo de 4.4 estrellas</strong> en Amazon.es con al menos 100 reseñas verificables</li>
+            <li><strong>Disponibilidad activa</strong> — solo productos que existen actualmente (verificamos cada ASIN)</li>
+            <li><strong>Precio real y actualizado</strong> — scrapeamos precios directamente de Amazon.es</li>
+            <li><strong>Diversidad de rangos</strong> — cubrimos desde entrada (menos de 25€) hasta premium (200€+)</li>
+            <li><strong>Relevancia para el mercado español</strong> — marcas disponibles en amazon.es con envío fiable</li>
+          </ul>
+          <p>Cuando un producto deja de estar disponible o su rating baja, lo替换amos. No mantenemos productos obsoletos solo para llenar espacio.</p>
+        </section>
+
+        <section class="about-section">
+          <h2>Nuestro compromiso con la honestidad</h2>
+          <p>Las reviews y comparativas de StyleCraft son editoriales. No recibimos productos gratis de las marcas. No tenemos acuerdos de patrocinio con fabricantes. Si un producto tiene problemas, lo decimos.</p>
+          <p>Cuando un producto no nos convence, no lo recomendamos — aunque nos beneficie económicamente incluirlo. Preferimos perder una venta que perder credibilidad.</p>
+          <div class="disclosure-box">
+            <strong>Divulgación de transparencia:</strong> StyleCraft participa en el Programa de Afiliados de Amazon. Los enlaces de productos en este sitio incluyen nuestro tag de afiliado (unmaquillaje-21), lo que significa que podemos recibir una comisión por las compras realizadas a través de ellos. Esta comisión no afecta al precio que pagas ni a nuestra independencia editorial.
+          </div>
+        </section>
+
+        <section class="about-section">
+          <h2>Qué encontrarás en StyleCraft</h2>
+          <div class="features-grid">
+            <div class="feature-card">
+              <div class="feature-icon">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+              </div>
+              <h3>Reviews detalladas</h3>
+              <p>Cada review incluye pros, contras, comparativa de specs y contexto real de uso.</p>
+            </div>
+            <div class="feature-card">
+              <div class="feature-icon">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6h16M4 10h16M4 14h16M4 18h16"/></svg>
+              </div>
+              <h3>Guías de compra</h3>
+              <p>Explicamos las tecnologías, diferencias entre modelos y qué buscar según tu tipo de cabello.</p>
+            </div>
+            <div class="feature-card">
+              <div class="feature-icon">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 20V10M18 20V4M6 20v-4"/></svg>
+              </div>
+              <h3>Comparativas reales</h3>
+              <p>Comparamos productos específicos con datos verificables, no con afirmaciones vagas.</p>
+            </div>
+            <div class="feature-card">
+              <div class="feature-icon">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z"/><path d="M12 8v4l3 3"/></svg>
+              </div>
+              <h3>Contenido actualizado</h3>
+              <p>Verificamos precios y disponibilidad regularmente. El contenido se marca con fecha de actualización.</p>
+            </div>
+          </div>
+        </section>
+
+        <section class="about-section last-update">
+          <p><strong>Última actualización de precios y productos:</strong> Mayo 2026</p>
+          <p>Todos los productos listados fueron verificados manualmente en amazon.es en las últimas 48 horas. Si un enlace devuelve error 404, el producto fue marcado como no disponible o substituído.</p>
+        </section>
+      </div>
+
+      <aside class="about-sidebar">
+        <div class="sidebar-card">
+          <h3>Categorías</h3>
+          <ul class="cat-links">
+            <li><a href="/secadores">Secadores de Pelo</a></li>
+            <li><a href="/planchas">Planchas de Pelo</a></li>
+            <li><a href="/rizadores">Rizadores</a></li>
+            <li><a href="/cepillos">Cepillos Secadores</a></li>
+          </ul>
+        </div>
+        <div class="sidebar-card">
+          <h3>Guías de Compra</h3>
+          <ul class="cat-links">
+            <li><a href="/guias/guia-comprar-secador">Cómo elegir un secador</a></li>
+            <li><a href="/guias/guia-comprar-plancha">Cómo elegir una plancha</a></li>
+            <li><a href="/guias/guia-comprar-rizador">Cómo elegir un rizador</a></li>
+            <li><a href="/guias/guia-comprar-cepillo">Cómo elegir un cepillo</a></li>
+          </ul>
+        </div>
+      </aside>
+    </div>
+  </div>
+</BaseLayout>
+
+<style>
+  .page-header { background: linear-gradient(135deg, rgba(0,80,157,0.05), rgba(255,107,53,0.03)); border-bottom: 1px solid var(--border); padding: 64px 0 48px; }
+  .breadcrumb { display: flex; align-items: center; gap: 8px; font-size: 0.85rem; color: var(--text-3); margin-bottom: 24px; }
+  .breadcrumb a { color: var(--primary); }
+  .page-header h1 { font-family: 'Playfair Display', serif; font-size: 2.5rem; margin-bottom: 12px; }
+  .page-intro { color: var(--text-2); font-size: 1.05rem; max-width: 600px; line-height: 1.7; }
+
+  .about-grid { display: grid; grid-template-columns: 1fr 280px; gap: 48px; padding: 48px 0 80px; }
+
+  .about-section { margin-bottom: 48px; }
+  .about-section h2 { font-family: 'Playfair Display', serif; font-size: 1.6rem; margin-bottom: 16px; color: var(--text); }
+  .about-section p { color: var(--text-2); font-size: 0.95rem; line-height: 1.8; margin-bottom: 16px; }
+  .about-section p:last-child { margin-bottom: 0; }
+
+  .criteria-list { list-style: none; padding: 0; margin: 20px 0 24px; display: flex; flex-direction: column; gap: 12px; }
+  .criteria-list li { padding: 14px 18px; background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); font-size: 0.9rem; color: var(--text-2); }
+  .criteria-list li strong { color: var(--text); }
+
+  .disclosure-box { background: rgba(255,107,53,0.06); border: 1px solid rgba(255,107,53,0.2); border-radius: var(--radius); padding: 20px 24px; font-size: 0.85rem; color: var(--text-2); line-height: 1.6; margin-top: 20px; }
+  .disclosure-box strong { color: var(--accent); }
+
+  .features-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; margin-top: 20px; }
+  .feature-card { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius-lg); padding: 24px; }
+  .feature-icon { width: 44px; height: 44px; background: linear-gradient(135deg, var(--primary), var(--primary-light)); border-radius: 12px; display: flex; align-items: center; justify-content: center; color: #fff; margin-bottom: 14px; }
+  .feature-card h3 { font-size: 1rem; font-weight: 700; margin-bottom: 8px; }
+  .feature-card p { font-size: 0.85rem; color: var(--text-2); line-height: 1.5; }
+
+  .last-update { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); padding: 24px; }
+  .last-update p { font-size: 0.88rem; margin-bottom: 8px; }
+  .last-update p:last-child { margin-bottom: 0; }
+
+  .about-sidebar { display: flex; flex-direction: column; gap: 16px; position: sticky; top: 88px; }
+  .sidebar-card { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius-lg); padding: 24px; }
+  .sidebar-card h3 { font-size: 0.9rem; font-weight: 700; margin-bottom: 16px; color: var(--text); }
+  .cat-links { list-style: none; padding: 0; }
+  .cat-links li { margin-bottom: 4px; }
+  .cat-links a { display: block; padding: 8px 12px; border-radius: 8px; font-size: 0.88rem; color: var(--text-2); transition: all 0.15s; }
+  .cat-links a:hover { background: var(--surface-2); color: var(--primary); }
+
+  @media (max-width: 900px) { .about-grid { grid-template-columns: 1fr; } .about-sidebar { position: static; flex-direction: row; flex-wrap: wrap; } .sidebar-card { flex: 1; min-width: 200px; } }
+  @media (max-width: 640px) { .features-grid { grid-template-columns: 1fr; } }
+</style>
