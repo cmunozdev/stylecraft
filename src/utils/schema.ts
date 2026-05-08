@@ -123,20 +123,37 @@ export function buildProductSchema(product) {
 export function buildHomeSchema() {
   return {
     "@context": "https://schema.org",
-    "@type": "WebSite",
-    "name": "StyleCraft",
-    "url": "https://stylecraft.es",
-    "description": "Tu guia experta en herramientas de estilismo capilar.",
-    "publisher": {
-      "@type": "Organization",
-      "name": "StyleCraft",
-      "url": "https://stylecraft.es"
-    },
-    "potentialAction": {
-      "@type": "SearchAction",
-      "target": "https://stylecraft.es/?q={search_term_string}",
-      "query-input": "required name=search_term_string"
-    }
+    "@graph": [
+      {
+        "@type": "WebSite",
+        "name": "StyleCraft",
+        "url": "https://stylecraft.es",
+        "description": "Tu guia experta en herramientas de estilismo capilar.",
+        "publisher": {
+          "@type": "Organization",
+          "name": "StyleCraft",
+          "url": "https://stylecraft.es"
+        },
+        "potentialAction": {
+          "@type": "SearchAction",
+          "target": "https://stylecraft.es/?q={search_term_string}",
+          "query-input": "required name=search_term_string"
+        }
+      },
+      {
+        "@type": "Organization",
+        "name": "StyleCraft",
+        "url": "https://stylecraft.es",
+        "description": "Tu guia experta en herramientas de estilismo capilar. Reviews, comparativas y guias de compra de los mejores secadores, planchas y rizadores de Amazon.es.",
+        "logo": "https://stylecraft.es/favicon.svg",
+        "sameAs": [],
+        "knowsAbout": ["herramientas de estilismo capilar", "secadores de pelo", "planchas de pelo", "rizadores automaticos", "cepillos secadores"],
+        "areaServed": {
+          "@type": "Country",
+          "name": "Spain"
+        }
+      }
+    ]
   };
 }
 
