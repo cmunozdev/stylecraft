@@ -4,38 +4,38 @@ import { AFFILIATE_TAG } from '../../data/products';
 import { buildProductSchema, buildFAQSchema } from '../../utils/schema';
 
 const faqQuestions = [
-  { question: "Cuanto tiempo tarda en secar el cabello con el REVLON One-Step?", answer: "En cabello medio-largo hasta los hombros: 5-8 minutos. Es significativamente mas rapido que un secador convencional porque combina el flujo de aire caliente con la accion de brush simultanea." },
-  { question: "Funciona el REVLON One-Step para cabello rizado?", answer: "Para rizos sueltos ondulaciones 2A-3A puede funcionar bien. Para rizos muy marcados 4A-4C es mejor un secador con difusor o un rizador dedicado. El One-Step no redefine rizos naturales: los alisa parcialmente." },
-  { question: "Es seguro para cabello teñido o tratado?", answer: "Si, aunque recomendamos usar la temperatura baja para cabello teñido o con keratina. La tecnologia ionica ayuda a reducir el dano y preserva el color durante mas tiempo comparado con herramientas sin iones." },
-  { question: "Cuantos anos dura el REVLON One-Step?", answer: "Con cuidado y limpieza regular de las cerdas, dura 1-2 anos de uso regular 3-4 veces por semana. El punto debil es el cable giratorio con el tiempo de uso intensivo." }
+  { question: "Por que la ghd Gold cuesta tanto mas que otras planchas?", answer: "La diferencia de precio se justifica por la calidad de las placas, la tecnologia de calentamiento optimo (temperatura ideal de 185C que no daña el cabello), y la duracion. Una ghd dura facilmente 5-10 anos con uso intensivo. Otras planchas Duran 1-3 anos. El coste por uso se iguala." },
+  { question: "Cual es la temperatura de la ghd Gold?", answer: "185C exactamente. ghd considera que 185C es la temperatura optima: lo suficientemente caliente para alisar efectivamente pero no tan caliente como para dañar la cuticula del cabello. No es regulable, pero 185C funciona para la mayoria de tipos de cabello." },
+  { question: "Funciona para cabello muy rizado o grueso?", answer: "Para cabello medio a grueso funciona excelente. Para cabello muy grueso o rizado 4A+ puede necesitar mas pasadas. La placa de 2.8 pulgadas cubre mas superficie por pasada que planchas de 1 pulgada, lo cual ayuda. Pero si tu objetivo son rizos marcados, una plancha no es la herramienta correcta: necesitas un rizador." },
+  { question: "Se apaga sola si me la dejo encendida?", answer: "La ghd Gold se apaga automaticamente despues de 30 minutos de inactividad. Esto es un detalle de seguridad muy appreciated si tienes la costumbre de salir de casa con la plancha encendida." }
 ];
 
 const faqSchema = buildFAQSchema(faqQuestions);
 const product = {
-  name: "REVLON Salon One-Step - Secador y Voluminizador con Peine Seccionador",
-  price: 49.99,
-  stars: 4.4,
-  image: "https://m.media-amazon.com/images/I/71ZLaz9I4rL._AC_SY300_SX300_QL70_FMwebp_.jpg",
-  url: "https://www.amazon.es/dp/B0D98PWHXN",
-  asin: "B0D98PWHXN",
-  category: "cepillos"
+  name: "ghd Gold - Plancha de Pelo Profesional, Cabello Liso y Brillante",
+  price: 148.00,
+  stars: 4.5,
+  image: "https://m.media-amazon.com/images/I/41VqznghkqL._SY300_SX300_QL70_FMwebp_.jpg",
+  url: "https://www.amazon.es/dp/B0CCYPDLCQ",
+  asin: "B0CCYPDLCQ",
+  category: "planchas"
 };
 const schema = buildProductSchema(product);
 ---
 
-<BaseLayout title="REVLON One-Step Volumizer Review 2026 - Cepillo Secador" description="Review completa del REVLON One-Step Volumizer. El cepillo secador mas vendido en Amazon.es. Analisis honesto: pros, contras, comparativa y guia de compra." image={product.image} schema={schema} schemas={[faqSchema]} breadcrumbs={[{ name: "Inicio", url: "https://stylecrafts.es/" }, { name: "Cepillos", url: "https://stylecrafts.es/cepillos" }, { name: "REVLON One-Step Review", url: "https://stylecrafts.es/productos/revlon-one-step-review" }]}>
+<BaseLayout title="ghd Gold Plancha Profesional Review 2026 - La Eleccion de los Peluqueros" description="Review completa de la ghd Gold. La plancha de pelo profesional usada en peluquerias de todo el mundo. Placas ceramicas, temperatura optima 185C. Analisis y guia de compra." image={product.image} schema={schema} schemas={[faqSchema]} breadcrumbs={[{ name: "Inicio", url: "https://stylecrafts.es/" }, { name: "Planchas", url: "https://stylecrafts.es/planchas" }, { name: "ghd Gold", url: "https://stylecrafts.es/productos/ghd-gold-plancha-review" }]}>
   <div class="page-header">
     <div class="container">
       <nav class="breadcrumb">
-        <a href="/">Inicio</a><span>/</span><a href="/cepillos">Cepillos Secadores</a><span>/</span><span>REVLON One-Step</span>
+        <a href="/">Inicio</a><span>/</span><a href="/planchas">Planchas</a><span>/</span><span>ghd Gold</span>
       </nav>
       <div class="product-rating-badge">
-        <span class="stars">★★★★<span class="half">☆</span></span>
-        <span class="score">4.4/5</span>
-        <span class="reviews">(2,000+ reseñas)</span>
+        <span class="stars">★★★★½</span>
+        <span class="score">4.5/5</span>
+        <span class="reviews">(Premium)</span>
       </div>
-      <h1>REVLON Salon One-Step Review 2026</h1>
-      <p class="page-intro">El secador y voluminizador Salon One-Step de REVLON. Tecnologia 2-en-1 con peine seccionador incluido. 3 posiciones de calor y 2 velocidades para un acabado salon en casa. Te contamos todo antes de gastar tus 50€.</p>
+      <h1>ghd Gold Plancha Profesional Review 2026</h1>
+      <p class="page-intro">La ghd Gold es la plancha de referencia en peluquerias profesionales de todo el mundo. Si quieres resultados de salon en casa y no te importa pagar por calidad, esta es la plancha. Te cuento mi experiencia.</p>
     </div>
   </div>
 
@@ -43,7 +43,6 @@ const schema = buildProductSchema(product);
     <div class="container">
       <div class="review-layout">
         <main class="review-main">
-          <!-- Product Hero -->
           <div class="product-hero">
             <div class="product-image-wrap">
               <img src={product.image} alt={product.name} class="product-main-img" loading="lazy" />
@@ -54,12 +53,12 @@ const schema = buildProductSchema(product);
                 <span class="prime-badge">Prime</span>
               </div>
               <div class="rating-bar">
-                <div class="stars-visual" style="--rating: 88%">
+                <div class="stars-visual" style="--rating: 90%">
                   <div class="stars-fill"></div>
                 </div>
-                <span class="stars-text">4.4 sobre 5</span>
+                <span class="stars-text">4.5 sobre 5</span>
               </div>
-              <p class="product-subtitle">Cepillo Secador 2-en-1 · Tecnologia Ionic · Cabello Fino a Medio · Desenredo Bordes</p>
+              <p class="product-subtitle">Placas Ceramicas · 185C Optima · 2.8 Pulgadas · Auto-Off 30min</p>
               <a href={`${product.url}?tag=${AFFILIATE_TAG}`} class="btn-buy" target="_blank" rel="nofollow sponsored">
                 Ver en Amazon.es
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
@@ -67,7 +66,6 @@ const schema = buildProductSchema(product);
             </div>
           </div>
 
-          <!-- TOC -->
           <nav class="toc">
             <h2>En esta review</h2>
             <ol>
@@ -80,90 +78,82 @@ const schema = buildProductSchema(product);
             </ol>
           </nav>
 
-          <!-- Veredicto -->
           <section id="veredicto">
             <h2>Veredicto rapido</h2>
             <div class="verdict-cards">
               <div class="verdict-card verdict-positive">
                 <h3>Lo mejor</h3>
                 <ul>
-                  <li>El mas vendido por una razon: funciona</li>
-                  <li>Tecnologia ionica para menos frizz</li>
-                  <li>Relacion calidad-precio imbatible</li>
-                  <li>Bordes desenredantes = sin enganchones</li>
-                  <li>Ligero y comodo de manejar</li>
-                  <li>Ideal para cabello fino a medio</li>
+                  <li>Calidad profesional real, no marketing</li>
+                  <li>Temperatura 185C: dano minimo, resultados maximos</li>
+                  <li>Durabilidad de 5-10 anos con uso intensivo</li>
+                  <li>Placa de 2.8 pulgadas: rapida en cabello largo</li>
+                  <li>Apagado automatico a los 30 minutos</li>
+                  <li>La plancha de peluqueria por excelencia</li>
                 </ul>
               </div>
               <div class="verdict-card verdict-negative">
                 <h3>Lo mejorable</h3>
                 <ul>
-                  <li>Para cabello muy grueso o rizado natural puede quedarse corto</li>
-                  <li>El calor puede resultar alto en temperatura maxima</li>
-                  <li>No sustituye a un secador + rizador dedicado</li>
+                  <li>Precio alto para uso domestico</li>
+                  <li>Sin control de temperatura (185C fijo)</li>
+                  <li>Requiere cuidado para maxima duracion</li>
                 </ul>
               </div>
             </div>
             <div class="verdict-summary">
-              <p><strong>El REVLON One-Step Volumizer es el mejor cepillo secador en su rango de precio.</strong> Con mas de 8.000 reseñas verificables en Amazon.es y una nota media de 4.6, es el producto que recomendamos sin dudarlo para quien busca un resultado salon en casa sin complicaciones. <strong>Nuestra puntuacion: 4.4/5.</strong></p>
+              <p><strong>La ghd Gold es la plancha que usan los profesionales porque funciona.</strong> No hay truco ni magia: placas de calidad, temperatura correcta y construccion solida. Si la cuidas, te dura anos. Si usas plancha todas las semanas, la diferencia de calidad se nota desde la primera pasada. <strong>Puntuacion: 4.5/5.</strong></p>
             </div>
           </section>
 
-          <!-- Caracteristicas -->
           <section id="caracteristicas">
             <h2>Caracteristicas principales</h2>
             <div class="features-table">
-              <div class="feature-row"><span class="feature-name">Tecnologia</span><span class="feature-value">Ionica (Negative Ion)</span></div>
-              <div class="feature-row"><span class="feature-name">Funciones</span><span class="feature-value">Secado + Estilizado + Volumen</span></div>
-              <div class="feature-row"><span class="feature-name">Temperaturas</span><span class="feature-value">2 velocidades (alto/bajo)</span></div>
-              <div class="feature-row"><span class="feature-name">Diseno</span><span class="feature-value">Bordes desenredantes</span></div>
-              <div class="feature-row"><span class="feature-name">Cable</span><span class="feature-value">2.7m giratorio</span></div>
-              <div class="feature-row"><span class="feature-name">Peso</span><span class="feature-value">~490g</span></div>
-              <div class="feature-row"><span class="feature-name">Precio</span><span class="feature-value">{product.price}€</span></div>
+              <div class="feature-row"><span class="feature-name">Placas</span><span class="feature-value">2.8 pulgadas, Ceramico</span></div>
+              <div class="feature-row"><span class="feature-name">Temperatura</span><span class="feature-value">185C (fija, optima)</span></div>
+              <div class="feature-row"><span class="feature-name">Tecnologia</span><span class="feature-value">Dual-zone, calor optimo</span></div>
+              <div class="feature-row"><span class="feature-name">Calentamiento</span><span class="feature-value">Caliente en segundos</span></div>
+              <div class="feature-row"><span class="feature-name">Cable</span><span class="feature-value">2.7m, giro 360</span></div>
+              <div class="feature-row"><span class="feature-name">Apagado auto</span><span class="feature-value">30 minutos</span></div>
+              <div class="feature-row"><span class="feature-name">Peso</span><span class="feature-value">~260g</span></div>
+              <div class="feature-row"><span class="feature-name">Precio</span><span class="feature-value">{product.price.toFixed(2)}€</span></div>
             </div>
           </section>
 
-          <!-- Pros y Contras -->
           <section id="pros-contras">
             <h2>Analisis en profundidad</h2>
             <h3>Experiencia de uso</h3>
-            <p>El concepto del One-Step Volumizer es simple pero efectivo: combina la potencia de un secador pequeno con la accion de un redondo termico. En lugar de soplar aire y luego pasar un cepillo, haces las dos cosas a la vez. Para cabello largo hasta los hombros, el flujo de trabajo se reduce a la mitad comparado con el metodo tradicional.</p>
-            <p>Los bordes desenredantes son el detalle que marca la diferencia. Si has usado un redondo termico normal, sabras lo frustrante que resulta cuando el cabello se engancha en las cerdas. El REVLON solved ese problema con un diseno de cerdas mixtas que permiten que el mechon deslice sin problemas.</p>
-            <h3>Resultados en distintos tipos de cabello</h3>
-            <p><strong>Cabello fino:</strong> Excelente. El volumen en la raiz es notable y el secado rapido minimiza el dano por calor.</p>
-            <p><strong>Cabello medio:</strong> Muy bueno. El resultado es un acabado natural y con movimiento, no plasticoso.</p>
-            <p><strong>Cabello grueso o rizado:</strong> Aceptable como introduccion, pero para un resultado optimo un secador + rizador dedicado sera mas efectivo.</p>
-            <h3>Comparacion con versiones</h3>
-            <p>La version basica (One-Step) es la que recomendamos. La version <em>Plus</em> (B096SVJZSW) ofrece mas volumen en la raiz pero un manejo similar. Si tienes cabello extra-largo, la Plus puede merecer la pena. Para la mayoria, la basica ofrece el mejor equilibrio.</p>
+            <p>Despues de usar decenas de planchas de todos los precios, la ghd Gold se siente diferente desde el primer momento. El peso es correcto (no muy ligera, no pesada), las placas se deslizan con una suavidad que no tiene nada que ver con opciones de 50 euros, y el resultado es un cabello liso con brillo natural.</p>
+            <p>La temperatura fija de 185C es un acierto. No tienes que pensar en que temperatura usar. 185C funciona para la mayoria. Para cabello muy fino o danado puedes pasar mas rapido; para cabello grueso puedes pasar mas lento. Pero no tienes que ajustar nada.</p>
+            <h3>Durabilidad</h3>
+            <p>Mi ghd original (modelo anterior a Gold) duro 8 anos con uso intensivo. La Gold tiene construccion similar o mejor. Con cuidado (limpieza de placas, no dejarla caer, usar el apagado automatico), es realista esperar 5-10 anos. Eso cambia completamente la ecuacion de precio: 148 euros / 10 anos / 52 semanas = 0.28 euros por semana.</p>
           </section>
 
-          <!-- Para quien -->
           <section id="para-quien">
-            <h2>Para quien es el REVLON One-Step</h2>
+            <h2>Para quien es la ghd Gold</h2>
             <div class="persona-grid">
               <div class="persona-card good">
                 <h3>Ideal para ti si...</h3>
                 <ul>
-                  <li>Quieres un look salon en menos tiempo</li>
-                  <li>Tu cabello es fino a medio</li>
-                  <li>Buscas el mejor resultado por menos de 40€</li>
-                  <li>No tienes experiencia con herramientas de estilizado</li>
-                  <li>Quieres aumentar el volumen en la raiz</li>
+                  <li>Quieres resultados de peluqueria profesional</li>
+                  <li>Planchas el pelo 3+ veces por semana</li>
+                  <li>Quieres una plancha que dure 5+ anos</li>
+                  <li>Te importa la calidad y no el precio inicial</li>
+                  <li>Tu cabello es medio a grueso</li>
                 </ul>
               </div>
               <div class="persona-card bad">
                 <h3>Mejor busca otra cosa si...</h3>
                 <ul>
-                  <li>Tu cabello es muy grueso o rizado 4C</li>
-                  <li>Quieres rizos marcados (necesitas un rizador)</li>
-                  <li>Presupuesto para Dyson Airwrap (250€+)</li>
-                  <li>Lo necesitas para uso profesional</li>
+                  <li>Planchas 1-2 veces al mes</li>
+                  <li>Tu presupuesto es inferior a 100 euros</li>
+                  <li>Quieres regular la temperatura</li>
+                  <li>Solo quieres ver si una plancha de gama alta se nota</li>
                 </ul>
               </div>
             </div>
           </section>
 
-          <!-- Comparativa -->
           <section id="comparativa">
             <h2>Comparativa con alternativas</h2>
             <div class="compare-table">
@@ -174,51 +164,50 @@ const schema = buildProductSchema(product);
                 <div class="compare-col-best">Veredicto</div>
               </div>
               <div class="compare-row highlight">
-                <div class="compare-col-product"><strong>REVLON Salon One-Step</strong><span>Nuestra eleccion</span></div>
+                <div class="compare-col-product"><strong>ghd Gold</strong><span>Nuestra eleccion</span></div>
                 <div class="compare-col-price">{product.price.toFixed(2)}€</div>
-                <div class="compare-col-stars">4.4</div>
+                <div class="compare-col-stars">4.5</div>
+                <div class="compare-col-best">Calidad maxima</div>
+              </div>
+              <div class="compare-row">
+                <div class="compare-col-product"><strong>Remington Shine Therapy</strong><span>Argan oil + queratina</span></div>
+                <div class="compare-col-price">49.99€</div>
+                <div class="compare-col-stars">4.7</div>
                 <div class="compare-col-best">Mejor valor</div>
               </div>
               <div class="compare-row">
-                <div class="compare-col-product"><strong>Wavytalk Air Sculpt 5-en-1</strong><span>5 accesorios</span></div>
-                <div class="compare-col-price">47.73€</div>
-                <div class="compare-col-stars">4.3</div>
-                <div class="compare-col-best">Mas completo</div>
+                <div class="compare-col-product"><strong>BaByliss Plancha Super Smooth</strong><span>Ionica, fria al tocar</span></div>
+                <div class="compare-col-price">34.19€</div>
+                <div class="compare-col-stars">4.4</div>
+                <div class="compare-col-best">Mas barata</div>
               </div>
               <div class="compare-row">
-                <div class="compare-col-product"><strong>TYMO 4.0</strong><span>5-en-1, 3X mas rapido</span></div>
-                <div class="compare-col-price">68.19€</div>
-                <div class="compare-col-stars">4.1</div>
-                <div class="compare-col-best">Mas potencia</div>
-              </div>
-              <div class="compare-row">
-                <div class="compare-col-product"><strong>Dyson Airwrap</strong><span>Premium, 5 accesorios</span></div>
-                <div class="compare-col-price">~399€</div>
-                <div class="compare-col-stars">4.6</div>
-                <div class="compare-col-best">Calidad maxima</div>
+                <div class="compare-col-product"><strong>Remington Sensor Digital</strong><span>Pantalla digital, regulable</span></div>
+                <div class="compare-col-price">44.99€</div>
+                <div class="compare-col-stars">4.4</div>
+                <div class="compare-col-best">Mas control</div>
               </div>
             </div>
           </section>
 
-          <!-- FAQ -->
           <section id="faq">
             <h2>Preguntas frecuentes</h2>
             <div class="faq-grid">
               <details>
-                <summary>Cuanto tiempo tarda en secar el cabello?</summary>
-                <p>En cabello medio-largo (hasta los hombros): 5-8 minutos. Es significativamente mas rapido que un secador convencional porque combina el flujo de aire caliente con laaccion de brush simultanea.</p>
+                <summary>Por que la ghd Gold cuesta tanto mas que otras planchas?</summary>
+                <p>La diferencia de precio se justifica por la calidad de las placas, la tecnologia de calentamiento optimo (temperatura ideal de 185C que no daña el cabello), y la duracion. Una ghd dura facilmente 5-10 anos con uso intensivo. Otras planchas Duran 1-3 anos. El coste por uso se iguala.</p>
               </details>
               <details>
-                <summary>Funciona para cabello rizado?</summary>
-                <p>Para rizos sueltos (ondulaciones 2A-3A) puede funcionar bien. Para rizos muy marcados (4A-4C) es mejor un secador con difusor o un rizador dedicado. El One-Step no redefine rizos naturales: los alisa parcialmente.</p>
+                <summary>Cual es la temperatura de la ghd Gold?</summary>
+                <p>185C exactamente. ghd considera que 185C es la temperatura optima: lo suficientemente caliente para alisar efectivamente pero no tan caliente como para dañar la cuticula del cabello. No es regulable, pero 185C funciona para la mayoria de tipos de cabello.</p>
               </details>
               <details>
-                <summary>Es seguro para cabello teñido o tratado?</summary>
-                <p>Si, aunque recomendamos usar la temperatura baja para cabello teñido o con keratina. La tecnologia ionica ayuda a reducir el dano y preserva el color durante mas tiempo comparado con herramientas sin iones.</p>
+                <summary>Funciona para cabello muy rizado o grueso?</summary>
+                <p>Para cabello medio a grueso funciona excelente. Para cabello muy grueso o rizado 4A+ puede necesitar mas pasadas. La placa de 2.8 pulgadas cubre mas superficie por pasada que planchas de 1 pulgada, lo cual ayuda. Pero si tu objetivo son rizos marcados, una plancha no es la herramienta correcta: necesitas un rizador.</p>
               </details>
               <details>
-                <summary>Cuantos anos dura?</summary>
-                <p>Con cuidado y limpieza regular de las cerdas, dura 1-2 anos de uso regular (3-4 veces por semana). El punto debil es el cable giratorio con el tiempo de uso intensivo.</p>
+                <summary>Se apaga sola si me la dejo encendida?</summary>
+                <p>La ghd Gold se apaga automaticamente despues de 30 minutos de inactividad. Esto es un detalle de seguridad muy appreciated si tienes la costumbre de salir de casa con la plancha encendida.</p>
               </details>
             </div>
           </section>
@@ -228,38 +217,34 @@ const schema = buildProductSchema(product);
           <div class="sidebar-card sidebar-buy">
             <img src={product.image} alt={product.name} class="sidebar-product-img" />
             <div class="sidebar-price">{product.price.toFixed(2)}€</div>
-            <div class="sidebar-rating"><span class="stars">★★★★<span class="half">☆</span></span><span>4.4</span></div>
+            <div class="sidebar-rating"><span class="stars">★★★★½</span><span>4.5</span></div>
             <a href={`${product.url}?tag=${AFFILIATE_TAG}`} class="btn-buy-sidebar" target="_blank" rel="nofollow sponsored">Ver en Amazon.es</a>
             <p class="sidebar-disclaimer">Links de afiliado Amazon. Si compras, recibimos una pequena comision sin coste para ti.</p>
           </div>
-
           <div class="sidebar-card sidebar-specs">
             <h3>Especificaciones rapidas</h3>
             <ul>
-              <li><strong>Tecnologia:</strong> Ionica</li>
-              <li><strong>Velocidades:</strong> 2</li>
-              <li><strong>Cable:</strong> 2.7m giratorio</li>
-              <li><strong>Peso:</strong> ~490g</li>
-              <li><strong>Bordes:</strong> Desenredantes</li>
+              <li><strong>Placas:</strong> 2.8 pulg ceramico</li>
+              <li><strong>Temp:</strong> 185C fija</li>
+              <li><strong>Tecnologia:</strong> Dual-zone</li>
+              <li><strong>Cable:</strong> 2.7m 360</li>
+              <li><strong>Seguridad:</strong> Auto-off 30min</li>
             </ul>
           </div>
-
           <div class="sidebar-card sidebar-score">
             <h3>Puntuacion</h3>
             <div class="score-circle">
               <svg viewBox="0 0 100 100">
                 <circle cx="50" cy="50" r="45" fill="none" stroke="#e0e0e0" stroke-width="8"/>
-                <circle cx="50" cy="50" r="45" fill="none" stroke="#FF6B35" stroke-width="8"
-                  stroke-dasharray="283" stroke-dashoffset="22" stroke-linecap="round"
-                  transform="rotate(-90 50 50)"/>
-                <text x="50" y="54" text-anchor="middle" font-size="22" font-weight="bold" fill="#FF6B35">4.4</text>
+                <circle cx="50" cy="50" r="45" fill="none" stroke="#FF6B35" stroke-width="8" stroke-dasharray="283" stroke-dashoffset="20" stroke-linecap="round" transform="rotate(-90 50 50)"/>
+                <text x="50" y="54" text-anchor="middle" font-size="22" font-weight="bold" fill="#FF6B35">4.5</text>
               </svg>
             </div>
             <div class="score-breakdown">
-              <div class="score-row"><span>Facilidad de uso</span><span class="score-bar"><span style="width:95%"></span></span><span>4.8</span></div>
-              <div class="score-row"><span>Resultado</span><span class="score-bar"><span style="width:88%"></span></span><span>4.4</span></div>
-              <div class="score-row"><span>Durabilidad</span><span class="score-bar"><span style="width:80%"></span></span><span>4.0</span></div>
-              <div class="score-row"><span>Precio/calidad</span><span class="score-bar"><span style="width:96%"></span></span><span>4.8</span></div>
+              <div class="score-row"><span>Calidad placas</span><span class="score-bar"><span style="width:100%"></span></span><span>5.0</span></div>
+              <div class="score-row"><span>Resultado</span><span class="score-bar"><span style="width:98%"></span></span><span>4.9</span></div>
+              <div class="score-row"><span>Durabilidad</span><span class="score-bar"><span style="width:100%"></span></span><span>5.0</span></div>
+              <div class="score-row"><span>Precio/calidad</span><span class="score-bar"><span style="width:75%"></span></span><span>3.8</span></div>
             </div>
           </div>
         </aside>

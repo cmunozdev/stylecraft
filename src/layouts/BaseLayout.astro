@@ -14,7 +14,7 @@ interface Props {
 }
 
 import { buildBreadcrumbSchema } from '../utils/schema';
-const { title, description = "Tu guia experta en herramientas de estilismo capilar. Reviews, comparativas y guias de compra de los mejores secadores, planchas y rizadores.", image = "https://stylecraft.es/og-default.svg", schema, schemas = [], breadcrumbs } = Astro.props;
+const { title, description = "Tu guia experta en herramientas de estilismo capilar. Reviews, comparativas y guias de compra de los mejores secadores, planchas y rizadores.", image = "https://stylecrafts.es/og-default.svg", schema, schemas = [], breadcrumbs } = Astro.props;
 const allSchemas = schema ? [schema, ...schemas] : schemas;
 const breadcrumbSchema = breadcrumbs ? buildBreadcrumbSchema(breadcrumbs) : null;
 const currentYear = new Date().getFullYear();
@@ -460,6 +460,24 @@ const currentYear = new Date().getFullYear();
     from { transform: translateX(100%); }
     to { transform: translateX(0); }
   }
+
+  /* Breadcrumb */
+  .breadcrumb {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.82rem;
+    color: var(--text-3);
+    margin-bottom: 1rem;
+  }
+  .breadcrumb a {
+    color: var(--text-2);
+    font-weight: 500;
+    transition: color 0.15s;
+  }
+  .breadcrumb a:hover { color: var(--primary); }
+  .breadcrumb span { color: var(--text-3); font-size: 0.75rem; }
+  .breadcrumb span:last-child { color: var(--text); font-weight: 600; }
 
   .container { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
 

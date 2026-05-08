@@ -45,6 +45,54 @@ export async function GET(context) {
       pubDate: new Date('2026-05-05'),
       link: '/productos/tymo-curlpro-review',
     },
+    {
+      title: 'StyleVibe 6-en-1 Air Styler Review 2026',
+      description: 'Review completa del StyleVibe 6-en-1 Air Styler. Secador con 6 accesorios magneticos: cepillo, rizador, difusor y mas.',
+      pubDate: new Date('2026-05-08'),
+      link: '/productos/stylevibe-air-styler-review',
+    },
+    {
+      title: 'Ufesa Secador X-Treme Shine 2600W Review 2026',
+      description: 'Review completa del Ufesa Secador X-Treme Shine 2600W. Motor AC, tecnologia ionica y 2600W de potencia para secado rapido.',
+      pubDate: new Date('2026-05-08'),
+      link: '/productos/ufesa-xtreme-shine-2600w-review',
+    },
+    {
+      title: 'Cecotec Bamba IoniCare Radiance 2500W Review 2026',
+      description: 'Review completa del Cecotec Secador Bamba IoniCare Radiance 2500W. Secador Cecotec con tecnologia ionica al mejor precio.',
+      pubDate: new Date('2026-05-08'),
+      link: '/productos/cecotec-bamba-ionicare-radiance-review',
+    },
+    {
+      title: 'Remington Shine Therapy Plancha Review 2026',
+      description: 'Review completa de la Remington Shine Therapy con placas de ceramico infusionadas en argan oil y keratina.',
+      pubDate: new Date('2026-05-08'),
+      link: '/productos/remington-shine-therapy-plancha-review',
+    },
+    {
+      title: 'ghd Gold Plancha Profesional Review 2026',
+      description: 'Review completa de la ghd Gold. La plancha de pelo profesional usada en peluquerias de todo el mundo. Placas ceramicas, temperatura optima 185C.',
+      pubDate: new Date('2026-05-08'),
+      link: '/productos/ghd-gold-plancha-review',
+    },
+    {
+      title: 'TYMO CurlPro Plus Review 2026',
+      description: 'Review completa del TYMO CurlPro Plus. Rizador automatico con barril de 25mm para cabello largo. Tecnologia automatica que riza sin tecnica.',
+      pubDate: new Date('2026-05-08'),
+      link: '/productos/tymo-curlpro-plus-review',
+    },
+    {
+      title: 'TYMO 4.0 Review 2026 - Cepillo Secador 5-en-1',
+      description: 'Review completa del TYMO 4.0. Cepillo secador 5-en-1 con motor de 110,000 RPM y 4 cabezales interchangeables.',
+      pubDate: new Date('2026-05-08'),
+      link: '/productos/tymo-4-review',
+    },
+    {
+      title: 'Cecotec Cepillo de Aire 10in1 CeramicCare AirBrush Review 2026',
+      description: 'Review completa del Cecotec Cepillo de Aire 10in1 CeramicCare AirBrush. 10 accesorios, motor 1200W, tecnologia CeramicCare.',
+      pubDate: new Date('2026-05-08'),
+      link: '/productos/cecotec-cepillo-10in1-airbrush-review',
+    },
   ];
 
   return rss({

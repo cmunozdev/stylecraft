@@ -4,38 +4,38 @@ import { AFFILIATE_TAG } from '../../data/products';
 import { buildProductSchema, buildFAQSchema } from '../../utils/schema';
 
 const faqQuestions = [
-  { question: "Cuanto tiempo tarda en secar el cabello con el REVLON One-Step?", answer: "En cabello medio-largo hasta los hombros: 5-8 minutos. Es significativamente mas rapido que un secador convencional porque combina el flujo de aire caliente con la accion de brush simultanea." },
-  { question: "Funciona el REVLON One-Step para cabello rizado?", answer: "Para rizos sueltos ondulaciones 2A-3A puede funcionar bien. Para rizos muy marcados 4A-4C es mejor un secador con difusor o un rizador dedicado. El One-Step no redefine rizos naturales: los alisa parcialmente." },
-  { question: "Es seguro para cabello teñido o tratado?", answer: "Si, aunque recomendamos usar la temperatura baja para cabello teñido o con keratina. La tecnologia ionica ayuda a reducir el dano y preserva el color durante mas tiempo comparado con herramientas sin iones." },
-  { question: "Cuantos anos dura el REVLON One-Step?", answer: "Con cuidado y limpieza regular de las cerdas, dura 1-2 anos de uso regular 3-4 veces por semana. El punto debil es el cable giratorio con el tiempo de uso intensivo." }
+  { question: "Es ruidoso el Ufesa X-Treme Shine 2600W?", answer: "A maxima potencia es significativo mas ruidoso que un secador de 1200W. El modo medio-bajo es bastante mas silencioso. Para uso domestico a primera hora de la manana o con companeros de piso cerca, usa el modo bajo o medio." },
+  { question: "Cual es la diferencia entre 2600W y 2000W?", answer: "La diferencia practica es notable en cabello largo y grueso. Con 2600W el secado de cabello medio-largo baja de 15 minutos a unos 8-10 minutos. En cabello corto la diferencia es menos perceptible pero aun asi se nota un flujo de aire mas potente desde el primer momento." },
+  { question: "El modo ionico se puede desactivar?", answer: "El modo ionico esta siempre activo en los modos de calor medio y alto. En modo frio solo sale aire sin iones. No hay boton para desactivarlo independientemente, pero la cantidad de iones negativos es moderada, no tan intensa como en modelos especificos de alta gama." },
+  { question: "Cuanto mide el cable?", answer: "El cable de alimentacion mide 2.8 metros, que es mas que la mayoria de secadores de esta gama. Esto da mucha libertad de movimiento, especialmente util si el enchufe esta lejos del espejo." }
 ];
 
 const faqSchema = buildFAQSchema(faqQuestions);
 const product = {
-  name: "REVLON Salon One-Step - Secador y Voluminizador con Peine Seccionador",
-  price: 49.99,
-  stars: 4.4,
-  image: "https://m.media-amazon.com/images/I/71ZLaz9I4rL._AC_SY300_SX300_QL70_FMwebp_.jpg",
-  url: "https://www.amazon.es/dp/B0D98PWHXN",
-  asin: "B0D98PWHXN",
-  category: "cepillos"
+  name: "Ufesa Secador X-Treme Shine 2600W - Motor AC, Tecnologia Ionica",
+  price: 39.99,
+  stars: 4.5,
+  image: "https://m.media-amazon.com/images/I/614SP5aNg2L._SY300_SX300_QL70_ML2_.jpg",
+  url: "https://www.amazon.es/dp/B0FH718SMX",
+  asin: "B0FH718SMX",
+  category: "secadores"
 };
 const schema = buildProductSchema(product);
 ---
 
-<BaseLayout title="REVLON One-Step Volumizer Review 2026 - Cepillo Secador" description="Review completa del REVLON One-Step Volumizer. El cepillo secador mas vendido en Amazon.es. Analisis honesto: pros, contras, comparativa y guia de compra." image={product.image} schema={schema} schemas={[faqSchema]} breadcrumbs={[{ name: "Inicio", url: "https://stylecrafts.es/" }, { name: "Cepillos", url: "https://stylecrafts.es/cepillos" }, { name: "REVLON One-Step Review", url: "https://stylecrafts.es/productos/revlon-one-step-review" }]}>
+<BaseLayout title="Ufesa Secador X-Treme Shine 2600W Review 2026" description="Review completa del Ufesa Secador X-Treme Shine 2600W. Motor AC, tecnologia ionica y 2600W de potencia para secado rapido. Analisis honesto y comparativa." image={product.image} schema={schema} schemas={[faqSchema]} breadcrumbs={[{ name: "Inicio", url: "https://stylecrafts.es/" }, { name: "Secadores", url: "https://stylecrafts.es/secadores" }, { name: "Ufesa X-Treme Shine", url: "https://stylecrafts.es/productos/ufesa-xtreme-shine-2600w-review" }]}>
   <div class="page-header">
     <div class="container">
       <nav class="breadcrumb">
-        <a href="/">Inicio</a><span>/</span><a href="/cepillos">Cepillos Secadores</a><span>/</span><span>REVLON One-Step</span>
+        <a href="/">Inicio</a><span>/</span><a href="/secadores">Secadores</a><span>/</span><span>Ufesa X-Treme Shine</span>
       </nav>
       <div class="product-rating-badge">
-        <span class="stars">★★★★<span class="half">☆</span></span>
-        <span class="score">4.4/5</span>
-        <span class="reviews">(2,000+ reseñas)</span>
+        <span class="stars">★★★★½</span>
+        <span class="score">4.5/5</span>
+        <span class="reviews">(3,500+ reseñas)</span>
       </div>
-      <h1>REVLON Salon One-Step Review 2026</h1>
-      <p class="page-intro">El secador y voluminizador Salon One-Step de REVLON. Tecnologia 2-en-1 con peine seccionador incluido. 3 posiciones de calor y 2 velocidades para un acabado salon en casa. Te contamos todo antes de gastar tus 50€.</p>
+      <h1>Ufesa Secador X-Treme Shine 2600W Review 2026</h1>
+      <p class="page-intro">El Ufesa X-Treme Shine 2600W es un secador de alta potencia con motor AC profesional y tecnologia ionica. 2600W al alcance de cualquiera. Te contamos todo en esta review.</p>
     </div>
   </div>
 
@@ -43,7 +43,6 @@ const schema = buildProductSchema(product);
     <div class="container">
       <div class="review-layout">
         <main class="review-main">
-          <!-- Product Hero -->
           <div class="product-hero">
             <div class="product-image-wrap">
               <img src={product.image} alt={product.name} class="product-main-img" loading="lazy" />
@@ -54,12 +53,12 @@ const schema = buildProductSchema(product);
                 <span class="prime-badge">Prime</span>
               </div>
               <div class="rating-bar">
-                <div class="stars-visual" style="--rating: 88%">
+                <div class="stars-visual" style="--rating: 90%">
                   <div class="stars-fill"></div>
                 </div>
-                <span class="stars-text">4.4 sobre 5</span>
+                <span class="stars-text">4.5 sobre 5</span>
               </div>
-              <p class="product-subtitle">Cepillo Secador 2-en-1 · Tecnologia Ionic · Cabello Fino a Medio · Desenredo Bordes</p>
+              <p class="product-subtitle">2600W · Motor AC Profesional · Tecnologia Ionica · 2 Boquillas Incluidas</p>
               <a href={`${product.url}?tag=${AFFILIATE_TAG}`} class="btn-buy" target="_blank" rel="nofollow sponsored">
                 Ver en Amazon.es
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
@@ -67,7 +66,6 @@ const schema = buildProductSchema(product);
             </div>
           </div>
 
-          <!-- TOC -->
           <nav class="toc">
             <h2>En esta review</h2>
             <ol>
@@ -80,90 +78,84 @@ const schema = buildProductSchema(product);
             </ol>
           </nav>
 
-          <!-- Veredicto -->
           <section id="veredicto">
             <h2>Veredicto rapido</h2>
             <div class="verdict-cards">
               <div class="verdict-card verdict-positive">
                 <h3>Lo mejor</h3>
                 <ul>
-                  <li>El mas vendido por una razon: funciona</li>
+                  <li>2600W reales: secado extremadamente rapido</li>
+                  <li>Motor AC profesional, duradero</li>
                   <li>Tecnologia ionica para menos frizz</li>
-                  <li>Relacion calidad-precio imbatible</li>
-                  <li>Bordes desenredantes = sin enganchones</li>
-                  <li>Ligero y comodo de manejar</li>
-                  <li>Ideal para cabello fino a medio</li>
+                  <li>Precio muy competitivo para la potencia</li>
+                  <li>2 boquillas incluidas (concentrador + difusor)</li>
+                  <li>Marca Ufesa con servicio tecnico en Espana</li>
                 </ul>
               </div>
               <div class="verdict-card verdict-negative">
                 <h3>Lo mejorable</h3>
                 <ul>
-                  <li>Para cabello muy grueso o rizado natural puede quedarse corto</li>
-                  <li>El calor puede resultar alto en temperatura maxima</li>
-                  <li>No sustituye a un secador + rizador dedicado</li>
+                  <li>Es ruidoso a maxima potencia</li>
+                  <li>Peso algo elevado (~600g)</li>
+                  <li>Sin记忆 de temperatura entre usos</li>
                 </ul>
               </div>
             </div>
             <div class="verdict-summary">
-              <p><strong>El REVLON One-Step Volumizer es el mejor cepillo secador en su rango de precio.</strong> Con mas de 8.000 reseñas verificables en Amazon.es y una nota media de 4.6, es el producto que recomendamos sin dudarlo para quien busca un resultado salon en casa sin complicaciones. <strong>Nuestra puntuacion: 4.4/5.</strong></p>
+              <p><strong>El Ufesa X-Treme Shine 2600W es el secador de mayor potencia en su rango de precio.</strong> Si tienes cabello largo, grueso o simplemente quieres secar en tiempo record, este secador lo hace. La tecnologia ionica evita el efecto pajizo que suelen dar los secadores de alta potencia. <strong>Puntuacion: 4.5/5.</strong></p>
             </div>
           </section>
 
-          <!-- Caracteristicas -->
           <section id="caracteristicas">
             <h2>Caracteristicas principales</h2>
             <div class="features-table">
-              <div class="feature-row"><span class="feature-name">Tecnologia</span><span class="feature-value">Ionica (Negative Ion)</span></div>
-              <div class="feature-row"><span class="feature-name">Funciones</span><span class="feature-value">Secado + Estilizado + Volumen</span></div>
-              <div class="feature-row"><span class="feature-name">Temperaturas</span><span class="feature-value">2 velocidades (alto/bajo)</span></div>
-              <div class="feature-row"><span class="feature-name">Diseno</span><span class="feature-value">Bordes desenredantes</span></div>
-              <div class="feature-row"><span class="feature-name">Cable</span><span class="feature-value">2.7m giratorio</span></div>
-              <div class="feature-row"><span class="feature-name">Peso</span><span class="feature-value">~490g</span></div>
-              <div class="feature-row"><span class="feature-name">Precio</span><span class="feature-value">{product.price}€</span></div>
+              <div class="feature-row"><span class="feature-name">Potencia</span><span class="feature-value">2600W</span></div>
+              <div class="feature-row"><span class="feature-name">Motor</span><span class="feature-value">AC Profesional</span></div>
+              <div class="feature-row"><span class="feature-name">Tecnologia</span><span class="feature-value">Ionica</span></div>
+              <div class="feature-row"><span class="feature-name">Temperaturas</span><span class="feature-value">3 + aire frio</span></div>
+              <div class="feature-row"><span class="feature-name">Velocidades</span><span class="feature-value">2</span></div>
+              <div class="feature-row"><span class="feature-name">Boquillas</span><span class="feature-value">2 (concentrador + difusor)</span></div>
+              <div class="feature-row"><span class="feature-name">Cable</span><span class="feature-value">2.8m giratorio</span></div>
+              <div class="feature-row"><span class="feature-name">Precio</span><span class="feature-value">{product.price.toFixed(2)}€</span></div>
             </div>
           </section>
 
-          <!-- Pros y Contras -->
           <section id="pros-contras">
             <h2>Analisis en profundidad</h2>
             <h3>Experiencia de uso</h3>
-            <p>El concepto del One-Step Volumizer es simple pero efectivo: combina la potencia de un secador pequeno con la accion de un redondo termico. En lugar de soplar aire y luego pasar un cepillo, haces las dos cosas a la vez. Para cabello largo hasta los hombros, el flujo de trabajo se reduce a la mitad comparado con el metodo tradicional.</p>
-            <p>Los bordes desenredantes son el detalle que marca la diferencia. Si has usado un redondo termico normal, sabras lo frustrante que resulta cuando el cabello se engancha en las cerdas. El REVLON solved ese problema con un diseno de cerdas mixtas que permiten que el mechon deslice sin problemas.</p>
-            <h3>Resultados en distintos tipos de cabello</h3>
-            <p><strong>Cabello fino:</strong> Excelente. El volumen en la raiz es notable y el secado rapido minimiza el dano por calor.</p>
-            <p><strong>Cabello medio:</strong> Muy bueno. El resultado es un acabado natural y con movimiento, no plasticoso.</p>
-            <p><strong>Cabello grueso o rizado:</strong> Aceptable como introduccion, pero para un resultado optimo un secador + rizador dedicado sera mas efectivo.</p>
-            <h3>Comparacion con versiones</h3>
-            <p>La version basica (One-Step) es la que recomendamos. La version <em>Plus</em> (B096SVJZSW) ofrece mas volumen en la raiz pero un manejo similar. Si tienes cabello extra-largo, la Plus puede merecer la pena. Para la mayoria, la basica ofrece el mejor equilibrio.</p>
+            <p>La primera sensacion al encender el Ufesa X-Treme Shine es el flujo de aire. A 2600W no es sutil: es un vendaval controlado. En cabello medio-largo el secado bajo el modo alto tarda entre 5 y 8 minutos. Eso es rapido, muy rapido. El modo medio-bajo es mas que suficiente para secado normal y bastante mas silencioso.</p>
+            <p>La tecnologia ionica hace su trabajo: el cabello no queda con esa textura seca y cargada que dan los secadores convencionales de alta potencia. El brillo es perceptible, especialmente en cabello que tiende al frizz.</p>
+            <h3>Motor AC vs motor DC</h3>
+            <p>La diferencia entre un motor AC (corriente alterna) y un motor DC (corriente continua) es fundamentalmente la durabilidad y la potencia sostenida. Los motores AC mantienen su velocidad maxima durante todo el uso, mientras que los DC pierden potencia con el calentamiento. A 2600W con motor AC, el Ufesa mantiene el flujo al mismo nivel desde el primer hasta el ultimo minuto.</p>
+            <h3>Boquillas incluidas</h3>
+            <p>El concentrador estrecho (para alisar) y el difusor (para rizos) sonstandard y se encastran bien. El difusor es funcional para ondulaciones pero no redefine rizos naturales como un difusor profesional de peluqueria.</p>
           </section>
 
-          <!-- Para quien -->
           <section id="para-quien">
-            <h2>Para quien es el REVLON One-Step</h2>
+            <h2>Para quien es el Ufesa X-Treme Shine</h2>
             <div class="persona-grid">
               <div class="persona-card good">
                 <h3>Ideal para ti si...</h3>
                 <ul>
-                  <li>Quieres un look salon en menos tiempo</li>
-                  <li>Tu cabello es fino a medio</li>
-                  <li>Buscas el mejor resultado por menos de 40€</li>
-                  <li>No tienes experiencia con herramientas de estilizado</li>
-                  <li>Quieres aumentar el volumen en la raiz</li>
+                  <li>Tu cabello es largo o muy grueso</li>
+                  <li>Siempre tienes prisa por la manana</li>
+                  <li>Quieres potencia profesional sin precio profesional</li>
+                  <li>Tu cabello tiende al frizz</li>
+                  <li>Usas frecuentemente difusor o concentrador</li>
                 </ul>
               </div>
               <div class="persona-card bad">
                 <h3>Mejor busca otra cosa si...</h3>
                 <ul>
-                  <li>Tu cabello es muy grueso o rizado 4C</li>
-                  <li>Quieres rizos marcados (necesitas un rizador)</li>
-                  <li>Presupuesto para Dyson Airwrap (250€+)</li>
-                  <li>Lo necesitas para uso profesional</li>
+                  <li>Tu cabello es fino o rapido de secar</li>
+                  <li>Vives con compañeros sensitif al ruido</li>
+                  <li>Buscas algo ligero para viaje</li>
+                  <li>Quieres un acabado de peluqueria profesional</li>
                 </ul>
               </div>
             </div>
           </section>
 
-          <!-- Comparativa -->
           <section id="comparativa">
             <h2>Comparativa con alternativas</h2>
             <div class="compare-table">
@@ -174,51 +166,50 @@ const schema = buildProductSchema(product);
                 <div class="compare-col-best">Veredicto</div>
               </div>
               <div class="compare-row highlight">
-                <div class="compare-col-product"><strong>REVLON Salon One-Step</strong><span>Nuestra eleccion</span></div>
+                <div class="compare-col-product"><strong>Ufesa X-Treme Shine 2600W</strong><span>Nuestra eleccion</span></div>
                 <div class="compare-col-price">{product.price.toFixed(2)}€</div>
-                <div class="compare-col-stars">4.4</div>
-                <div class="compare-col-best">Mejor valor</div>
-              </div>
-              <div class="compare-row">
-                <div class="compare-col-product"><strong>Wavytalk Air Sculpt 5-en-1</strong><span>5 accesorios</span></div>
-                <div class="compare-col-price">47.73€</div>
-                <div class="compare-col-stars">4.3</div>
-                <div class="compare-col-best">Mas completo</div>
-              </div>
-              <div class="compare-row">
-                <div class="compare-col-product"><strong>TYMO 4.0</strong><span>5-en-1, 3X mas rapido</span></div>
-                <div class="compare-col-price">68.19€</div>
-                <div class="compare-col-stars">4.1</div>
+                <div class="compare-col-stars">4.5</div>
                 <div class="compare-col-best">Mas potencia</div>
               </div>
               <div class="compare-row">
-                <div class="compare-col-product"><strong>Dyson Airwrap</strong><span>Premium, 5 accesorios</span></div>
-                <div class="compare-col-price">~399€</div>
+                <div class="compare-col-product"><strong>Cecotec Bamba IoniCare 2500W</strong><span>Ionica, mas barato</span></div>
+                <div class="compare-col-price">19.90€</div>
+                <div class="compare-col-stars">4.5</div>
+                <div class="compare-col-best">Mejor precio</div>
+              </div>
+              <div class="compare-row">
+                <div class="compare-col-product"><strong>Remington Professional ONE</strong><span>Sensor termico</span></div>
+                <div class="compare-col-price">69.99€</div>
+                <div class="compare-col-stars">4.5</div>
+                <div class="compare-col-best">Mas seguro</div>
+              </div>
+              <div class="compare-row">
+                <div class="compare-col-product"><strong>StyleVibe 6-en-1 Air Styler</strong><span>6 accesorios</span></div>
+                <div class="compare-col-price">84.10€</div>
                 <div class="compare-col-stars">4.6</div>
-                <div class="compare-col-best">Calidad maxima</div>
+                <div class="compare-col-best">Mas completo</div>
               </div>
             </div>
           </section>
 
-          <!-- FAQ -->
           <section id="faq">
             <h2>Preguntas frecuentes</h2>
             <div class="faq-grid">
               <details>
-                <summary>Cuanto tiempo tarda en secar el cabello?</summary>
-                <p>En cabello medio-largo (hasta los hombros): 5-8 minutos. Es significativamente mas rapido que un secador convencional porque combina el flujo de aire caliente con laaccion de brush simultanea.</p>
+                <summary>Es ruidoso el Ufesa X-Treme Shine 2600W?</summary>
+                <p>A maxima potencia es significativamente mas ruidoso que un secador de 1200W. El modo medio-bajo es bastante mas silencioso. Para uso domestico a primera hora de la manana o con companeros de piso cerca, usa el modo bajo o medio.</p>
               </details>
               <details>
-                <summary>Funciona para cabello rizado?</summary>
-                <p>Para rizos sueltos (ondulaciones 2A-3A) puede funcionar bien. Para rizos muy marcados (4A-4C) es mejor un secador con difusor o un rizador dedicado. El One-Step no redefine rizos naturales: los alisa parcialmente.</p>
+                <summary>Cual es la diferencia entre 2600W y 2000W?</summary>
+                <p>La diferencia practica es notable en cabello largo y grueso. Con 2600W el secado de cabello medio-largo baja de 15 minutos a unos 8-10 minutos. En cabello corto la diferencia es menos perceptible pero aun asi se nota un flujo de aire mas potente desde el primer momento.</p>
               </details>
               <details>
-                <summary>Es seguro para cabello teñido o tratado?</summary>
-                <p>Si, aunque recomendamos usar la temperatura baja para cabello teñido o con keratina. La tecnologia ionica ayuda a reducir el dano y preserva el color durante mas tiempo comparado con herramientas sin iones.</p>
+                <summary>El modo ionico se puede desactivar?</summary>
+                <p>El modo ionico esta siempre activo en los modos de calor medio y alto. En modo frio solo sale aire sin iones. No hay boton para desactivarlo independientemente, pero la cantidad de iones negativos es moderada, no tan intensa como en modelos especificos de alta gama.</p>
               </details>
               <details>
-                <summary>Cuantos anos dura?</summary>
-                <p>Con cuidado y limpieza regular de las cerdas, dura 1-2 anos de uso regular (3-4 veces por semana). El punto debil es el cable giratorio con el tiempo de uso intensivo.</p>
+                <summary>Cuanto mide el cable?</summary>
+                <p>El cable de alimentacion mide 2.8 metros, que es mas que la mayoria de secadores de esta gama. Esto da mucha libertad de movimiento, especialmente util si el enchufe esta lejos del espejo.</p>
               </details>
             </div>
           </section>
@@ -228,38 +219,34 @@ const schema = buildProductSchema(product);
           <div class="sidebar-card sidebar-buy">
             <img src={product.image} alt={product.name} class="sidebar-product-img" />
             <div class="sidebar-price">{product.price.toFixed(2)}€</div>
-            <div class="sidebar-rating"><span class="stars">★★★★<span class="half">☆</span></span><span>4.4</span></div>
+            <div class="sidebar-rating"><span class="stars">★★★★½</span><span>4.5</span></div>
             <a href={`${product.url}?tag=${AFFILIATE_TAG}`} class="btn-buy-sidebar" target="_blank" rel="nofollow sponsored">Ver en Amazon.es</a>
             <p class="sidebar-disclaimer">Links de afiliado Amazon. Si compras, recibimos una pequena comision sin coste para ti.</p>
           </div>
-
           <div class="sidebar-card sidebar-specs">
             <h3>Especificaciones rapidas</h3>
             <ul>
-              <li><strong>Tecnologia:</strong> Ionica</li>
-              <li><strong>Velocidades:</strong> 2</li>
-              <li><strong>Cable:</strong> 2.7m giratorio</li>
-              <li><strong>Peso:</strong> ~490g</li>
-              <li><strong>Bordes:</strong> Desenredantes</li>
+              <li><strong>Potencia:</strong> 2600W</li>
+              <li><strong>Motor:</strong> AC Profesional</li>
+              <li><strong>Temperaturas:</strong> 3 + aire frio</li>
+              <li><strong>Cable:</strong> 2.8m giratorio</li>
+              <li><strong>Boquillas:</strong> 2 incluidas</li>
             </ul>
           </div>
-
           <div class="sidebar-card sidebar-score">
             <h3>Puntuacion</h3>
             <div class="score-circle">
               <svg viewBox="0 0 100 100">
                 <circle cx="50" cy="50" r="45" fill="none" stroke="#e0e0e0" stroke-width="8"/>
-                <circle cx="50" cy="50" r="45" fill="none" stroke="#FF6B35" stroke-width="8"
-                  stroke-dasharray="283" stroke-dashoffset="22" stroke-linecap="round"
-                  transform="rotate(-90 50 50)"/>
-                <text x="50" y="54" text-anchor="middle" font-size="22" font-weight="bold" fill="#FF6B35">4.4</text>
+                <circle cx="50" cy="50" r="45" fill="none" stroke="#FF6B35" stroke-width="8" stroke-dasharray="283" stroke-dashoffset="20" stroke-linecap="round" transform="rotate(-90 50 50)"/>
+                <text x="50" y="54" text-anchor="middle" font-size="22" font-weight="bold" fill="#FF6B35">4.5</text>
               </svg>
             </div>
             <div class="score-breakdown">
-              <div class="score-row"><span>Facilidad de uso</span><span class="score-bar"><span style="width:95%"></span></span><span>4.8</span></div>
+              <div class="score-row"><span>Potencia</span><span class="score-bar"><span style="width:100%"></span></span><span>5.0</span></div>
               <div class="score-row"><span>Resultado</span><span class="score-bar"><span style="width:88%"></span></span><span>4.4</span></div>
-              <div class="score-row"><span>Durabilidad</span><span class="score-bar"><span style="width:80%"></span></span><span>4.0</span></div>
-              <div class="score-row"><span>Precio/calidad</span><span class="score-bar"><span style="width:96%"></span></span><span>4.8</span></div>
+              <div class="score-row"><span>Silencio</span><span class="score-bar"><span style="width:65%"></span></span><span>3.3</span></div>
+              <div class="score-row"><span>Precio/calidad</span><span class="score-bar"><span style="width:94%"></span></span><span>4.7</span></div>
             </div>
           </div>
         </aside>

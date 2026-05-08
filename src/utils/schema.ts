@@ -2,10 +2,10 @@
 
 export function buildCollectionSchema(category, products) {
   const urlMap = {
-    secadores: "https://stylecraft.es/secadores",
-    planchas: "https://stylecraft.es/planchas",
-    rizadores: "https://stylecraft.es/rizadores",
-    cepillos: "https://stylecraft.es/cepillos",
+    secadores: "https://stylecrafts.es/secadores",
+    planchas: "https://stylecrafts.es/planchas",
+    rizadores: "https://stylecrafts.es/rizadores",
+    cepillos: "https://stylecrafts.es/cepillos",
   };
   const nameMap = {
     secadores: "Mejores Secadores de Pelo 2026",
@@ -48,12 +48,12 @@ export function buildCollectionSchema(category, products) {
     "@context": "https://schema.org",
     "@type": "CollectionPage",
     "name": nameMap[category] || category,
-    "url": urlMap[category] || "https://stylecraft.es",
+    "url": urlMap[category] || "https://stylecrafts.es",
     "description": "Guia de compra y reviews de " + category + ".",
     "publisher": {
       "@type": "Organization",
       "name": "StyleCraft",
-      "url": "https://stylecraft.es"
+      "url": "https://stylecrafts.es"
     },
     "mainEntity": {
       "@type": "ItemList",
@@ -63,7 +63,7 @@ export function buildCollectionSchema(category, products) {
   };
 }
 
-export function buildArticleSchema(title, url, description, image) {
+export function buildArticleSchema(title, url, description, image, section) {
   const schema = {
     "@context": "https://schema.org",
     "@type": "Article",
@@ -73,12 +73,12 @@ export function buildArticleSchema(title, url, description, image) {
     "publisher": {
       "@type": "Organization",
       "name": "StyleCraft",
-      "url": "https://stylecraft.es"
+      "url": "https://stylecrafts.es"
     },
     "author": {
       "@type": "Organization",
       "name": "StyleCraft Editorial",
-      "url": "https://stylecraft.es"
+      "url": "https://stylecrafts.es"
     },
     "datePublished": "2026-05-01",
     "dateModified": "2026-05-08",
@@ -90,6 +90,9 @@ export function buildArticleSchema(title, url, description, image) {
   };
   if (image) {
     schema["image"] = image;
+  }
+  if (section) {
+    schema["articleSection"] = section;
   }
   return schema;
 }
@@ -127,25 +130,25 @@ export function buildHomeSchema() {
       {
         "@type": "WebSite",
         "name": "StyleCraft",
-        "url": "https://stylecraft.es",
+        "url": "https://stylecrafts.es",
         "description": "Tu guia experta en herramientas de estilismo capilar.",
         "publisher": {
           "@type": "Organization",
           "name": "StyleCraft",
-          "url": "https://stylecraft.es"
+          "url": "https://stylecrafts.es"
         },
         "potentialAction": {
           "@type": "SearchAction",
-          "target": "https://stylecraft.es/?q={search_term_string}",
+          "target": "https://stylecrafts.es/?q={search_term_string}",
           "query-input": "required name=search_term_string"
         }
       },
       {
         "@type": "Organization",
         "name": "StyleCraft",
-        "url": "https://stylecraft.es",
+        "url": "https://stylecrafts.es",
         "description": "Tu guia experta en herramientas de estilismo capilar. Reviews, comparativas y guias de compra de los mejores secadores, planchas y rizadores de Amazon.es.",
-        "logo": "https://stylecraft.es/favicon.svg",
+        "logo": "https://stylecrafts.es/favicon.svg",
         "sameAs": [],
         "knowsAbout": ["herramientas de estilismo capilar", "secadores de pelo", "planchas de pelo", "rizadores automaticos", "cepillos secadores"],
         "areaServed": {
@@ -198,9 +201,9 @@ export function buildAboutSchema() {
     "mainEntity": {
       "@type": "Organization",
       "name": "StyleCraft",
-      "url": "https://stylecraft.es",
+      "url": "https://stylecrafts.es",
       "description": "Tu guia experta en herramientas de estilismo capilar. Reviews, comparativas y guias de compra de los mejores secadores, planchas y rizadores de Amazon.es.",
-      "logo": "https://stylecraft.es/favicon.svg",
+      "logo": "https://stylecrafts.es/favicon.svg",
       "sameAs": [],
       "knowsAbout": ["herramientas de estilismo capilar", "secadores de pelo", "planchas de pelo", "rizadores automaticos", "cepillos secadores"],
       "areaServed": {

@@ -6,22 +6,16 @@
     </linearGradient>
   </defs>
   <rect width="1200" height="630" fill="url(#bg)"/>
-  <!-- Decorative circles -->
   <circle cx="1050" cy="80" r="200" fill="rgba(255,255,255,0.05)"/>
   <circle cx="80" cy="580" r="150" fill="rgba(255,255,255,0.05)"/>
   <circle cx="1100" cy="500" r="180" fill="rgba(255,107,53,0.1)"/>
-  <!-- Logo mark -->
   <circle cx="80" cy="80" r="32" fill="none" stroke="rgba(255,255,255,0.6)" stroke-width="4"/>
   <path d="M60 80 Q80 50 100 80" stroke="rgba(255,255,255,0.6)" stroke-width="3" fill="none" stroke-linecap="round"/>
   <path d="M80 50 Q100 80 120 80" stroke="rgba(255,107,53,0.8)" stroke-width="3" fill="none" stroke-linecap="round"/>
-  <!-- Title -->
   <text x="80" y="180" font-family="'Playfair Display', Georgia, serif" font-size="72" font-weight="700" fill="#FFFFFF">StyleCraft</text>
-  <text x="80" y="240" font-family="system-ui, sans-serif" font-size="28" fill="rgba(255,255,255,0.75)" font-weight="400">Tu guia experta en herramientas de estilismo</text>
-  <!-- Divider -->
+  <text x="80" y="240" font-family="system-ui, sans-serif" font-size="28" fill="rgba(255,255,255,0.75)" font-weight="400">Mejores Secadores de Pelo 2026</text>
   <rect x="80" y="280" width="120" height="4" rx="2" fill="#FF6B35"/>
-  <!-- Subtitle -->
-  <text x="80" y="340" font-family="system-ui, sans-serif" font-size="22" fill="rgba(255,255,255,0.6)">Secadores · Planchas · Rizadores · Cepillos</text>
-  <!-- Amazon badge -->
+  <text x="80" y="340" font-family="system-ui, sans-serif" font-size="22" fill="rgba(255,255,255,0.6)">Reviews, comparativas y guia de compra</text>
   <rect x="80" y="520" width="200" height="44" rx="8" fill="rgba(255,255,255,0.1)" stroke="rgba(255,255,255,0.2)" stroke-width="1"/>
-  <text x="180" y="550" font-family="system-ui, sans-serif" font-size="18" fill="rgba(255,255,255,0.7)" text-anchor="middle">stylecrafts.es</text>
+  <text x="180" y="550" font-family="system-ui, sans-serif" font-size="18" fill="rgba(255,255,255,0.7)" text-anchor="middle">stylecrafts.es/secadores</text>
 </svg>

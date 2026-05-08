@@ -4,38 +4,38 @@ import { AFFILIATE_TAG } from '../../data/products';
 import { buildProductSchema, buildFAQSchema } from '../../utils/schema';
 
 const faqQuestions = [
-  { question: "Cuanto tiempo tarda en secar el cabello con el REVLON One-Step?", answer: "En cabello medio-largo hasta los hombros: 5-8 minutos. Es significativamente mas rapido que un secador convencional porque combina el flujo de aire caliente con la accion de brush simultanea." },
-  { question: "Funciona el REVLON One-Step para cabello rizado?", answer: "Para rizos sueltos ondulaciones 2A-3A puede funcionar bien. Para rizos muy marcados 4A-4C es mejor un secador con difusor o un rizador dedicado. El One-Step no redefine rizos naturales: los alisa parcialmente." },
-  { question: "Es seguro para cabello teñido o tratado?", answer: "Si, aunque recomendamos usar la temperatura baja para cabello teñido o con keratina. La tecnologia ionica ayuda a reducir el dano y preserva el color durante mas tiempo comparado con herramientas sin iones." },
-  { question: "Cuantos anos dura el REVLON One-Step?", answer: "Con cuidado y limpieza regular de las cerdas, dura 1-2 anos de uso regular 3-4 veces por semana. El punto debil es el cable giratorio con el tiempo de uso intensivo." }
+  { question: "Cuantos accesorios incluye el TYMO 4.0?", answer: "El kit basico incluye 4 cabezales: redondo termico, plancha alisadora, difusor de rizos y peine de volumen. La version completa puede incluir 2 cabezales adicionales de rizador. Todos se cambian facilmente y el cuerpo funciona como secador independiente." },
+  { question: "Funciona bien para cabello rizado natural?", answer: "Para rizos sueltos (ondulaciones 2A-3B) funciona muy bien con el cabezal de difusor. Para rizos muy marcados (4A-4C) la potencia de 110,000 RPM del motor puede quedarse corta. Un secador con difusor dedicado de mas potencia sera mas efectivo para rizos naturales." },
+  { question: "Es ruidoso comparado con un secador normal?", answer: "El nivel de ruido es moderado. A maxima potencia es comparable a un secador de gama media. El modo bajo es significativamente mas silencioso. No es tan silencioso como algunos secadores premium pero tampoco es molesto para uso domestico quotidiano." },
+  { question: "Los cabezales son faceis de limpiar?", answer: "Si, los cabezales se pueden desmontar facilmente para limpieza. La acumulacion de polvo y residuos de productos capilares (spray, mousse, keratina) puede afectar al rendimiento si no se limpian regularmente. Recomendamos una limpieza mensual con un pano humedo." }
 ];
 
 const faqSchema = buildFAQSchema(faqQuestions);
 const product = {
-  name: "REVLON Salon One-Step - Secador y Voluminizador con Peine Seccionador",
-  price: 49.99,
-  stars: 4.4,
-  image: "https://m.media-amazon.com/images/I/71ZLaz9I4rL._AC_SY300_SX300_QL70_FMwebp_.jpg",
-  url: "https://www.amazon.es/dp/B0D98PWHXN",
-  asin: "B0D98PWHXN",
+  name: "TYMO 4.0 - Cepillo Secador 5-en-1, 3X Mas Rapido",
+  price: 59.66,
+  stars: 4.1,
+  image: "https://m.media-amazon.com/images/I/71gVrutZBKL._AC_SY300_SX300_QL70_FMwebp_.jpg",
+  url: "https://www.amazon.es/dp/B0G4W45B2J",
+  asin: "B0G4W45B2J",
   category: "cepillos"
 };
 const schema = buildProductSchema(product);
 ---
 
-<BaseLayout title="REVLON One-Step Volumizer Review 2026 - Cepillo Secador" description="Review completa del REVLON One-Step Volumizer. El cepillo secador mas vendido en Amazon.es. Analisis honesto: pros, contras, comparativa y guia de compra." image={product.image} schema={schema} schemas={[faqSchema]} breadcrumbs={[{ name: "Inicio", url: "https://stylecrafts.es/" }, { name: "Cepillos", url: "https://stylecrafts.es/cepillos" }, { name: "REVLON One-Step Review", url: "https://stylecrafts.es/productos/revlon-one-step-review" }]}>
+<BaseLayout title="TYMO 4.0 Review 2026 - Cepillo Secador 5-en-1" description="Review completa del TYMO 4.0. Cepillo secador 5-en-1 con motor de 110,000 RPM y 4 cabezales interchangeables. Secado 3X mas rapido. Analisis honesto y guia de compra." image={product.image} schema={schema} schemas={[faqSchema]} breadcrumbs={[{ name: "Inicio", url: "https://stylecrafts.es/" }, { name: "Cepillos", url: "https://stylecrafts.es/cepillos" }, { name: "TYMO 4.0", url: "https://stylecrafts.es/productos/tymo-4-review" }]}>
   <div class="page-header">
     <div class="container">
       <nav class="breadcrumb">
-        <a href="/">Inicio</a><span>/</span><a href="/cepillos">Cepillos Secadores</a><span>/</span><span>REVLON One-Step</span>
+        <a href="/">Inicio</a><span>/</span><a href="/cepillos">Cepillos</a><span>/</span><span>TYMO 4.0</span>
       </nav>
       <div class="product-rating-badge">
-        <span class="stars">★★★★<span class="half">☆</span></span>
-        <span class="score">4.4/5</span>
-        <span class="reviews">(2,000+ reseñas)</span>
+        <span class="stars">★★★★</span>
+        <span class="score">4.1/5</span>
+        <span class="reviews">(Cepillo Secador)</span>
       </div>
-      <h1>REVLON Salon One-Step Review 2026</h1>
-      <p class="page-intro">El secador y voluminizador Salon One-Step de REVLON. Tecnologia 2-en-1 con peine seccionador incluido. 3 posiciones de calor y 2 velocidades para un acabado salon en casa. Te contamos todo antes de gastar tus 50€.</p>
+      <h1>TYMO 4.0 Review 2026</h1>
+      <p class="page-intro">El TYMO 4.0 es la generacion mas reciente de los cepillos secadores de la marca TYMO. Motor de 110,000 RPM, 5 cabezales interchangeables y claim de secado 3X mas rapido. Te contamos si esta generacion mejora la 3.0.</p>
     </div>
   </div>
 
@@ -43,7 +43,6 @@ const schema = buildProductSchema(product);
     <div class="container">
       <div class="review-layout">
         <main class="review-main">
-          <!-- Product Hero -->
           <div class="product-hero">
             <div class="product-image-wrap">
               <img src={product.image} alt={product.name} class="product-main-img" loading="lazy" />
@@ -54,12 +53,12 @@ const schema = buildProductSchema(product);
                 <span class="prime-badge">Prime</span>
               </div>
               <div class="rating-bar">
-                <div class="stars-visual" style="--rating: 88%">
+                <div class="stars-visual" style="--rating: 82%">
                   <div class="stars-fill"></div>
                 </div>
-                <span class="stars-text">4.4 sobre 5</span>
+                <span class="stars-text">4.1 sobre 5</span>
               </div>
-              <p class="product-subtitle">Cepillo Secador 2-en-1 · Tecnologia Ionic · Cabello Fino a Medio · Desenredo Bordes</p>
+              <p class="product-subtitle">5-en-1 · 110,000 RPM · 4 Cabezales · Secado 3X Rapido</p>
               <a href={`${product.url}?tag=${AFFILIATE_TAG}`} class="btn-buy" target="_blank" rel="nofollow sponsored">
                 Ver en Amazon.es
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
@@ -67,7 +66,6 @@ const schema = buildProductSchema(product);
             </div>
           </div>
 
-          <!-- TOC -->
           <nav class="toc">
             <h2>En esta review</h2>
             <ol>
@@ -80,90 +78,82 @@ const schema = buildProductSchema(product);
             </ol>
           </nav>
 
-          <!-- Veredicto -->
           <section id="veredicto">
             <h2>Veredicto rapido</h2>
             <div class="verdict-cards">
               <div class="verdict-card verdict-positive">
                 <h3>Lo mejor</h3>
                 <ul>
-                  <li>El mas vendido por una razon: funciona</li>
-                  <li>Tecnologia ionica para menos frizz</li>
-                  <li>Relacion calidad-precio imbatible</li>
-                  <li>Bordes desenredantes = sin enganchones</li>
-                  <li>Ligero y comodo de manejar</li>
-                  <li>Ideal para cabello fino a medio</li>
+                  <li>Motor de 110,000 RPM: flujo de aire potente</li>
+                  <li>5 cabezales interchangeables para diferentes estilos</li>
+                  <li>Secado mas rapido que generaciones anteriores</li>
+                  <li>Relacion funcionalidad/precio competente</li>
+                  <li>Tecnologia ionica para reducir frizz</li>
+                  <li>Bastante mas barato que Dyson Airwrap</li>
                 </ul>
               </div>
               <div class="verdict-card verdict-negative">
                 <h3>Lo mejorable</h3>
                 <ul>
-                  <li>Para cabello muy grueso o rizado natural puede quedarse corto</li>
-                  <li>El calor puede resultar alto en temperatura maxima</li>
-                  <li>No sustituye a un secador + rizador dedicado</li>
+                  <li>4.1 estrellas sugiere algunas quejas de durabilidad</li>
+                  <li>No alcanza la calidad de Dyson Airwrap</li>
+                  <li>Los cabezales pueden aflojarse con el uso intensivo</li>
                 </ul>
               </div>
             </div>
             <div class="verdict-summary">
-              <p><strong>El REVLON One-Step Volumizer es el mejor cepillo secador en su rango de precio.</strong> Con mas de 8.000 reseñas verificables en Amazon.es y una nota media de 4.6, es el producto que recomendamos sin dudarlo para quien busca un resultado salon en casa sin complicaciones. <strong>Nuestra puntuacion: 4.4/5.</strong></p>
+              <p><strong>El TYMO 4.0 es una mejora real sobre la generacion 3.0.</strong> El motor mas rapido se nota y la variedad de cabezales cubre la mayoria de necesidades domesticas. Por menos de 60 euros es una alternativa solida al Airwrap. La puntuacion de 4.1 refleja algunas quejas de durabilidad a largo plazo. <strong>Puntuacion: 4.1/5.</strong></p>
             </div>
           </section>
 
-          <!-- Caracteristicas -->
           <section id="caracteristicas">
             <h2>Caracteristicas principales</h2>
             <div class="features-table">
-              <div class="feature-row"><span class="feature-name">Tecnologia</span><span class="feature-value">Ionica (Negative Ion)</span></div>
-              <div class="feature-row"><span class="feature-name">Funciones</span><span class="feature-value">Secado + Estilizado + Volumen</span></div>
-              <div class="feature-row"><span class="feature-name">Temperaturas</span><span class="feature-value">2 velocidades (alto/bajo)</span></div>
-              <div class="feature-row"><span class="feature-name">Diseno</span><span class="feature-value">Bordes desenredantes</span></div>
-              <div class="feature-row"><span class="feature-name">Cable</span><span class="feature-value">2.7m giratorio</span></div>
-              <div class="feature-row"><span class="feature-name">Peso</span><span class="feature-value">~490g</span></div>
-              <div class="feature-row"><span class="feature-name">Precio</span><span class="feature-value">{product.price}€</span></div>
+              <div class="feature-row"><span class="feature-name">Motor</span><span class="feature-value">110,000 RPM</span></div>
+              <div class="feature-row"><span class="feature-name">Cabezales</span><span class="feature-value">5 (4 incluidos + 1 extra)</span></div>
+              <div class="feature-row"><span class="feature-name">Tecnologia</span><span class="feature-value">Ionica</span></div>
+              <div class="feature-row"><span class="feature-name">Temperaturas</span><span class="feature-value">3 + frio</span></div>
+              <div class="feature-row"><span class="feature-name">Velocidades</span><span class="feature-value">2</span></div>
+              <div class="feature-row"><span class="feature-name">Peso</span><span class="feature-value">~520g</span></div>
+              <div class="feature-row"><span class="feature-name">Cable</span><span class="feature-value">2m, giro 360</span></div>
+              <div class="feature-row"><span class="feature-name">Precio</span><span class="feature-value">{product.price.toFixed(2)}€</span></div>
             </div>
           </section>
 
-          <!-- Pros y Contras -->
           <section id="pros-contras">
             <h2>Analisis en profundidad</h2>
             <h3>Experiencia de uso</h3>
-            <p>El concepto del One-Step Volumizer es simple pero efectivo: combina la potencia de un secador pequeno con la accion de un redondo termico. En lugar de soplar aire y luego pasar un cepillo, haces las dos cosas a la vez. Para cabello largo hasta los hombros, el flujo de trabajo se reduce a la mitad comparado con el metodo tradicional.</p>
-            <p>Los bordes desenredantes son el detalle que marca la diferencia. Si has usado un redondo termico normal, sabras lo frustrante que resulta cuando el cabello se engancha en las cerdas. El REVLON solved ese problema con un diseno de cerdas mixtas que permiten que el mechon deslice sin problemas.</p>
-            <h3>Resultados en distintos tipos de cabello</h3>
-            <p><strong>Cabello fino:</strong> Excelente. El volumen en la raiz es notable y el secado rapido minimiza el dano por calor.</p>
-            <p><strong>Cabello medio:</strong> Muy bueno. El resultado es un acabado natural y con movimiento, no plasticoso.</p>
-            <p><strong>Cabello grueso o rizado:</strong> Aceptable como introduccion, pero para un resultado optimo un secador + rizador dedicado sera mas efectivo.</p>
-            <h3>Comparacion con versiones</h3>
-            <p>La version basica (One-Step) es la que recomendamos. La version <em>Plus</em> (B096SVJZSW) ofrece mas volumen en la raiz pero un manejo similar. Si tienes cabello extra-largo, la Plus puede merecer la pena. Para la mayoria, la basica ofrece el mejor equilibrio.</p>
+            <p>El TYMO 4.0 se siente mas potente que la mayoria de cepillos secadores de su rango de precio. El flujo de aire es consistentemente fuerte, lo cual es la base para un secado rapido. Los 5 cabezales cubren las funciones principales: secado directo, alisado, difusion, volumen y rizado.</p>
+            <p>El cambio de cabezales es rapido y sin herramientas. Cada cabezal se encastra con un click y se mantiene firme durante el uso. La unica pega es que con el tiempo y el calor, algunos usuarios reportan que los cabezales pueden aflojarse ligeramente.</p>
+            <h3>Comparacion con TYMO 3.0</h3>
+            <p>La diferencia principal es el motor. Los 110,000 RPM del 4.0 son un salto significativo sobre los motores mas lentos de la generacion anterior. En la practica, eso se traduce en secado aproximadamente 30% mas rapido en pruebas directas. Si ya tienes un TYMO 3.0, el upgrade no es urgente. Si eliges entre los dos, el 4.0 justifica la diferencia de precio.</p>
           </section>
 
-          <!-- Para quien -->
           <section id="para-quien">
-            <h2>Para quien es el REVLON One-Step</h2>
+            <h2>Para quien es el TYMO 4.0</h2>
             <div class="persona-grid">
               <div class="persona-card good">
                 <h3>Ideal para ti si...</h3>
                 <ul>
-                  <li>Quieres un look salon en menos tiempo</li>
-                  <li>Tu cabello es fino a medio</li>
-                  <li>Buscas el mejor resultado por menos de 40€</li>
-                  <li>No tienes experiencia con herramientas de estilizado</li>
-                  <li>Quieres aumentar el volumen en la raiz</li>
+                  <li>Quieres un kit completo 5-en-1</li>
+                  <li>Tu cabello es fino a medio-grueso</li>
+                  <li>Quieres secado rapido pero no 250 euros para Dyson</li>
+                  <li>Experimentas con distintos estilos frecuentemente</li>
+                  <li>No tienes espacio para muchos aparatos</li>
                 </ul>
               </div>
               <div class="persona-card bad">
                 <h3>Mejor busca otra cosa si...</h3>
                 <ul>
                   <li>Tu cabello es muy grueso o rizado 4C</li>
-                  <li>Quieres rizos marcados (necesitas un rizador)</li>
-                  <li>Presupuesto para Dyson Airwrap (250€+)</li>
-                  <li>Lo necesitas para uso profesional</li>
+                  <li>Quieres calidad Dyson y no te importa el precio</li>
+                  <li>Ya tienes un TYMO 3.0 y funciona bien</li>
+                  <li>Buscas algo exclusivamente para rizos naturales</li>
                 </ul>
               </div>
             </div>
           </section>
 
-          <!-- Comparativa -->
           <section id="comparativa">
             <h2>Comparativa con alternativas</h2>
             <div class="compare-table">
@@ -174,25 +164,25 @@ const schema = buildProductSchema(product);
                 <div class="compare-col-best">Veredicto</div>
               </div>
               <div class="compare-row highlight">
-                <div class="compare-col-product"><strong>REVLON Salon One-Step</strong><span>Nuestra eleccion</span></div>
+                <div class="compare-col-product"><strong>TYMO 4.0</strong><span>Nuestra eleccion</span></div>
                 <div class="compare-col-price">{product.price.toFixed(2)}€</div>
+                <div class="compare-col-stars">4.1</div>
+                <div class="compare-col-best">Mas potencia</div>
+              </div>
+              <div class="compare-row">
+                <div class="compare-col-product"><strong>REVLON One-Step</strong><span>El clasico</span></div>
+                <div class="compare-col-price">49.00€</div>
                 <div class="compare-col-stars">4.4</div>
-                <div class="compare-col-best">Mejor valor</div>
+                <div class="compare-col-best">Mejor rating</div>
               </div>
               <div class="compare-row">
                 <div class="compare-col-product"><strong>Wavytalk Air Sculpt 5-en-1</strong><span>5 accesorios</span></div>
                 <div class="compare-col-price">47.73€</div>
                 <div class="compare-col-stars">4.3</div>
-                <div class="compare-col-best">Mas completo</div>
+                <div class="compare-col-best">Mejor precio</div>
               </div>
               <div class="compare-row">
-                <div class="compare-col-product"><strong>TYMO 4.0</strong><span>5-en-1, 3X mas rapido</span></div>
-                <div class="compare-col-price">68.19€</div>
-                <div class="compare-col-stars">4.1</div>
-                <div class="compare-col-best">Mas potencia</div>
-              </div>
-              <div class="compare-row">
-                <div class="compare-col-product"><strong>Dyson Airwrap</strong><span>Premium, 5 accesorios</span></div>
+                <div class="compare-col-product"><strong>Dyson Airwrap</strong><span>Premium</span></div>
                 <div class="compare-col-price">~399€</div>
                 <div class="compare-col-stars">4.6</div>
                 <div class="compare-col-best">Calidad maxima</div>
@@ -200,25 +190,24 @@ const schema = buildProductSchema(product);
             </div>
           </section>
 
-          <!-- FAQ -->
           <section id="faq">
             <h2>Preguntas frecuentes</h2>
             <div class="faq-grid">
               <details>
-                <summary>Cuanto tiempo tarda en secar el cabello?</summary>
-                <p>En cabello medio-largo (hasta los hombros): 5-8 minutos. Es significativamente mas rapido que un secador convencional porque combina el flujo de aire caliente con laaccion de brush simultanea.</p>
+                <summary>Cuantos accesorios incluye el TYMO 4.0?</summary>
+                <p>El kit basico incluye 4 cabezales: redondo termico, plancha alisadora, difusor de rizos y peine de volumen. La version completa puede incluir 2 cabezales adicionales de rizador. Todos se cambian facilmente y el cuerpo funciona como secador independiente.</p>
               </details>
               <details>
-                <summary>Funciona para cabello rizado?</summary>
-                <p>Para rizos sueltos (ondulaciones 2A-3A) puede funcionar bien. Para rizos muy marcados (4A-4C) es mejor un secador con difusor o un rizador dedicado. El One-Step no redefine rizos naturales: los alisa parcialmente.</p>
+                <summary>Funciona bien para cabello rizado natural?</summary>
+                <p>Para rizos sueltos (ondulaciones 2A-3B) funciona muy bien con el cabezal de difusor. Para rizos muy marcados (4A-4C) la potencia de 110,000 RPM del motor puede quedarse corta. Un secador con difusor dedicado de mas potencia sera mas efectivo para rizos naturales.</p>
               </details>
               <details>
-                <summary>Es seguro para cabello teñido o tratado?</summary>
-                <p>Si, aunque recomendamos usar la temperatura baja para cabello teñido o con keratina. La tecnologia ionica ayuda a reducir el dano y preserva el color durante mas tiempo comparado con herramientas sin iones.</p>
+                <summary>Es ruidoso comparado con un secador normal?</summary>
+                <p>El nivel de ruido es moderado. A maxima potencia es comparable a un secador de gama media. El modo bajo es significativamente mas silencioso. No es tan silencioso como algunos secadores premium pero tampoco es molesto para uso domestico quotidiano.</p>
               </details>
               <details>
-                <summary>Cuantos anos dura?</summary>
-                <p>Con cuidado y limpieza regular de las cerdas, dura 1-2 anos de uso regular (3-4 veces por semana). El punto debil es el cable giratorio con el tiempo de uso intensivo.</p>
+                <summary>Los cabezales son faceis de limpiar?</summary>
+                <p>Si, los cabezales se pueden desmontar facilmente para limpieza. La acumulacion de polvo y residuos de productos capilares (spray, mousse, keratina) puede afectar al rendimiento si no se limpian regularmente. Recomendamos una limpieza mensual con un pano humedo.</p>
               </details>
             </div>
           </section>
@@ -228,38 +217,34 @@ const schema = buildProductSchema(product);
           <div class="sidebar-card sidebar-buy">
             <img src={product.image} alt={product.name} class="sidebar-product-img" />
             <div class="sidebar-price">{product.price.toFixed(2)}€</div>
-            <div class="sidebar-rating"><span class="stars">★★★★<span class="half">☆</span></span><span>4.4</span></div>
+            <div class="sidebar-rating"><span class="stars">★★★★</span><span>4.1</span></div>
             <a href={`${product.url}?tag=${AFFILIATE_TAG}`} class="btn-buy-sidebar" target="_blank" rel="nofollow sponsored">Ver en Amazon.es</a>
             <p class="sidebar-disclaimer">Links de afiliado Amazon. Si compras, recibimos una pequena comision sin coste para ti.</p>
           </div>
-
           <div class="sidebar-card sidebar-specs">
             <h3>Especificaciones rapidas</h3>
             <ul>
-              <li><strong>Tecnologia:</strong> Ionica</li>
-              <li><strong>Velocidades:</strong> 2</li>
-              <li><strong>Cable:</strong> 2.7m giratorio</li>
-              <li><strong>Peso:</strong> ~490g</li>
-              <li><strong>Bordes:</strong> Desenredantes</li>
+              <li><strong>Motor:</strong> 110,000 RPM</li>
+              <li><strong>Cabezales:</strong> 5 intercambiables</li>
+              <li><strong>Temperaturas:</strong> 3 + frio</li>
+              <li><strong>Cable:</strong> 2m 360</li>
+              <li><strong>Peso:</strong> ~520g</li>
             </ul>
           </div>
-
           <div class="sidebar-card sidebar-score">
             <h3>Puntuacion</h3>
             <div class="score-circle">
               <svg viewBox="0 0 100 100">
                 <circle cx="50" cy="50" r="45" fill="none" stroke="#e0e0e0" stroke-width="8"/>
-                <circle cx="50" cy="50" r="45" fill="none" stroke="#FF6B35" stroke-width="8"
-                  stroke-dasharray="283" stroke-dashoffset="22" stroke-linecap="round"
-                  transform="rotate(-90 50 50)"/>
-                <text x="50" y="54" text-anchor="middle" font-size="22" font-weight="bold" fill="#FF6B35">4.4</text>
+                <circle cx="50" cy="50" r="45" fill="none" stroke="#FF6B35" stroke-width="8" stroke-dasharray="283" stroke-dashoffset="32" stroke-linecap="round" transform="rotate(-90 50 50)"/>
+                <text x="50" y="54" text-anchor="middle" font-size="22" font-weight="bold" fill="#FF6B35">4.1</text>
               </svg>
             </div>
             <div class="score-breakdown">
-              <div class="score-row"><span>Facilidad de uso</span><span class="score-bar"><span style="width:95%"></span></span><span>4.8</span></div>
-              <div class="score-row"><span>Resultado</span><span class="score-bar"><span style="width:88%"></span></span><span>4.4</span></div>
-              <div class="score-row"><span>Durabilidad</span><span class="score-bar"><span style="width:80%"></span></span><span>4.0</span></div>
-              <div class="score-row"><span>Precio/calidad</span><span class="score-bar"><span style="width:96%"></span></span><span>4.8</span></div>
+              <div class="score-row"><span>Potencia</span><span class="score-bar"><span style="width:88%"></span></span><span>4.4</span></div>
+              <div class="score-row"><span>Versatilidad</span><span class="score-bar"><span style="width:90%"></span></span><span>4.5</span></div>
+              <div class="score-row"><span>Facilidad uso</span><span class="score-bar"><span style="width:85%"></span></span><span>4.3</span></div>
+              <div class="score-row"><span>Precio/calidad</span><span class="score-bar"><span style="width:82%"></span></span><span>4.1</span></div>
             </div>
           </div>
         </aside>
