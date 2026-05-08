@@ -69,6 +69,11 @@ export function buildArticleSchema(title, url, description) {
       "name": "StyleCraft",
       "url": "https://stylecraft.es"
     },
+    "author": {
+      "@type": "Organization",
+      "name": "StyleCraft Editorial",
+      "url": "https://stylecraft.es"
+    },
     "datePublished": "2026-05-01",
     "dateModified": "2026-05-08",
     "mainEntity": {
@@ -120,7 +125,7 @@ export function buildHomeSchema() {
     },
     "potentialAction": {
       "@type": "SearchAction",
-      "target": "https://stylecraft.es/secadores?q={search_term_string}",
+      "target": "https://stylecraft.es/?q={search_term_string}",
       "query-input": "required name=search_term_string"
     }
   };
