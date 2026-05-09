@@ -83,4 +83,14 @@ export function getProductsByCategory(cat: string): Product[] {
   }
 }
 
+export function getReviewUrl(name: string): string {
+  const slug = name
+    .toLowerCase()
+    .replace(/[^a-z0-9\s-]/g, '')
+    .replace(/\s+/g, '-')
+    .replace(/-+/g, '-')
+    .replace(/^-|-$/g, '');
+  return `/productos/${slug}-review`;
+}
+
 export { secadores, planchas, rizadores, cepillos, AFFILIATE_TAG };

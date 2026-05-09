@@ -1,6 +1,6 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
-import { planchas, AFFILIATE_TAG } from '../data/products';
+import { planchas, AFFILIATE_TAG, getReviewUrl } from '../data/products';
 import { buildCollectionSchema, buildFAQSchema } from '../utils/schema';
 
 const faqQuestions = [
@@ -49,10 +49,10 @@ const schema = buildCollectionSchema("planchas", sorted);
           <div class="product-rank">#{i + 1}</div>
           {p.badge && <span class={`badge ${p.badge === 'Premium' ? 'badge-premium' : p.badge === 'BS Elegido' ? 'badge-choice' : 'badge-bs'}`}>{p.badge}</span>}
           <div class="product-image-wrap">
-            <img src={p.image} alt={p.name} loading="lazy" />
+            <a href={getReviewUrl(p.name)}><img src={p.image} alt={p.name} loading="lazy" /></a>
           </div>
           <div class="product-body">
-            <h3>{p.name}</h3>
+            <h3><a href={getReviewUrl(p.name)}>{p.name}</a></h3>
             <div class="product-rating">
               <span class="stars">{'★'.repeat(Math.round(p.stars))}</span>
               <span class="rating-num">{p.stars}</span>
@@ -76,10 +76,10 @@ const schema = buildCollectionSchema("planchas", sorted);
             <div class="product-rank">#{i + 1}</div>
             {p.badge && <span class="badge badge-premium">{p.badge}</span>}
             <div class="product-image-wrap">
-              <img src={p.image} alt={p.name} loading="lazy" />
-            </div>
-            <div class="product-body">
-              <h3>{p.name}</h3>
+                <a href={getReviewUrl(p.name)}><img src={p.image} alt={p.name} loading="lazy" /></a>
+              </div>
+              <div class="product-body">
+                <h3><a href={getReviewUrl(p.name)}>{p.name}</a></h3>
               <div class="product-rating">
                 <span class="stars">{'★'.repeat(Math.round(p.stars))}</span>
                 <span class="rating-num">{p.stars}</span>
