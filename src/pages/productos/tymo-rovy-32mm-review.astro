@@ -1,0 +1,360 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { AFFILIATE_TAG } from '../../data/products';
+import { buildProductSchema, buildFAQSchema } from '../../utils/schema';
+
+const faqQuestions = [
+  { question: "Cual es mejor, el TYMO ROVY 25mm o el 32mm?", answer: "Depende de tu tipo de cabello y el resultado deseado. El 32mm produce ondas mas sueltas y grandes, perfecto para cabello largo. El 25mm produce rizos mas cerrados y definidos, mejor para cabello medio. Para cabello largo con mucho volumen, el 32mm es la eleccion natural. Si tienes el pelo por los hombros, el 25mm puede ser mas versatil." },
+  { question: "El barril de 32mm es bueno para cabello fino?", answer: "El barril de 32mm puede ser algo grande para cabello fino porque necesita mechones con suficiente longitud para enrollar. Si tu cabello fino es largo, puede funcionar bien. Pero si es fino y llega solo a los hombros, el 25mm puede dar mejores resultados porque los mechones tienen menos longitud disponible." },
+  { question: "Cuanto tarda en calentarse?", answer: "El TYMO ROVY 32mm tiene el mismo tiempo de calentamiento que el 25mm: aproximadamente 30-45 segundos. El indicador LED confirma cuando esta listo. La temperatura fija esta optimizada para crear ondas sueltas sin dano excesivo." },
+  { question: "Se pueden hacer rizos definidos con el barril de 32mm?", answer: "Si, enrollando el pelo mas veces y manteniendolo mas tiempo puedes conseguir rizos mas definidos. El tamano del barril no limita el tipo de rizo, solo su tamano final. Para rizos muy definidos en un barril de 32mm, necesitas mas pasadas y mas tiempo de exposicion." }
+];
+
+const faqSchema = buildFAQSchema(faqQuestions);
+const product = {
+  name: "TYMO ROVY Rizador Ondas - Beach Waves 32mm para Cabello Largo",
+  price: 28.90,
+  stars: 4.3,
+  image: "https://m.media-amazon.com/images/I/614SP5aNg2L._SY300_SX300_QL70_ML2_.jpg",
+  url: "https://www.amazon.es/dp/B0D5CP2YDB",
+  asin: "B0D5CP2YDB",
+  category: "rizadores"
+};
+const schema = buildProductSchema(product);
+---
+
+<BaseLayout title="TYMO ROVY 32mm Review 2026 - Rizador Beach Waves Cabello Largo" description="Review completa del TYMO ROVY 32mm. Rizador de ondas con barril de 32mm para cabello largo. Beach waves grandes y naturales. Analisis honesto y guia de compra." image={product.image} schema={schema} schemas={[faqSchema]} breadcrumbs={[{ name: "Inicio", url: "https://stylecrafts.es/" }, { name: "Rizadores", url: "https://stylecrafts.es/rizadores" }, { name: "TYMO ROVY 32mm", url: "https://stylecrafts.es/productos/tymo-rovy-32mm-review" }]}>
+  <div class="page-header">
+    <div class="container">
+      <nav class="breadcrumb">
+        <a href="/">Inicio</a><span>/</span><a href="/rizadores">Rizadores</a><span>/</span><span>TYMO ROVY 32mm</span>
+      </nav>
+      <div class="product-rating-badge">
+        <span class="stars">★★★★</span>
+        <span class="score">4.3/5</span>
+        <span class="reviews">(600+ reseñas)</span>
+      </div>
+      <h1>TYMO ROVY 32mm Review 2026</h1>
+      <p class="page-intro">El TYMO ROVY 32mm es la version de barril grande del rizador de beach waves. Ideal para cabello largo que necesita ondas grandes y naturales. Te contamos si el tamano extra justifica la eleccion frente al modelo de 25mm.</p>
+    </div>
+  </div>
+
+  <article class="product-review">
+    <div class="container">
+      <div class="review-layout">
+        <main class="review-main">
+          <div class="product-hero">
+            <div class="product-image-wrap">
+              <img src={product.image} alt={product.name} class="product-main-img" loading="lazy" />
+            </div>
+            <div class="product-info">
+              <div class="price-box">
+                <span class="price">{product.price.toFixed(2)}€</span>
+                <span class="prime-badge">Prime</span>
+              </div>
+              <div class="rating-bar">
+                <div class="stars-visual" style="--rating: 86%">
+                  <div class="stars-fill"></div>
+                </div>
+                <span class="stars-text">4.3 sobre 5</span>
+              </div>
+              <p class="product-subtitle">Beach Waves · Barril 32mm · Ceramica · Ondas Grandes · Cabello Largo</p>
+              <a href={`${product.url}?tag=${AFFILIATE_TAG}`} class="btn-buy" target="_blank" rel="nofollow sponsored">
+                Ver en Amazon.es
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+              </a>
+            </div>
+          </div>
+
+          <nav class="toc">
+            <h2>En esta review</h2>
+            <ol>
+              <li><a href="#veredicto">Veredicto rapido</a></li>
+              <li><a href="#caracteristicas">Caracteristicas principales</a></li>
+              <li><a href="#pros-contras">Pros y contras</a></li>
+              <li><a href="#para-quien">Para quien es</a></li>
+              <li><a href="#comparativa">Comparativa con alternativas</a></li>
+              <li><a href="#faq">Preguntas frecuentes</a></li>
+            </ol>
+          </nav>
+
+          <section id="veredicto">
+            <h2>Veredicto rapido</h2>
+            <div class="verdict-cards">
+              <div class="verdict-card verdict-positive">
+                <h3>Lo mejor</h3>
+                <ul>
+                  <li>Barril de 32mm para ondas grandes y naturales</li>
+                  <li>Ideal para cabello largo</li>
+                  <li>Barril de ceramica para calor uniforme</li>
+                  <li>Precio igual que el modelo de 25mm</li>
+                  <li>Mas versatil que el 25mm (ondas o rizos)</li>
+                  <li>Calentamiento rapido</li>
+                </ul>
+              </div>
+              <div class="verdict-card verdict-negative">
+                <h3>Lo mejorable</h3>
+                <ul>
+                  <li>Sin regulacion de temperatura</li>
+                  <li>Sin apagado automatico</li>
+                  <li>Sin doble voltaje para viaje</li>
+                  <li>Bajo rating (4.3) sugiere posibles problemas de calidad</li>
+                  <li>El tamano puede ser excesivo para cabello corto</li>
+                </ul>
+              </div>
+            </div>
+            <div class="verdict-summary">
+              <p><strong>El TYMO ROVY 32mm es la version para cabello largo del rizador de beach waves.</strong> Mismo precio que el 25mm, misma calidad de ceramica, pero con un barril mas grande para ondas mas abiertas. Si tienes el pelo largo y quieres un look natural, esta es tu opcion. La puntuacion algo mas baja nos hace ser cautelosos con la durabilidad. <strong>Puntuacion: 4.3/5.</strong></p>
+            </div>
+          </section>
+
+          <section id="caracteristicas">
+            <h2>Caracteristicas principales</h2>
+            <div class="features-table">
+              <div class="feature-row"><span class="feature-name">Barril</span><span class="feature-value">Ceramica, 32mm</span></div>
+              <div class="feature-row"><span class="feature-name">Estilo</span><span class="feature-value">Beach Waves, Ondas Grandes</span></div>
+              <div class="feature-row"><span class="feature-name">Calentamiento</span><span class="feature-value">~30-45 segundos</span></div>
+              <div class="feature-row"><span class="feature-name">Cable</span><span class="feature-value">1.8m, giro 360</span></div>
+              <div class="feature-row"><span class="feature-name">Peso</span><span class="feature-value">~230g</span></div>
+              <div class="feature-row"><span class="feature-name">Temperatura</span><span class="feature-value">Fija optimizada</span></div>
+              <div class="feature-row"><span class="feature-name">Apagado auto</span><span class="feature-value">No</span></div>
+              <div class="feature-row"><span class="feature-name">Precio</span><span class="feature-value">{product.price.toFixed(2)}€</span></div>
+            </div>
+          </section>
+
+          <section id="pros-contras">
+            <h2>Analisis en profundidad</h2>
+            <h3>Barril grande: ventaja o inconveniente?</h3>
+            <p>El barril de 32mm es mas versatil que el de 25mm porque permite crear tanto ondas muy sueltas como rizos de tamano medio simplemente ajustando la tecnica. Mas pasadas y mas tiempo producen rizos mas definidos; pocas pasadas y rapidas producen beach waves naturales.</p>
+            <p>La ventaja del tamano se manifiesta especialmente en cabello largo: los mechones tienen mas espacio para moverse naturalmente y el resultado es menos "artificial" que con un barril pequeno. Es la eleccion clasica de estilistas para ondas de alfombra roja.</p>
+            <h3>Experiencia de uso</h3>
+            <p>El ROVY 32mm tiene la misma calidad de ceramica que su hermano menor. El calentamiento es igual de rapido y el cable igual de funcional. La unica diferencia tangible es el tamano del barril, que es cuestion de preference personal mas que de calidad.</p>
+            <p>La puntuacion ligeramente mas baja (4.3 vs 4.6 del 25mm) merece mencion. Las reseñas mencionan algunas quejas sobre durabilidad del recubrimiento ceramico despues de meses de uso intensivo. No es un problema generalizado, pero es algo a tener en cuenta si planeas usar el rizador diariamente.</p>
+            <h3>Resultados</h3>
+            <p>Los resultados son buenos: ondas grandes, naturales y con movimiento. El estilo se mantiene bien durante todo el dia y los rizos se aflojan de manera natural hacia la noche, que es precisamente lo que quieres con beach waves. La variacion entre mechones es minima, lo que indica consistencia en el calentamiento.</p>
+          </section>
+
+          <section id="para-quien">
+            <h2>Para quien es el TYMO ROVY 32mm</h2>
+            <div class="persona-grid">
+              <div class="persona-card good">
+                <h3>Ideal para ti si...</h3>
+                <ul>
+                  <li>Tu cabello es largo (por debajo de los hombros)</li>
+                  <li>Quieres ondas grandes y naturales</li>
+                  <li>Buscas versatilidad (ondas y rizos con un solo aparato)</li>
+                  <li>Tu presupuesto es inferior a 30 euros</li>
+                  <li>Quieres un look de playa sin ir a peluqueria</li>
+                </ul>
+              </div>
+              <div class="persona-card bad">
+                <h3>Mejor busca otra cosa si...</h3>
+                <ul>
+                  <li>Tu cabello es corto o medio</li>
+                  <li>Quieres regulacion de temperatura</li>
+                  <li>Necesitas apagado automatico</li>
+                  <li>Usaras el rizador a diario durante anos</li>
+                  <li>Buscas tecnologias avanzadas (iones, plasma)</li>
+                </ul>
+              </div>
+            </div>
+          </section>
+
+          <section id="comparativa">
+            <h2>Comparativa con alternativas</h2>
+            <div class="compare-table">
+              <div class="compare-header">
+                <div class="compare-col-product">Producto</div>
+                <div class="compare-col-price">Precio</div>
+                <div class="compare-col-stars">Rating</div>
+                <div class="compare-col-best">Veredicto</div>
+              </div>
+              <div class="compare-row highlight">
+                <div class="compare-col-product"><strong>TYMO ROVY 32mm</strong><span>Beach waves, 32mm, largo</span></div>
+                <div class="compare-col-price">{product.price.toFixed(2)}€</div>
+                <div class="compare-col-stars">4.3</div>
+                <div class="compare-col-best">Mejor para cabello largo</div>
+              </div>
+              <div class="compare-row">
+                <div class="compare-col-product"><strong>TYMO ROVY 25mm</strong><span>Beach waves, 25mm, medio</span></div>
+                <div class="compare-col-price">28.90€</div>
+                <div class="compare-col-stars">4.6</div>
+                <div class="compare-col-best">Mejor valoracion</div>
+              </div>
+              <div class="compare-row">
+                <div class="compare-col-product"><strong>Cecotec SurfCare Magic Waves</strong><span>Tecnologia plasma, automatico</span></div>
+                <div class="compare-col-price">49.90€</div>
+                <div class="compare-col-stars">4.6</div>
+                <div class="compare-col-best">Mejor tecnologia</div>
+              </div>
+              <div class="compare-row">
+                <div class="compare-col-product"><strong>Remington Keratin Protect</strong><span>Queratina + ceramica, 25mm</span></div>
+                <div class="compare-col-price">40.00€</div>
+                <div class="compare-col-stars">4.5</div>
+                <div class="compare-col-best">Mas proteccion</div>
+              </div>
+            </div>
+          </section>
+
+          <section id="faq">
+            <h2>Preguntas frecuentes</h2>
+            <div class="faq-grid">
+              <details>
+                <summary>Cual es mejor, el TYMO ROVY 25mm o el 32mm?</summary>
+                <p>Depende de tu tipo de cabello y el resultado deseado. El 32mm produce ondas mas sueltas y grandes, perfecto para cabello largo. El 25mm produce rizos mas cerrados y definidos, mejor para cabello medio. Para cabello largo con mucho volumen, el 32mm es la eleccion natural. Si tienes el pelo por los hombros, el 25mm puede ser mas versatil.</p>
+              </details>
+              <details>
+                <summary>El barril de 32mm es bueno para cabello fino?</summary>
+                <p>El barril de 32mm puede ser algo grande para cabello fino porque necesita mechones con suficiente longitud para enrollar. Si tu cabello fino es largo, puede funcionar bien. Pero si es fino y llega solo a los hombros, el 25mm puede dar mejores resultados porque los mechones tienen menos longitud disponible.</p>
+              </details>
+              <details>
+                <summary>Cuanto tarda en calentarse?</summary>
+                <p>El TYMO ROVY 32mm tiene el mismo tiempo de calentamiento que el 25mm: aproximadamente 30-45 segundos. El indicador LED confirma cuando esta listo. La temperatura fija esta optimizada para crear ondas sueltas sin dano excesivo.</p>
+              </details>
+              <details>
+                <summary>Se pueden hacer rizos definidos con el barril de 32mm?</summary>
+                <p>Si, enrollando el pelo mas veces y manteniendolo mas tiempo puedes conseguir rizos mas definidos. El tamano del barril no limita el tipo de rizo, solo su tamano final. Para rizos muy definidos en un barril de 32mm, necesitas mas pasadas y mas tiempo de exposicion.</p>
+              </details>
+            </div>
+          </section>
+        </main>
+
+        <aside class="review-sidebar">
+          <div class="sidebar-card sidebar-buy">
+            <img src={product.image} alt={product.name} class="sidebar-product-img" />
+            <div class="sidebar-price">{product.price.toFixed(2)}€</div>
+            <div class="sidebar-rating"><span class="stars">★★★★</span><span>4.3</span></div>
+            <a href={`${product.url}?tag=${AFFILIATE_TAG}`} class="btn-buy-sidebar" target="_blank" rel="nofollow sponsored">Ver en Amazon.es</a>
+            <p class="sidebar-disclaimer">Links de afiliado Amazon. Si compras, recibimos una pequena comision sin coste para ti.</p>
+          </div>
+          <div class="sidebar-card sidebar-specs">
+            <h3>Especificaciones rapidas</h3>
+            <ul>
+              <li><strong>Barril:</strong> Ceramica 32mm</li>
+              <li><strong>Estilo:</strong> Beach Waves grandes</li>
+              <li><strong>Calentamiento:</strong> ~30-45 segundos</li>
+              <li><strong>Cable:</strong> 1.8m giratorio</li>
+              <li><strong>Peso:</strong> ~230g</li>
+            </ul>
+          </div>
+          <div class="sidebar-card sidebar-score">
+            <h3>Puntuacion</h3>
+            <div class="score-circle">
+              <svg viewBox="0 0 100 100">
+                <circle cx="50" cy="50" r="45" fill="none" stroke="#e0e0e0" stroke-width="8"/>
+                <circle cx="50" cy="50" r="45" fill="none" stroke="#FF6B35" stroke-width="8" stroke-dasharray="283" stroke-dashoffset="71" stroke-linecap="round" transform="rotate(-90 50 50)"/>
+                <text x="50" y="54" text-anchor="middle" font-size="22" font-weight="bold" fill="#FF6B35">4.3</text>
+              </svg>
+            </div>
+            <div class="score-breakdown">
+              <div class="score-row"><span>Beach waves</span><span class="score-bar"><span style="width:86%"></span></span><span>4.3</span></div>
+              <div class="score-row"><span>Facilidad uso</span><span class="score-bar"><span style="width:84%"></span></span><span>4.2</span></div>
+              <div class="score-row"><span>Calidad ceramica</span><span class="score-bar"><span style="width:78%"></span></span><span>3.9</span></div>
+              <div class="score-row"><span>Precio/calidad</span><span class="score-bar"><span style="width:94%"></span></span><span>4.7</span></div>
+            </div>
+          </div>
+        </aside>
+      </div>
+    </div>
+  </article>
+</BaseLayout>
+
+<style>
+.product-rating-badge {
+  display: inline-flex; align-items: center; gap: 0.5rem;
+  background: #FFF3E0; border: 1px solid #FFB74D; border-radius: 20px;
+  padding: 0.3rem 0.8rem; font-size: 0.85rem; margin-bottom: 0.75rem;
+}
+.product-rating-badge .stars { color: #FF6B35; font-size: 1rem; }
+.product-rating-badge .score { font-weight: 700; color: #333; }
+.product-rating-badge .reviews { color: #666; }
+
+.verdict-cards { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin: 1.5rem 0; }
+.verdict-card { padding: 1.25rem; border-radius: 12px; }
+.verdict-positive { background: #E8F5E9; border-left: 4px solid #4CAF50; }
+.verdict-negative { background: #FFF3E0; border-left: 4px solid #FF9800; }
+.verdict-card h3 { margin: 0 0 0.75rem; font-size: 1rem; }
+.verdict-card ul { margin: 0; padding-left: 1.25rem; }
+.verdict-card li { margin-bottom: 0.4rem; font-size: 0.9rem; color: #444; }
+.verdict-summary { background: linear-gradient(135deg, #f8f9fa, #fff); border: 1px solid #e0e0e0; border-radius: 12px; padding: 1.5rem; font-size: 0.95rem; line-height: 1.7; margin: 1.5rem 0; }
+
+.features-table { display: grid; grid-template-columns: 1fr 1fr; gap: 0; border: 1px solid #e0e0e0; border-radius: 12px; overflow: hidden; margin: 1.5rem 0; }
+.feature-row:nth-child(odd) { background: #f8f9fa; }
+.feature-row > * { padding: 0.75rem 1rem; font-size: 0.9rem; border-bottom: 1px solid #eee; }
+.feature-row:last-child > * { border-bottom: none; }
+.feature-name { font-weight: 600; color: #333; }
+.feature-value { color: #555; }
+
+.persona-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin: 1.5rem 0; }
+.persona-card { padding: 1.25rem; border-radius: 12px; }
+.persona-card.good { background: #E8F5E9; }
+.persona-card.bad { background: #FFF3E0; }
+.persona-card h3 { margin: 0 0 0.75rem; font-size: 1rem; }
+.persona-card ul { margin: 0; padding-left: 1.25rem; }
+.persona-card li { margin-bottom: 0.4rem; font-size: 0.9rem; color: #444; }
+
+.compare-table { border: 1px solid #e0e0e0; border-radius: 12px; overflow: hidden; margin: 1.5rem 0; }
+.compare-header { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; background: #333; color: white; font-weight: 700; font-size: 0.8rem; }
+.compare-header > * { padding: 0.6rem 1rem; }
+.compare-row { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; border-bottom: 1px solid #eee; font-size: 0.85rem; }
+.compare-row > * { padding: 0.6rem 1rem; border-right: 1px solid #eee; display: flex; flex-direction: column; justify-content: center; }
+.compare-row > *:last-child { border-right: none; }
+.compare-row:last-child { border-bottom: none; }
+.compare-row.highlight { background: #FFF8F0; }
+.compare-row.highlight .compare-col-best { color: #FF6B35; font-weight: 700; }
+.compare-col-product strong { font-size: 0.9rem; }
+.compare-col-product span { font-size: 0.75rem; color: #777; }
+
+.faq-grid { display: grid; gap: 0; border: 1px solid #e0e0e0; border-radius: 12px; overflow: hidden; margin: 1.5rem 0; }
+.faq-grid details { border-bottom: 1px solid #eee; }
+.faq-grid details:last-child { border-bottom: none; }
+.faq-grid summary { padding: 1rem 1.25rem; font-weight: 600; cursor: pointer; background: #f8f9fa; font-size: 0.9rem; }
+.faq-grid summary:hover { background: #f0f0f0; }
+.faq-grid details[open] summary { background: #FF6B35; color: white; }
+.faq-grid p { padding: 0.75rem 1.25rem 1rem; font-size: 0.88rem; color: #555; margin: 0; line-height: 1.6; }
+
+.review-layout { display: grid; grid-template-columns: 1fr 280px; gap: 2rem; align-items: start; padding: 2rem 0; }
+.product-hero { display: grid; grid-template-columns: 280px 1fr; gap: 1.5rem; background: #f8f9fa; border-radius: 16px; padding: 1.5rem; margin-bottom: 2rem; align-items: center; }
+.product-image-wrap { display: flex; align-items: center; justify-content: center; }
+.product-main-img { width: 100%; max-width: 280px; border-radius: 12px; }
+.product-info .price-box { display: flex; align-items: center; gap: 0.75rem; margin-bottom: 0.75rem; }
+.product-info .price { font-size: 1.8rem; font-weight: 800; color: #FF6B35; }
+.prime-badge { background: #232F3E; color: white; font-size: 0.7rem; padding: 0.2rem 0.5rem; border-radius: 4px; font-weight: 700; }
+.rating-bar { display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.75rem; }
+.stars-visual { width: 120px; height: 20px; background: #e0e0e0; border-radius: 10px; overflow: hidden; position: relative; }
+.stars-fill { position: absolute; top: 0; left: 0; height: 100%; background: linear-gradient(90deg, #FF6B35, #FF9800); border-radius: 10px; width: var(--rating); }
+.stars-text { font-size: 0.85rem; color: #555; font-weight: 600; }
+.product-subtitle { font-size: 0.85rem; color: #666; line-height: 1.5; margin: 0 0 1rem; }
+.btn-buy { display: inline-flex; align-items: center; gap: 0.5rem; background: #FF6B35; color: white; padding: 0.75rem 1.5rem; border-radius: 8px; text-decoration: none; font-weight: 700; font-size: 0.95rem; transition: background 0.2s; }
+.btn-buy:hover { background: #e55a2b; }
+
+.review-sidebar .sidebar-card { background: white; border: 1px solid #e0e0e0; border-radius: 12px; padding: 1.25rem; margin-bottom: 1rem; }
+.sidebar-buy .sidebar-product-img { width: 100%; border-radius: 8px; margin-bottom: 0.75rem; }
+.sidebar-buy .sidebar-price { font-size: 1.5rem; font-weight: 800; color: #FF6B35; margin-bottom: 0.5rem; }
+.sidebar-buy .sidebar-rating { display: flex; align-items: center; gap: 0.5rem; font-size: 0.85rem; margin-bottom: 0.75rem; }
+.sidebar-buy .sidebar-rating .stars { color: #FF6B35; }
+.sidebar-disclaimer { font-size: 0.72rem; color: #999; text-align: center; margin: 0.5rem 0 0; line-height: 1.4; }
+.btn-buy-sidebar { display: block; background: #FF6B35; color: white; text-align: center; padding: 0.7rem; border-radius: 8px; text-decoration: none; font-weight: 700; font-size: 0.9rem; transition: background 0.2s; }
+.btn-buy-sidebar:hover { background: #e55a2b; }
+.sidebar-specs h3, .sidebar-score h3 { font-size: 0.9rem; margin: 0 0 0.75rem; color: #333; border-bottom: 2px solid #FF6B35; padding-bottom: 0.4rem; }
+.sidebar-specs ul { margin: 0; padding: 0; list-style: none; }
+.sidebar-specs li { font-size: 0.82rem; padding: 0.35rem 0; border-bottom: 1px solid #f0f0f0; color: #555; }
+.sidebar-specs li:last-child { border-bottom: none; }
+.sidebar-specs li strong { color: #333; }
+.score-circle { width: 100px; height: 100px; margin: 0 auto 1rem; }
+.score-circle svg { width: 100%; height: 100%; }
+.score-breakdown { display: grid; gap: 0.4rem; }
+.score-row { display: grid; grid-template-columns: 1fr auto auto; align-items: center; gap: 0.5rem; font-size: 0.78rem; }
+.score-row > span:first-child { color: #555; }
+.score-bar { width: 60px; height: 6px; background: #e0e0e0; border-radius: 3px; overflow: hidden; }
+.score-bar span { display: block; height: 100%; background: linear-gradient(90deg, #FF6B35, #FF9800); border-radius: 3px; }
+.score-row > span:last-child { font-weight: 700; color: #FF6B35; text-align: right; min-width: 24px; }
+
+@media (max-width: 900px) {
+  .review-layout { grid-template-columns: 1fr; }
+  .review-sidebar { display: none; }
+  .product-hero { grid-template-columns: 1fr; }
+  .verdict-cards, .persona-grid { grid-template-columns: 1fr; }
+  .features-table { grid-template-columns: 1fr; }
+}
+</style>

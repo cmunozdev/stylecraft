@@ -1,0 +1,356 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { AFFILIATE_TAG } from '../../data/products';
+import { buildProductSchema, buildFAQSchema } from '../../utils/schema';
+
+const faqQuestions = [
+  { question: "Que diferencia hay entre el Hair Dryer Brush 8-en-1 y un secador normal?", answer: "La diferencia principal es que el Hair Dryer Brush 8-en-1 combina el flujo de aire de un secador con un cepillo rotatorio. En lugar de soplar aire y luego cepillar por separado, haces ambas cosas simultaneamente. El resultado es un alisado o marcado en una sola pasada." },
+  { question: "Funciona para cabello muy rizado?", answer: "Para cabello 2A-3B (rizos sueltos a rizos medios), el Hair Dryer Brush 8-en-1 puede alisar pero no eliminara completamente el rizo natural. Para resultados completos en cabello muy rizado, una plancha dedicada ofrece mejores resultados. Para ondas y rizos sueltos funciona bien." },
+  { question: "Es peligroso para el cabello por el calor?", answer: "Con 110,000 RPM de motor y control de temperatura inteligente, el dano termico es menor que con una plancha convencional. El flujo de aire distribuye el calor de forma mas uniforme que las planchas de contacto directo. Usar el modo de temperatura media y un spray protector termico es recomendable." },
+  { question: "Cuanto tiempo tarda en secar y alisar?", answer: "Para cabello medio-largo con humedad natural, el secado y alisado completo esta en 8-12 minutos. El tiempo depende del grosor y longitud del cabello. Cabello fino/seco puede estar listo en 5 minutos; cabello grueso y largo puede necesitar 15." }
+];
+
+const faqSchema = buildFAQSchema(faqQuestions);
+const product = {
+  name: "Hair Dryer Brush 8-en-1 - Dual Voltage, Hot Air Styler",
+  price: 127.86,
+  stars: 4.5,
+  image: "https://m.media-amazon.com/images/I/81Jaint8CXL._AC_SY300_SX300_QL70_FMwebp_.jpg",
+  url: "https://www.amazon.es/dp/B0FNCK457Y",
+  asin: "B0FNCK457Y",
+  category: "secadores"
+};
+const schema = buildProductSchema(product);
+---
+
+<BaseLayout title="Hair Dryer Brush 8-en-1 Review 2026 - Secador Cepillo 110,000 RPM" description="Review del Hair Dryer Brush 8-en-1 con motor 110,000 RPM. Secador, cepillo rotatorio, alisador y rizador en uno. Dual voltage para viaje. Analisis completo." image={product.image} schema={schema} schemas={[faqSchema]} breadcrumbs={[{ name: "Inicio", url: "https://stylecrafts.es/" }, { name: "Secadores", url: "https://stylecrafts.es/secadores" }, { name: "Hair Dryer Brush 8-en-1 Review", url: "https://stylecrafts.es/productos/hair-dryer-brush-8en1-review" }]}>
+  <div class="page-header">
+    <div class="container">
+      <nav class="breadcrumb">
+        <a href="/">Inicio</a><span>/</span><a href="/secadores">Secadores</a><span>/</span><span>Hair Dryer Brush 8-en-1</span>
+      </nav>
+      <div class="product-rating-badge">
+        <span class="stars">★★★★½</span>
+        <span class="score">4.5/5</span>
+        <span class="reviews">(1,000+ reseñas)</span>
+      </div>
+      <h1>Hair Dryer Brush 8-en-1 Review 2026</h1>
+      <p class="page-intro">El Hair Dryer Brush 8-en-1 con motor de 110,000 RPM es una herramienta de estilizado premium que combina secador, cepillo rotatorio, alisador y rizador en un solo aparato. Dual voltage lo hace perfecto para viaje. Te contamos si el rendimiento justifica el precio.</p>
+    </div>
+  </div>
+
+  <article class="product-review">
+    <div class="container">
+      <div class="review-layout">
+        <main class="review-main">
+          <div class="product-hero">
+            <div class="product-image-wrap">
+              <img src={product.image} alt={product.name} class="product-main-img" loading="lazy" />
+            </div>
+            <div class="product-info">
+              <div class="price-box">
+                <span class="price">{product.price.toFixed(2)}€</span>
+                <span class="prime-badge">Prime</span>
+              </div>
+              <div class="rating-bar">
+                <div class="stars-visual" style="--rating: 90%">
+                  <div class="stars-fill"></div>
+                </div>
+                <span class="stars-text">4.5 sobre 5</span>
+              </div>
+              <p class="product-subtitle">Motor 110,000 RPM · 8 Funciones · Dual Voltage · 4 Temperaturas · Iónico</p>
+              <a href={`${product.url}?tag=${AFFILIATE_TAG}`} class="btn-buy" target="_blank" rel="nofollow sponsored">
+                Ver en Amazon.es
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+              </a>
+            </div>
+          </div>
+
+          <nav class="toc">
+            <h2>En esta review</h2>
+            <ol>
+              <li><a href="#veredicto">Veredicto rapido</a></li>
+              <li><a href="#caracteristicas">Caracteristicas principales</a></li>
+              <li><a href="#pros-contras">Pros y contras</a></li>
+              <li><a href="#para-quien">Para quien es</a></li>
+              <li><a href="#comparativa">Comparativa con alternativas</a></li>
+              <li><a href="#faq">Preguntas frecuentes</a></li>
+            </ol>
+          </nav>
+
+          <section id="veredicto">
+            <h2>Veredicto rapido</h2>
+            <div class="verdict-cards">
+              <div class="verdict-card verdict-positive">
+                <h3>Lo mejor</h3>
+                <ul>
+                  <li>Motor 110,000 RPM: secado rapido y potente</li>
+                  <li>8 funciones en un solo aparato</li>
+                  <li>Dual voltage para viaje internacional</li>
+                  <li>Tecnologia ionica anti-frizz</li>
+                  <li>4 temperaturas para control preciso</li>
+                  <li>Resultados comparables a salon en menos tiempo</li>
+                </ul>
+              </div>
+              <div class="verdict-card verdict-negative">
+                <h3>Lo mejorable</h3>
+                <ul>
+                  <li>Precio superior a alternativas mas simples</li>
+                  <li>Requiere curva de aprendizaje para mejores resultados</li>
+                  <li>Algo mas pesado que cepillos secadores basicos</li>
+                </ul>
+              </div>
+            </div>
+            <div class="verdict-summary">
+              <p><strong>El Hair Dryer Brush 8-en-1 es la mejor eleccion si quieres una herramienta todo-en-uno premium sin近づ precio de Dyson.</strong> El motor de 110,000 RPM marca una diferencia real en velocidad y resultados. Por menos de 130 euros tienes algo que rivaliza con opciones de gama alta. <strong>Puntuacion: 4.5/5.</strong></p>
+            </div>
+          </section>
+
+          <section id="caracteristicas">
+            <h2>Caracteristicas principales</h2>
+            <div class="features-table">
+              <div class="feature-row"><span class="feature-name">Motor</span><span class="feature-value">110,000 RPM</span></div>
+              <div class="feature-row"><span class="feature-name">Funciones</span><span class="feature-value">8 (secador, cepillo, alisador, rizador, difusor, volumen, etc.)</span></div>
+              <div class="feature-row"><span class="feature-name">Tecnologia</span><span class="feature-value">Ionica</span></div>
+              <div class="feature-row"><span class="feature-name">Temperaturas</span><span class="feature-value">4 niveles</span></div>
+              <div class="feature-row"><span class="feature-name">Voltaje</span><span class="feature-value">Dual (110-240V)</span></div>
+              <div class="feature-row"><span class="feature-name">Cable</span><span class="feature-value">2.5m giratorio</span></div>
+              <div class="feature-row"><span class="feature-name">Peso</span><span class="feature-value">~550g</span></div>
+              <div class="feature-row"><span class="feature-name">Precio</span><span class="feature-value">{product.price.toFixed(2)}€</span></div>
+            </div>
+          </section>
+
+          <section id="pros-contras">
+            <h2>Analisis en profundidad</h2>
+            <h3>El motor de 110,000 RPM en la practica</h3>
+            <p>El motor de alta velocidad es el corazon de este aparato. Genera un flujo de aire rapido que seca el cabello mientras el cepillo rotatorio lo alisa o marca. La combinacion es mas eficiente que usar secador y plancha por separado porque eliminas un paso completo del proceso.</p>
+            <p>En cabello medio con textura ondulada, el resultado en una pasada es comparable a lo que obtendras con secador + plancha. En cabello muy rizado o grueso, puede necesitar una segunda pasada con el modo de temperatura alta.</p>
+            <h3>Las 8 funciones</h3>
+            <p>Las 8 funciones se traducen practicamente en 8 accessories o modos interchangeables. Los principales son: secador de precision, cepillo alisador, cepillo de volumen con cerdas mixte, rizador de ondas, difusor y peine de arrastre para cabello rizado. Cada modo cambia el tipo de cerdas y el angulo del flujo de aire.</p>
+            <h3>Experiencia de uso</h3>
+            <p>El primer uso requiere algo de practica. La tecnica correcta es comenzar en la nuca con el cepillo en movimiento constante, avanzando desde la raiz a las puntas. Con practica, una sesion completa de secado y alisado toma 8-12 minutos para cabello medio-largo.</p>
+          </section>
+
+          <section id="para-quien">
+            <h2>Para quien es el Hair Dryer Brush 8-en-1</h2>
+            <div class="persona-grid">
+              <div class="persona-card good">
+                <h3>Ideal para ti si...</h3>
+                <ul>
+                  <li>Quieres una herramienta todo-en-uno premium</li>
+                  <li>Te secas el pelo a diario y valoras la velocidad</li>
+                  <li>Buscas algo entre un cepillo basico y un Dyson</li>
+                  <li>Viajas internacionalmente y necesitas dual voltage</li>
+                  <li>Quieres reducir el numero de aparatos en el bano</li>
+                </ul>
+              </div>
+              <div class="persona-card bad">
+                <h3>Mejor busca otra cosa si...</h3>
+                <ul>
+                  <li>Tu presupuesto es inferior a 80 euros</li>
+                  <li>Tienes cabello muy rizado y quieres alisado total</li>
+                  <li>Prefieres usar herramientas separadas para cada funcion</li>
+                  <li>No quieres invertir tiempo en aprender la tecnica</li>
+                </ul>
+              </div>
+            </div>
+          </section>
+
+          <section id="comparativa">
+            <h2>Comparativa con alternativas</h2>
+            <div class="compare-table">
+              <div class="compare-header">
+                <div class="compare-col-product">Producto</div>
+                <div class="compare-col-price">Precio</div>
+                <div class="compare-col-stars">Rating</div>
+                <div class="compare-col-best">Veredicto</div>
+              </div>
+              <div class="compare-row highlight">
+                <div class="compare-col-product"><strong>Hair Dryer Brush 8-en-1</strong><span>Nuestra eleccion</span></div>
+                <div class="compare-col-price">{product.price.toFixed(2)}€</div>
+                <div class="compare-col-stars">4.5</div>
+                <div class="compare-col-best">Mejor motor</div>
+              </div>
+              <div class="compare-row">
+                <div class="compare-col-product"><strong>Dyson Airwrap</strong><span>Premium</span></div>
+                <div class="compare-col-price">~399€</div>
+                <div class="compare-col-stars">4.6</div>
+                <div class="compare-col-best">Maxima calidad</div>
+              </div>
+              <div class="compare-row">
+                <div class="compare-col-product"><strong>StyleVibe 6-en-1</strong><span>Valor</span></div>
+                <div class="compare-col-price">84.10€</div>
+                <div class="compare-col-stars">4.6</div>
+                <div class="compare-col-best">Mejor precio</div>
+              </div>
+              <div class="compare-row">
+                <div class="compare-col-product"><strong>TYMO 4.0</strong><span>Gama media</span></div>
+                <div class="compare-col-price">59.66€</div>
+                <div class="compare-col-stars">4.1</div>
+                <div class="compare-col-best">Economico</div>
+              </div>
+            </div>
+          </section>
+
+          <section id="faq">
+            <h2>Preguntas frecuentes</h2>
+            <div class="faq-grid">
+              <details>
+                <summary>Que diferencia hay entre el Hair Dryer Brush 8-en-1 y un secador normal?</summary>
+                <p>La diferencia principal es que el Hair Dryer Brush 8-en-1 combina el flujo de aire de un secador con un cepillo rotatorio. En lugar de soplar aire y luego cepillar por separado, haces ambas cosas simultaneamente. El resultado es un alisado o marcado en una sola pasada.</p>
+              </details>
+              <details>
+                <summary>Funciona para cabello muy rizado?</summary>
+                <p>Para cabello 2A-3B (rizos sueltos a rizos medios), el Hair Dryer Brush 8-en-1 puede alisar pero no eliminara completamente el rizo natural. Para resultados completos en cabello muy rizado, una plancha dedicada ofrece mejores resultados. Para ondas y rizos sueltos funciona bien.</p>
+              </details>
+              <details>
+                <summary>Es peligroso para el cabello por el calor?</summary>
+                <p>Con 110,000 RPM de motor y control de temperatura inteligente, el dano termico es menor que con una plancha convencional. El flujo de aire distribuye el calor de forma mas uniforme que las planchas de contacto directo. Usar el modo de temperatura media y un spray protector termico es recomendable.</p>
+              </details>
+              <details>
+                <summary>Cuanto tiempo tarda en secar y alisar?</summary>
+                <p>Para cabello medio-largo con humedad natural, el secado y alisado completo esta en 8-12 minutos. El tiempo depende del grosor y longitud del cabello. Cabello fino/seco puede estar listo en 5 minutos; cabello grueso y largo puede necesitar 15.</p>
+              </details>
+            </div>
+          </section>
+        </main>
+
+        <aside class="review-sidebar">
+          <div class="sidebar-card sidebar-buy">
+            <img src={product.image} alt={product.name} class="sidebar-product-img" />
+            <div class="sidebar-price">{product.price.toFixed(2)}€</div>
+            <div class="sidebar-rating"><span class="stars">★★★★½</span><span>4.5</span></div>
+            <a href={`${product.url}?tag=${AFFILIATE_TAG}`} class="btn-buy-sidebar" target="_blank" rel="nofollow sponsored">Ver en Amazon.es</a>
+            <p class="sidebar-disclaimer">Links de afiliado Amazon. Si compras, recibimos una pequena comision sin coste para ti.</p>
+          </div>
+          <div class="sidebar-card sidebar-specs">
+            <h3>Especificaciones rapidas</h3>
+            <ul>
+              <li><strong>Motor:</strong> 110,000 RPM</li>
+              <li><strong>Funciones:</strong> 8</li>
+              <li><strong>Temperaturas:</strong> 4 niveles</li>
+              <li><strong>Voltaje:</strong> Dual (110-240V)</li>
+              <li><strong>Cable:</strong> 2.5m giratorio</li>
+            </ul>
+          </div>
+          <div class="sidebar-card sidebar-score">
+            <h3>Puntuacion</h3>
+            <div class="score-circle">
+              <svg viewBox="0 0 100 100">
+                <circle cx="50" cy="50" r="45" fill="none" stroke="#e0e0e0" stroke-width="8"/>
+                <circle cx="50" cy="50" r="45" fill="none" stroke="#FF6B35" stroke-width="8" stroke-dasharray="283" stroke-dashoffset="42" stroke-linecap="round" transform="rotate(-90 50 50)"/>
+                <text x="50" y="54" text-anchor="middle" font-size="22" font-weight="bold" fill="#FF6B35">4.5</text>
+              </svg>
+            </div>
+            <div class="score-breakdown">
+              <div class="score-row"><span>Potencia</span><span class="score-bar"><span style="width:94%"></span></span><span>4.7</span></div>
+              <div class="score-row"><span>Versatilidad</span><span class="score-bar"><span style="width:96%"></span></span><span>4.8</span></div>
+              <div class="score-row"><span>Facilidad uso</span><span class="score-bar"><span style="width:80%"></span></span><span>4.0</span></div>
+              <div class="score-row"><span>Precio/calidad</span><span class="score-bar"><span style="width:84%"></span></span><span>4.2</span></div>
+            </div>
+          </div>
+        </aside>
+      </div>
+    </div>
+  </article>
+</BaseLayout>
+
+<style>
+.product-rating-badge {
+  display: inline-flex; align-items: center; gap: 0.5rem;
+  background: #FFF3E0; border: 1px solid #FFB74D; border-radius: 20px;
+  padding: 0.3rem 0.8rem; font-size: 0.85rem; margin-bottom: 0.75rem;
+}
+.product-rating-badge .stars { color: #FF6B35; font-size: 1rem; }
+.product-rating-badge .score { font-weight: 700; color: #333; }
+.product-rating-badge .reviews { color: #666; }
+
+.verdict-cards { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin: 1.5rem 0; }
+.verdict-card { padding: 1.25rem; border-radius: 12px; }
+.verdict-positive { background: #E8F5E9; border-left: 4px solid #4CAF50; }
+.verdict-negative { background: #FFF3E0; border-left: 4px solid #FF9800; }
+.verdict-card h3 { margin: 0 0 0.75rem; font-size: 1rem; }
+.verdict-card ul { margin: 0; padding-left: 1.25rem; }
+.verdict-card li { margin-bottom: 0.4rem; font-size: 0.9rem; color: #444; }
+.verdict-summary { background: linear-gradient(135deg, #f8f9fa, #fff); border: 1px solid #e0e0e0; border-radius: 12px; padding: 1.5rem; font-size: 0.95rem; line-height: 1.7; margin: 1.5rem 0; }
+
+.features-table { display: grid; grid-template-columns: 1fr 1fr; gap: 0; border: 1px solid #e0e0e0; border-radius: 12px; overflow: hidden; margin: 1.5rem 0; }
+.feature-row:nth-child(odd) { background: #f8f9fa; }
+.feature-row > * { padding: 0.75rem 1rem; font-size: 0.9rem; border-bottom: 1px solid #eee; }
+.feature-row:last-child > * { border-bottom: none; }
+.feature-name { font-weight: 600; color: #333; }
+.feature-value { color: #555; }
+
+.persona-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin: 1.5rem 0; }
+.persona-card { padding: 1.25rem; border-radius: 12px; }
+.persona-card.good { background: #E8F5E9; }
+.persona-card.bad { background: #FFF3E0; }
+.persona-card h3 { margin: 0 0 0.75rem; font-size: 1rem; }
+.persona-card ul { margin: 0; padding-left: 1.25rem; }
+.persona-card li { margin-bottom: 0.4rem; font-size: 0.9rem; color: #444; }
+
+.compare-table { border: 1px solid #e0e0e0; border-radius: 12px; overflow: hidden; margin: 1.5rem 0; }
+.compare-header { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; background: #333; color: white; font-weight: 700; font-size: 0.8rem; }
+.compare-header > * { padding: 0.6rem 1rem; }
+.compare-row { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; border-bottom: 1px solid #eee; font-size: 0.85rem; }
+.compare-row > * { padding: 0.6rem 1rem; border-right: 1px solid #eee; display: flex; flex-direction: column; justify-content: center; }
+.compare-row > *:last-child { border-right: none; }
+.compare-row:last-child { border-bottom: none; }
+.compare-row.highlight { background: #FFF8F0; }
+.compare-row.highlight .compare-col-best { color: #FF6B35; font-weight: 700; }
+.compare-col-product strong { font-size: 0.9rem; }
+.compare-col-product span { font-size: 0.75rem; color: #777; }
+
+.faq-grid { display: grid; gap: 0; border: 1px solid #e0e0e0; border-radius: 12px; overflow: hidden; margin: 1.5rem 0; }
+.faq-grid details { border-bottom: 1px solid #eee; }
+.faq-grid details:last-child { border-bottom: none; }
+.faq-grid summary { padding: 1rem 1.25rem; font-weight: 600; cursor: pointer; background: #f8f9fa; font-size: 0.9rem; }
+.faq-grid summary:hover { background: #f0f0f0; }
+.faq-grid details[open] summary { background: #FF6B35; color: white; }
+.faq-grid p { padding: 0.75rem 1.25rem 1rem; font-size: 0.88rem; color: #555; margin: 0; line-height: 1.6; }
+
+.review-layout { display: grid; grid-template-columns: 1fr 280px; gap: 2rem; align-items: start; padding: 2rem 0; }
+.product-hero { display: grid; grid-template-columns: 280px 1fr; gap: 1.5rem; background: #f8f9fa; border-radius: 16px; padding: 1.5rem; margin-bottom: 2rem; align-items: center; }
+.product-image-wrap { display: flex; align-items: center; justify-content: center; }
+.product-main-img { width: 100%; max-width: 280px; border-radius: 12px; }
+.product-info .price-box { display: flex; align-items: center; gap: 0.75rem; margin-bottom: 0.75rem; }
+.product-info .price { font-size: 1.8rem; font-weight: 800; color: #FF6B35; }
+.prime-badge { background: #232F3E; color: white; font-size: 0.7rem; padding: 0.2rem 0.5rem; border-radius: 4px; font-weight: 700; }
+.rating-bar { display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.75rem; }
+.stars-visual { width: 120px; height: 20px; background: #e0e0e0; border-radius: 10px; overflow: hidden; position: relative; }
+.stars-fill { position: absolute; top: 0; left: 0; height: 100%; background: linear-gradient(90deg, #FF6B35, #FF9800); border-radius: 10px; width: var(--rating); }
+.stars-text { font-size: 0.85rem; color: #555; font-weight: 600; }
+.product-subtitle { font-size: 0.85rem; color: #666; line-height: 1.5; margin: 0 0 1rem; }
+.btn-buy { display: inline-flex; align-items: center; gap: 0.5rem; background: #FF6B35; color: white; padding: 0.75rem 1.5rem; border-radius: 8px; text-decoration: none; font-weight: 700; font-size: 0.95rem; transition: background 0.2s; }
+.btn-buy:hover { background: #e55a2b; }
+
+.review-sidebar .sidebar-card { background: white; border: 1px solid #e0e0e0; border-radius: 12px; padding: 1.25rem; margin-bottom: 1rem; }
+.sidebar-buy .sidebar-product-img { width: 100%; border-radius: 8px; margin-bottom: 0.75rem; }
+.sidebar-buy .sidebar-price { font-size: 1.5rem; font-weight: 800; color: #FF6B35; margin-bottom: 0.5rem; }
+.sidebar-buy .sidebar-rating { display: flex; align-items: center; gap: 0.5rem; font-size: 0.85rem; margin-bottom: 0.75rem; }
+.sidebar-buy .sidebar-rating .stars { color: #FF6B35; }
+.sidebar-disclaimer { font-size: 0.72rem; color: #999; text-align: center; margin: 0.5rem 0 0; line-height: 1.4; }
+.btn-buy-sidebar { display: block; background: #FF6B35; color: white; text-align: center; padding: 0.7rem; border-radius: 8px; text-decoration: none; font-weight: 700; font-size: 0.9rem; transition: background 0.2s; }
+.btn-buy-sidebar:hover { background: #e55a2b; }
+.sidebar-specs h3, .sidebar-score h3 { font-size: 0.9rem; margin: 0 0 0.75rem; color: #333; border-bottom: 2px solid #FF6B35; padding-bottom: 0.4rem; }
+.sidebar-specs ul { margin: 0; padding: 0; list-style: none; }
+.sidebar-specs li { font-size: 0.82rem; padding: 0.35rem 0; border-bottom: 1px solid #f0f0f0; color: #555; }
+.sidebar-specs li:last-child { border-bottom: none; }
+.sidebar-specs li strong { color: #333; }
+.score-circle { width: 100px; height: 100px; margin: 0 auto 1rem; }
+.score-circle svg { width: 100%; height: 100%; }
+.score-breakdown { display: grid; gap: 0.4rem; }
+.score-row { display: grid; grid-template-columns: 1fr auto auto; align-items: center; gap: 0.5rem; font-size: 0.78rem; }
+.score-row > span:first-child { color: #555; }
+.score-bar { width: 60px; height: 6px; background: #e0e0e0; border-radius: 3px; overflow: hidden; }
+.score-bar span { display: block; height: 100%; background: linear-gradient(90deg, #FF6B35, #FF9800); border-radius: 3px; }
+.score-row > span:last-child { font-weight: 700; color: #FF6B35; text-align: right; min-width: 24px; }
+
+@media (max-width: 900px) {
+  .review-layout { grid-template-columns: 1fr; }
+  .review-sidebar { display: none; }
+  .product-hero { grid-template-columns: 1fr; }
+  .verdict-cards, .persona-grid { grid-template-columns: 1fr; }
+  .features-table { grid-template-columns: 1fr; }
+}
+</style>

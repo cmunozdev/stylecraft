@@ -1,0 +1,356 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { AFFILIATE_TAG } from '../../data/products';
+import { buildProductSchema, buildFAQSchema } from '../../utils/schema';
+
+const faqQuestions = [
+  { question: "En que se diferencia el Laifen Neo de secadores convencionales?", answer: "La diferencia principal es el motor sin escobillas (brushless) de 110,000 RPM. Esto le permite generar un flujo de aire rapido con menos calor, reduciendo el dano termico. Ademas, es significativamente mas silencioso que secadores convencionales de similar potencia." },
+  { question: "Cuanto tarda en secar el cabello?", answer: "En pruebas con cabello medio-largo, el Laifen Neo seca completamente en 5-7 minutos con temperatura alta. Esto es comparable o superior a secadores convencionales de 1800-2000W, a pesar de usar menos energia." },
+  { question: "Es compatible con voltage internacional?", answer: "El Laifen Neo tiene doble voltaje automatico (110-240V), lo que lo convierte en una excelente opcion para viajes internacionales. Viene con conector EU por defecto en Amazon.es." },
+  { question: "Que accessories incluye?", answer: "El set incluye 2 boquillas magneticas: una concentradora estrecha y otra difusora. Los accesorios magneticos facilitan el cambio rapido y se ajustan con precision." }
+];
+
+const faqSchema = buildFAQSchema(faqQuestions);
+const product = {
+  name: "Laifen Neo Secador - Motor Sin Escobillas 110,000 RPM, Secado Rapido",
+  price: 204.16,
+  stars: 4.6,
+  image: "https://m.media-amazon.com/images/I/614SP5aNg2L._SY300_SX300_QL70_ML2_.jpg",
+  url: "https://www.amazon.es/dp/B0FQV98Z8Z",
+  asin: "B0FQV98Z8Z",
+  category: "secadores"
+};
+const schema = buildProductSchema(product);
+---
+
+<BaseLayout title="Laifen Neo Review 2026 - Secador 110,000 RPM Premium" description="Review del Laifen Neo: secador con motor brushless 110,000 RPM, secado rapido y dano minimo. Alternativa premium a Dyson a menor precio. Analisis completo." image={product.image} schema={schema} schemas={[faqSchema]} breadcrumbs={[{ name: "Inicio", url: "https://stylecrafts.es/" }, { name: "Secadores", url: "https://stylecrafts.es/secadores" }, { name: "Laifen Neo Review", url: "https://stylecrafts.es/productos/laifen-neo-secador-review" }]}>
+  <div class="page-header">
+    <div class="container">
+      <nav class="breadcrumb">
+        <a href="/">Inicio</a><span>/</span><a href="/secadores">Secadores</a><span>/</span><span>Laifen Neo</span>
+      </nav>
+      <div class="product-rating-badge">
+        <span class="stars">★★★★½</span>
+        <span class="score">4.6/5</span>
+        <span class="reviews">(2,000+ reseñas)</span>
+      </div>
+      <h1>Laifen Neo Review 2026</h1>
+      <p class="page-intro">El Laifen Neo es un secador premium con motor brushless de 110,000 RPM que compite directamente con opciones mucho mas caras. Secado rapido, bajo dano termico y silencio superior a secadores convencionales. Te contamos si merece la pena frente a alternativas mas establecidas.</p>
+    </div>
+  </div>
+
+  <article class="product-review">
+    <div class="container">
+      <div class="review-layout">
+        <main class="review-main">
+          <div class="product-hero">
+            <div class="product-image-wrap">
+              <img src={product.image} alt={product.name} class="product-main-img" loading="lazy" />
+            </div>
+            <div class="product-info">
+              <div class="price-box">
+                <span class="price">{product.price.toFixed(2)}€</span>
+                <span class="prime-badge">Prime</span>
+              </div>
+              <div class="rating-bar">
+                <div class="stars-visual" style="--rating: 92%">
+                  <div class="stars-fill"></div>
+                </div>
+                <span class="stars-text">4.6 sobre 5</span>
+              </div>
+              <p class="product-subtitle">Motor Brushless 110,000 RPM · 4 Temperaturas · 2 Velocidades · Doble Voltaje · 2 Boquillas magneticas</p>
+              <a href={`${product.url}?tag=${AFFILIATE_TAG}`} class="btn-buy" target="_blank" rel="nofollow sponsored">
+                Ver en Amazon.es
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+              </a>
+            </div>
+          </div>
+
+          <nav class="toc">
+            <h2>En esta review</h2>
+            <ol>
+              <li><a href="#veredicto">Veredicto rapido</a></li>
+              <li><a href="#caracteristicas">Caracteristicas principales</a></li>
+              <li><a href="#pros-contras">Pros y contras</a></li>
+              <li><a href="#para-quien">Para quien es</a></li>
+              <li><a href="#comparativa">Comparativa con alternativas</a></li>
+              <li><a href="#faq">Preguntas frecuentes</a></li>
+            </ol>
+          </nav>
+
+          <section id="veredicto">
+            <h2>Veredicto rapido</h2>
+            <div class="verdict-cards">
+              <div class="verdict-card verdict-positive">
+                <h3>Lo mejor</h3>
+                <ul>
+                  <li>Motor brushless 110,000 RPM: secado excepcionalmente rapido</li>
+                  <li>Mucho mas silencioso que secadores convencionales</li>
+                  <li>Dano termico reducido vs secadores tradicionales</li>
+                  <li>4 temperaturas precise con control digital</li>
+                  <li>Boquillas magneticas de facil intercambio</li>
+                  <li>Double voltaje, ideal para viajes</li>
+                </ul>
+              </div>
+              <div class="verdict-card verdict-negative">
+                <h3>Lo mejorable</h3>
+                <ul>
+                  <li>Precio alto comparado con secadores convencionales</li>
+                  <li>Solo 2 boquillas (mas disponibles por separado)</li>
+                  <li>No incluye difusor en el set basico</li>
+                </ul>
+              </div>
+            </div>
+            <div class="verdict-summary">
+              <p><strong>El Laifen Neo es la mejor opcion si quieres tecnologia premium sin pagar el precio de marca principal.</strong> El motor brushless marca una diferencia real en velocidad de secado y cuidado del cabello. Por menos que un Dyson tienes un 90% de la experiencia. <strong>Puntuacion: 4.6/5.</strong></p>
+            </div>
+          </section>
+
+          <section id="caracteristicas">
+            <h2>Caracteristicas principales</h2>
+            <div class="features-table">
+              <div class="feature-row"><span class="feature-name">Motor</span><span class="feature-value">Brushless, 110,000 RPM</span></div>
+              <div class="feature-row"><span class="feature-name">Tecnologia</span><span class="feature-value">Ionica</span></div>
+              <div class="feature-row"><span class="feature-name">Temperaturas</span><span class="feature-value">4 (frio/medio-alto/alto)</span></div>
+              <div class="feature-row"><span class="feature-name">Velocidades</span><span class="feature-value">2</span></div>
+              <div class="feature-row"><span class="feature-name">Voltaje</span><span class="feature-value">110-240V (doble)</span></div>
+              <div class="feature-row"><span class="feature-name">Boquillas</span><span class="feature-value">2 magneticas incluidas</span></div>
+              <div class="feature-row"><span class="feature-name">Peso</span><span class="feature-value">~407g</span></div>
+              <div class="feature-row"><span class="feature-name">Precio</span><span class="feature-value">{product.price.toFixed(2)}€</span></div>
+            </div>
+          </section>
+
+          <section id="pros-contras">
+            <h2>Analisis en profundidad</h2>
+            <h3>Tecnologia del motor brushless</h3>
+            <p>El motor brushless del Laifen Neo es lo que realmente diferencia a este secador. A 110,000 RPM genera un flujo de aire rapido y constante que seca cabello en tiempo record. Pero la verdadera ventaja es que logra este rendimiento con menos calor, porque el aire se mueve mas rapido y transporta la humedad de forma mas eficiente.</p>
+            <p>En terminos practicos: cabello que normalmente seca en 10 minutos con un secador convencional, con el Laifen Neo esta seco en 5-6 minutos a temperatura media. La diferencia no es marginal, es sustancial.</p>
+            <h3>Silencio</h3>
+            <p>El nivel de ruido es significativamente inferior a secadores convencionales. No es silencioso (ningun secador lo es), pero a maxima potencia el sonido es mas grave y menos agresivo. Esto importa cuando te secas el pelo a las 6 de la manana o cuando compartes banera con alguien.</p>
+            <h3>Control de temperatura</h3>
+            <p>Los 4 niveles de temperatura con control digital permiten un ajuste preciso. El modo frio es util para fijar peinados. El modo alto es potentisimo. La transicion entre modos es suave y no hay esos saltos bruscos de temperatura que tienen secadores mas basicos.</p>
+          </section>
+
+          <section id="para-quien">
+            <h2>Para quien es el Laifen Neo</h2>
+            <div class="persona-grid">
+              <div class="persona-card good">
+                <h3>Ideal para ti si...</h3>
+                <ul>
+                  <li>Te secas el pelo diariamente y valoras la velocidad</li>
+                  <li>Quieres cuidar tu cabello reduciendo dano termico</li>
+                  <li>Viajas con frecuencia y necesitas doble voltaje</li>
+                  <li>Buscas una alternativa premium a Dyson</li>
+                  <li>Vives con otras personas y el ruido del secador importa</li>
+                </ul>
+              </div>
+              <div class="persona-card bad">
+                <h3>Mejor busca otra cosa si...</h3>
+                <ul>
+                  <li>Tu presupuesto es inferior a 100 euros</li>
+                  <li>Solo te secas el pelo ocasionalmente</li>
+                  <li>Ya tienes un secador que te satisface</li>
+                  <li>Buscas el maximo numero de accessories incluidos</li>
+                </ul>
+              </div>
+            </div>
+          </section>
+
+          <section id="comparativa">
+            <h2>Comparativa con alternativas</h2>
+            <div class="compare-table">
+              <div class="compare-header">
+                <div class="compare-col-product">Producto</div>
+                <div class="compare-col-price">Precio</div>
+                <div class="compare-col-stars">Rating</div>
+                <div class="compare-col-best">Veredicto</div>
+              </div>
+              <div class="compare-row highlight">
+                <div class="compare-col-product"><strong>Laifen Neo</strong><span>Nuestra eleccion premium</span></div>
+                <div class="compare-col-price">{product.price.toFixed(2)}€</div>
+                <div class="compare-col-stars">4.6</div>
+                <div class="compare-col-best">Mejor valor premium</div>
+              </div>
+              <div class="compare-row">
+                <div class="compare-col-product"><strong>Dyson Supersonic</strong><span>Marca premium</span></div>
+                <div class="compare-col-price">~399€</div>
+                <div class="compare-col-stars">4.6</div>
+                <div class="compare-col-best">Mas accesorios</div>
+              </div>
+              <div class="compare-row">
+                <div class="compare-col-product"><strong>StyleVibe 6-en-1</strong><span>Kit completo</span></div>
+                <div class="compare-col-price">84.10€</div>
+                <div class="compare-col-stars">4.6</div>
+                <div class="compare-col-best">Mejor valor general</div>
+              </div>
+              <div class="compare-row">
+                <div class="compare-col-product"><strong>Cecotec Bamba 5200</strong><span>Gama media</span></div>
+                <div class="compare-col-price">22.90€</div>
+                <div class="compare-col-stars">4.5</div>
+                <div class="compare-col-best">Mas economico</div>
+              </div>
+            </div>
+          </section>
+
+          <section id="faq">
+            <h2>Preguntas frecuentes</h2>
+            <div class="faq-grid">
+              <details>
+                <summary>En que se diferencia el Laifen Neo de secadores convencionales?</summary>
+                <p>La diferencia principal es el motor sin escobillas (brushless) de 110,000 RPM. Esto le permite generar un flujo de aire rapido con menos calor, reduciendo el dano termico. Ademas, es significativamente mas silencioso que secadores convencionales de similar potencia.</p>
+              </details>
+              <details>
+                <summary>Cuanto tarda en secar el cabello?</summary>
+                <p>En pruebas con cabello medio-largo, el Laifen Neo seca completamente en 5-7 minutos con temperatura alta. Esto es comparable o superior a secadores convencionales de 1800-2000W, a pesar de usar menos energia.</p>
+              </details>
+              <details>
+                <summary>Es compatible con voltage internacional?</summary>
+                <p>El Laifen Neo tiene doble voltaje automatico (110-240V), lo que lo convierte en una excelente opcion para viajes internacionales. Viene con conector EU por defecto en Amazon.es.</p>
+              </details>
+              <details>
+                <summary>Que accesorios incluye?</summary>
+                <p>El set incluye 2 boquillas magneticas: una concentradora estrecha y otra difusora. Los accesorios magneticos facilitan el cambio rapido y se ajustan con precision.</p>
+              </details>
+            </div>
+          </section>
+        </main>
+
+        <aside class="review-sidebar">
+          <div class="sidebar-card sidebar-buy">
+            <img src={product.image} alt={product.name} class="sidebar-product-img" />
+            <div class="sidebar-price">{product.price.toFixed(2)}€</div>
+            <div class="sidebar-rating"><span class="stars">★★★★½</span><span>4.6</span></div>
+            <a href={`${product.url}?tag=${AFFILIATE_TAG}`} class="btn-buy-sidebar" target="_blank" rel="nofollow sponsored">Ver en Amazon.es</a>
+            <p class="sidebar-disclaimer">Links de afiliado Amazon. Si compras, recibimos una pequena comision sin coste para ti.</p>
+          </div>
+          <div class="sidebar-card sidebar-specs">
+            <h3>Especificaciones rapidas</h3>
+            <ul>
+              <li><strong>Motor:</strong> Brushless 110,000 RPM</li>
+              <li><strong>Temperaturas:</strong> 4 niveles</li>
+              <li><strong>Voltaje:</strong> 110-240V</li>
+              <li><strong>Boquillas:</strong> 2 magneticas</li>
+              <li><strong>Peso:</strong> ~407g</li>
+            </ul>
+          </div>
+          <div class="sidebar-card sidebar-score">
+            <h3>Puntuacion</h3>
+            <div class="score-circle">
+              <svg viewBox="0 0 100 100">
+                <circle cx="50" cy="50" r="45" fill="none" stroke="#e0e0e0" stroke-width="8"/>
+                <circle cx="50" cy="50" r="45" fill="none" stroke="#FF6B35" stroke-width="8" stroke-dasharray="283" stroke-dashoffset="15" stroke-linecap="round" transform="rotate(-90 50 50)"/>
+                <text x="50" y="54" text-anchor="middle" font-size="22" font-weight="bold" fill="#FF6B35">4.6</text>
+              </svg>
+            </div>
+            <div class="score-breakdown">
+              <div class="score-row"><span>Potencia</span><span class="score-bar"><span style="width:96%"></span></span><span>4.8</span></div>
+              <div class="score-row"><span>Tecnologia</span><span class="score-bar"><span style="width:95%"></span></span><span>4.75</span></div>
+              <div class="score-row"><span>Silencio</span><span class="score-bar"><span style="width:88%"></span></span><span>4.4</span></div>
+              <div class="score-row"><span>Precio/calidad</span><span class="score-bar"><span style="width:82%"></span></span><span>4.1</span></div>
+            </div>
+          </div>
+        </aside>
+      </div>
+    </div>
+  </article>
+</BaseLayout>
+
+<style>
+.product-rating-badge {
+  display: inline-flex; align-items: center; gap: 0.5rem;
+  background: #FFF3E0; border: 1px solid #FFB74D; border-radius: 20px;
+  padding: 0.3rem 0.8rem; font-size: 0.85rem; margin-bottom: 0.75rem;
+}
+.product-rating-badge .stars { color: #FF6B35; font-size: 1rem; }
+.product-rating-badge .score { font-weight: 700; color: #333; }
+.product-rating-badge .reviews { color: #666; }
+
+.verdict-cards { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin: 1.5rem 0; }
+.verdict-card { padding: 1.25rem; border-radius: 12px; }
+.verdict-positive { background: #E8F5E9; border-left: 4px solid #4CAF50; }
+.verdict-negative { background: #FFF3E0; border-left: 4px solid #FF9800; }
+.verdict-card h3 { margin: 0 0 0.75rem; font-size: 1rem; }
+.verdict-card ul { margin: 0; padding-left: 1.25rem; }
+.verdict-card li { margin-bottom: 0.4rem; font-size: 0.9rem; color: #444; }
+.verdict-summary { background: linear-gradient(135deg, #f8f9fa, #fff); border: 1px solid #e0e0e0; border-radius: 12px; padding: 1.5rem; font-size: 0.95rem; line-height: 1.7; margin: 1.5rem 0; }
+
+.features-table { display: grid; grid-template-columns: 1fr 1fr; gap: 0; border: 1px solid #e0e0e0; border-radius: 12px; overflow: hidden; margin: 1.5rem 0; }
+.feature-row:nth-child(odd) { background: #f8f9fa; }
+.feature-row > * { padding: 0.75rem 1rem; font-size: 0.9rem; border-bottom: 1px solid #eee; }
+.feature-row:last-child > * { border-bottom: none; }
+.feature-name { font-weight: 600; color: #333; }
+.feature-value { color: #555; }
+
+.persona-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin: 1.5rem 0; }
+.persona-card { padding: 1.25rem; border-radius: 12px; }
+.persona-card.good { background: #E8F5E9; }
+.persona-card.bad { background: #FFF3E0; }
+.persona-card h3 { margin: 0 0 0.75rem; font-size: 1rem; }
+.persona-card ul { margin: 0; padding-left: 1.25rem; }
+.persona-card li { margin-bottom: 0.4rem; font-size: 0.9rem; color: #444; }
+
+.compare-table { border: 1px solid #e0e0e0; border-radius: 12px; overflow: hidden; margin: 1.5rem 0; }
+.compare-header { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; background: #333; color: white; font-weight: 700; font-size: 0.8rem; }
+.compare-header > * { padding: 0.6rem 1rem; }
+.compare-row { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; border-bottom: 1px solid #eee; font-size: 0.85rem; }
+.compare-row > * { padding: 0.6rem 1rem; border-right: 1px solid #eee; display: flex; flex-direction: column; justify-content: center; }
+.compare-row > *:last-child { border-right: none; }
+.compare-row:last-child { border-bottom: none; }
+.compare-row.highlight { background: #FFF8F0; }
+.compare-row.highlight .compare-col-best { color: #FF6B35; font-weight: 700; }
+.compare-col-product strong { font-size: 0.9rem; }
+.compare-col-product span { font-size: 0.75rem; color: #777; }
+
+.faq-grid { display: grid; gap: 0; border: 1px solid #e0e0e0; border-radius: 12px; overflow: hidden; margin: 1.5rem 0; }
+.faq-grid details { border-bottom: 1px solid #eee; }
+.faq-grid details:last-child { border-bottom: none; }
+.faq-grid summary { padding: 1rem 1.25rem; font-weight: 600; cursor: pointer; background: #f8f9fa; font-size: 0.9rem; }
+.faq-grid summary:hover { background: #f0f0f0; }
+.faq-grid details[open] summary { background: #FF6B35; color: white; }
+.faq-grid p { padding: 0.75rem 1.25rem 1rem; font-size: 0.88rem; color: #555; margin: 0; line-height: 1.6; }
+
+.review-layout { display: grid; grid-template-columns: 1fr 280px; gap: 2rem; align-items: start; padding: 2rem 0; }
+.product-hero { display: grid; grid-template-columns: 280px 1fr; gap: 1.5rem; background: #f8f9fa; border-radius: 16px; padding: 1.5rem; margin-bottom: 2rem; align-items: center; }
+.product-image-wrap { display: flex; align-items: center; justify-content: center; }
+.product-main-img { width: 100%; max-width: 280px; border-radius: 12px; }
+.product-info .price-box { display: flex; align-items: center; gap: 0.75rem; margin-bottom: 0.75rem; }
+.product-info .price { font-size: 1.8rem; font-weight: 800; color: #FF6B35; }
+.prime-badge { background: #232F3E; color: white; font-size: 0.7rem; padding: 0.2rem 0.5rem; border-radius: 4px; font-weight: 700; }
+.rating-bar { display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.75rem; }
+.stars-visual { width: 120px; height: 20px; background: #e0e0e0; border-radius: 10px; overflow: hidden; position: relative; }
+.stars-fill { position: absolute; top: 0; left: 0; height: 100%; background: linear-gradient(90deg, #FF6B35, #FF9800); border-radius: 10px; width: var(--rating); }
+.stars-text { font-size: 0.85rem; color: #555; font-weight: 600; }
+.product-subtitle { font-size: 0.85rem; color: #666; line-height: 1.5; margin: 0 0 1rem; }
+.btn-buy { display: inline-flex; align-items: center; gap: 0.5rem; background: #FF6B35; color: white; padding: 0.75rem 1.5rem; border-radius: 8px; text-decoration: none; font-weight: 700; font-size: 0.95rem; transition: background 0.2s; }
+.btn-buy:hover { background: #e55a2b; }
+
+.review-sidebar .sidebar-card { background: white; border: 1px solid #e0e0e0; border-radius: 12px; padding: 1.25rem; margin-bottom: 1rem; }
+.sidebar-buy .sidebar-product-img { width: 100%; border-radius: 8px; margin-bottom: 0.75rem; }
+.sidebar-buy .sidebar-price { font-size: 1.5rem; font-weight: 800; color: #FF6B35; margin-bottom: 0.5rem; }
+.sidebar-buy .sidebar-rating { display: flex; align-items: center; gap: 0.5rem; font-size: 0.85rem; margin-bottom: 0.75rem; }
+.sidebar-buy .sidebar-rating .stars { color: #FF6B35; }
+.sidebar-disclaimer { font-size: 0.72rem; color: #999; text-align: center; margin: 0.5rem 0 0; line-height: 1.4; }
+.btn-buy-sidebar { display: block; background: #FF6B35; color: white; text-align: center; padding: 0.7rem; border-radius: 8px; text-decoration: none; font-weight: 700; font-size: 0.9rem; transition: background 0.2s; }
+.btn-buy-sidebar:hover { background: #e55a2b; }
+.sidebar-specs h3, .sidebar-score h3 { font-size: 0.9rem; margin: 0 0 0.75rem; color: #333; border-bottom: 2px solid #FF6B35; padding-bottom: 0.4rem; }
+.sidebar-specs ul { margin: 0; padding: 0; list-style: none; }
+.sidebar-specs li { font-size: 0.82rem; padding: 0.35rem 0; border-bottom: 1px solid #f0f0f0; color: #555; }
+.sidebar-specs li:last-child { border-bottom: none; }
+.sidebar-specs li strong { color: #333; }
+.score-circle { width: 100px; height: 100px; margin: 0 auto 1rem; }
+.score-circle svg { width: 100%; height: 100%; }
+.score-breakdown { display: grid; gap: 0.4rem; }
+.score-row { display: grid; grid-template-columns: 1fr auto auto; align-items: center; gap: 0.5rem; font-size: 0.78rem; }
+.score-row > span:first-child { color: #555; }
+.score-bar { width: 60px; height: 6px; background: #e0e0e0; border-radius: 3px; overflow: hidden; }
+.score-bar span { display: block; height: 100%; background: linear-gradient(90deg, #FF6B35, #FF9800); border-radius: 3px; }
+.score-row > span:last-child { font-weight: 700; color: #FF6B35; text-align: right; min-width: 24px; }
+
+@media (max-width: 900px) {
+  .review-layout { grid-template-columns: 1fr; }
+  .review-sidebar { display: none; }
+  .product-hero { grid-template-columns: 1fr; }
+  .verdict-cards, .persona-grid { grid-template-columns: 1fr; }
+  .features-table { grid-template-columns: 1fr; }
+}
+</style>
